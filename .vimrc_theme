@@ -1,0 +1,162 @@
+
+
+
+set conceallevel=0
+set concealcursor=""
+
+" Define syntax of Conceal
+
+highlight ThemeConceal ctermfg=DarkCyan guifg=DarkCyan 
+syntax match PatternTextConcealed "@!.\{-}@" conceal
+highlight link PatternTextConcealed ThemeConceal
+
+
+
+
+highlight BgBlue ctermbg=Blue
+highlight BgGrey ctermbg=Grey guibg=Grey
+
+highlight TextBlack ctermbg=Black guibg=Black
+
+
+syntax region RegionBgGrey start="@!+[^@]\{-}bg=grey[^@]\{-}@" end="@!-[^@]\{-}bg=grey[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionBgGrey BgGrey
+
+
+" Define syntax for pre tag
+highlight ThemePreTag ctermbg=Grey guibg=Grey ctermfg=Black guifg=Black
+syntax region RegionPreTag start="@!+[^@]\{-}|bg=grey|tc=black|[^@]\{-}@" end="@!-[^@]\{-}|bg=grey|tc=black|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionPreTag ThemePreTag
+
+function! InsertPreTag()
+    call YankSelectedRegion()
+    let content = @0
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("@!-|bg=grey|tc=black|keep=</pre>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|bg=grey|tc=black|keep=<pre>|@")
+    call SelectOriginalContent(content)
+    "call Cleanup()
+endfunction
+
+
+" Define syntax for red text
+
+highlight TextRed ctermfg=Red guifg=Red
+syntax region RegionTextRed start="@!+[^@]\{-}|tc=red|[^@]\{-}@" end="@!-[^@]\{-}|tc=red|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionTextRed TextRed
+
+
+
+function! InsertRedtTextTag()
+    call YankSelectedRegion()
+    let content = @0
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("@!-|tc=red|keep=</span>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|tc=red|keep=<span style=\"color: red;\">|@")
+    call SelectOriginalContent(content)
+    call Cleanup()
+
+endfunction
+
+" Define syntax for header
+
+highlight ThemeHeader cterm=bold gui=bold ctermfg=Blue guifg=Blue ctermbg=Yellow guibg=Yellow
+syntax region RegionHeader start="@!+[^@]\{-}|bg=Yellow|tc=blue|[^@]\{-}@" end="@!-[^@]\{-}|bg=Yellow|tc=blue|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionHeader ThemeHeader
+
+
+function! InsertHeaderTagLineMode()
+    call YankSelectedRegion()
+    let content = @0[:len(@0)-2]
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("@!-|bg=Yellow|tc=blue|keep=</h3>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|bg=Yellow|tc=blue|keep=<h3>|@")
+    call SelectOriginalContent(content)
+    call Cleanup()
+endfunction
+
+
+" Define syntax for highlight(bold)
+
+highlight ThemeHighlight ctermfg=Yellow guifg=Yellow
+syntax region RegionHighlight start="@!+[^@]\{-}|tc=yellow|[^@]\{-}@" end="@!-[^@]\{-}|tc=yellow|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionHighlight ThemeHighlight
+
+function! InsertHighlightTheme()
+    call YankSelectedRegion()
+    let content = @0[:len(@0)-2]
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("@!-|tc=yellow|keep=</b>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|tc=yellow|keep=<b>|@")
+    call SelectOriginalContent(content)
+    call Cleanup()
+endfunction
+
+
+" Define utilities related to Code Block
+
+function! AsCodeBlock(lang)
+    call MoveToEndOfRegion()
+    call append(GetLineNumber(), ["@code-end"])
+    call MoveToStartOfRegion()
+    call append(GetLineNumber()-1, ["@code-start[lang=" . a:lang . "]"])
+endfunction
+
+
+" Implement the insert method for output block
+
+
+highlight ThemeOutputBlock guifg=Red guibg=LightCyan
+syntax region RegionOutputBlock start="@!+[^@]\{-}|bg=lightcyan|tc=red|[^@]\{-}@" end="@!-[^@]\{-}|bg=lightcyan|tc=red|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionOutputBlock ThemeOutputBlock
+
+
+function! AsOutputBlock()
+    call MoveToEndOfRegion()
+    call append(GetLineNumber(), ["@!-|bg=lightcyan|tc=red|keep=</pre>@"])
+    call MoveToStartOfRegion()
+    call append(GetLineNumber()-1, ["@!+|bg=lightcyan|tc=red|keep=<pre>@"])
+endfunction
+
+
+" Implement a helper method to generate the final version of the content in a
+" separate buffer.
+
+
+function! Generate(selectAll)
+    if a:selectAll == 1
+        normal! ggVGy
+    else
+        normal! gvy
+    endif
+    let command = ":vnew __TMP__" . strftime("%Y%m%d%H%M%S")
+    execute command
+    sleep 300m
+    normal! ggVGd
+    normal! P
+
+    " handle keep part in the tag
+    :silent execute ":%s/@!.\\{-}|keep=\\(.\\{-}\\)|@/\\1/ge"
+
+    " remove all the tags
+    :silent execute ":%s/@!.\\{-}@//ge"
+
+    " handle the coe block
+    :silent execute "%s/@code-start\\[lang=\\(.\\{-}\\)\\]/<pre><code class=\"\\1\">/e"
+    :silent execute ":%s/@code-end/<\\/code><\\/pre>/e"
+
+endfunction
+
+
+
+function! GenerateBlog()
+    call Generate(1)
+    normal! gg
+    execute ":r ~/workspace/Blog/blog_header.txt"
+endfunction
+
+

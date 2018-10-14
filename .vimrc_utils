@@ -1,0 +1,334 @@
+
+
+
+function! MoveToStartOfRegion()
+    normal! `<
+endfunction
+
+
+function! MoveToEndOfRegion()
+    normal! `>
+endfunction
+
+
+function! InsertStringBeforeCursor(text)
+    let @t = a:text
+    normal! "tP
+endfunction
+
+
+function! InsertStringAfterCursor(text)
+    let @t = a:text
+    normal! "tp
+endfunction
+
+
+function! MoveCharBackward(n)
+    let command = "normal! " . a:n . "h"
+    execute command
+endfunction
+
+
+function! MoveCharForward(n)
+    let command = "normal! " . a:n . "l"
+    execute command
+endfunction
+
+
+
+function! MoveToStartOfLine()
+    normal! 0
+endfunction
+
+
+function! MoveToEndOfLine()
+    normal! $
+endfunction
+
+
+function! AddQuote()
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor('"')
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor('"')
+endfunction
+
+
+
+function! PressEsc()
+    normal! 
+endfunction
+
+function! GetLineNumber()
+    return line(".")
+endfunction
+
+
+function! GetColNumber()
+    return col(".")
+endfunction
+
+
+function! InsertFunction()
+    call append( GetLineNumber(), ["function!  ", "endfunction"])
+    normal! j$
+    execute ":startinsert"
+endfunction
+
+
+
+
+function! YankSelectedRegion() 
+    normal! gvy
+endfunction
+
+
+
+
+function! SelectOriginalContent(content)
+    " This function requires the curror must be right before the original
+    " content
+    normal! ma
+    call search(a:content, '', line('.'))
+    normal! mb
+    normal! `a
+    call search(a:content, 'e', line('.'))
+    normal! mc
+    normal! `a
+    normal! `bv`c
+endfunction
+
+
+
+
+
+function! HelperExtractFieldValue(field, direction)
+    normal! mb
+
+    call HelperGotoStartOfTag()
+    let lower = GetColNumber()
+    normal! `b
+
+    call HelperGotoEndOfTag()
+    let upper = GetColNumber()
+    normal! `b
+    
+    let l:isOutOfBound = 0
+    let l:output = ""
+    let l:p0 = 0
+
+    if a:direction == -1
+        let l:p0 = search("@!+[^@]\\{-}\|" . a:field . "=[^@]\\{-}@", 'b', line('.'))
+        if GetColNumber() >= lower
+            let l:isOutOfBound = 0
+            normal! ma
+        else
+            let l:isOutOfBound = 1
+        endif
+    elseif a:direction == 1
+        let l:p0 = search("@!-[^@]\\{-}\|" . a:field . "=[^@]\\{-}@", '', line('.'))
+        if GetColNumber() <= upper
+            let l:isOutOfBound = 0
+        else
+            let l:isOutOfBound = 1
+        endif
+
+    else
+        echom "Wrong value of direction"
+    endif
+
+
+    if l:p0 == 0 || l:isOutOfBound == 1
+        return ""
+    else
+        call search(a:field . "=", '', line('.'))
+        let p1 = col('.')
+        call search("\|", '', line('.'))
+        let p2 = col('.')
+
+        let l:output = getline('.')[p1+len(a:field) : p2-2]
+    endif
+
+    if a:direction == -1
+        normal! `a
+    endif
+    
+    return l:output
+
+endfunction
+
+
+
+
+function! HelperGotoStartOfTag()
+    normal! ma
+
+    let p = search("@!.\\{-}@", 'b', line('.'))
+    let z = getline('.')[col('.')+1]
+    let output = 0
+
+    while p != 0 && z == '+'
+        let output = 1
+        normal! ma
+        let p = search("@!.\\{-}@", 'b', line('.'))
+        let z = getline('.')[col('.')+1]
+    endwhile
+
+    normal! `a
+    return output
+endfunction
+
+
+
+function! HelperGotoEndOfTag()
+    normal! ma
+
+    let p = search("@!.\\{-}@", '', line('.'))
+    let z = getline('.')[col('.')+1]
+    let output = 0
+
+    while p != 0 && z == '-'
+        let output = 1
+        normal! f@
+        normal! ma
+        let p = search("@!.\\{-}@", '', line('.'))
+        let z = getline('.')[col('.')+1]
+    endwhile
+
+    normal! `a
+    return output
+endfunction
+
+
+
+
+function! Cleanup()
+    " Get a copy of the original selected text
+    call YankSelectedRegion()
+    let originalText = @0
+
+
+    " Collect field values
+    "
+    let bgBefore = HelperExtractFieldValue("bg", -1)
+    call MoveToStartOfRegion()
+
+    let tcBefore = HelperExtractFieldValue("tc", -1)
+    call MoveToStartOfRegion()
+    
+    let keepBefore = []
+    
+    let x = HelperExtractFieldValue("keep", -1)
+    while x != "" 
+        call add(keepBefore, x)
+        let x = HelperExtractFieldValue("keep", -1)
+    endwhile
+
+    call reverse(keepBefore)
+
+
+    let bgAfter = HelperExtractFieldValue("bg", 1)
+    call MoveToStartOfRegion()
+
+    let tcAfter = HelperExtractFieldValue("tc", 1)
+    call MoveToStartOfRegion()
+
+
+    let keepAfter = []
+    
+    let x = HelperExtractFieldValue("keep", 1)
+    while x != "" 
+        call add(keepAfter, x)
+        let x = HelperExtractFieldValue("keep", 1)
+    endwhile
+
+    " Remove the right part of the tag
+    
+    call MoveToEndOfRegion()
+
+    let p = HelperGotoEndOfTag()
+
+    if p != 0
+        normal! ma
+        call MoveToEndOfRegion()
+        call MoveCharForward(1)
+        normal! d`a
+        normal! x
+    endif
+
+    " Remove the left part of the tag
+    let p = HelperGotoStartOfTag()
+
+    if p != 0
+        normal! d`>
+        normal! x
+        if !IsEndOfLine()
+            call MoveCharBackward(1)
+        endif
+    endif
+
+    " Insert back the tag and the original selected region
+    
+    call InsertStringAfterCursor("@!+|")
+
+    if bgBefore != ""
+        call InsertStringAfterCursor("bg=" . bgBefore . "|")
+    endif
+
+
+    if tcBefore != ""
+        call InsertStringAfterCursor("tc=" . tcBefore . "|")
+    endif
+    
+    if len(keepBefore) != 0
+        call InsertStringAfterCursor("keep=" . join(keepBefore,"") . "|")
+    endif
+
+    call InsertStringAfterCursor("@")
+    call InsertStringAfterCursor(originalText)
+    call InsertStringAfterCursor("@!-|")
+
+
+    if bgAfter != ""
+        call InsertStringAfterCursor("bg=" . bgAfter . "|")
+    endif
+
+
+    if tcAfter != ""
+        call InsertStringAfterCursor("tc=" . tcAfter . "|")
+    endif
+    
+    if len(keepAfter) != 0
+        call InsertStringAfterCursor("keep=" . join(keepAfter,"") . "|")
+    endif
+
+    call InsertStringAfterCursor("@")
+
+endfunction
+
+
+
+function! ToggleConceal()
+    if &conceallevel == 0
+        let &conceallevel = 2
+    elseif &conceallevel == 2
+        let &conceallevel = 0
+    endif
+
+endfunction
+
+
+
+function! IsEndOfLine()
+    let p0 = GetColNumber()
+    normal! ma
+    normal! $
+    let p1 = GetColNumber()
+    normal! `a
+    
+    if p0 == p1
+        return 1
+    else
+        return 0
+    endif
+endfunction
