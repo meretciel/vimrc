@@ -32,9 +32,9 @@ function! InsertPreTag()
     call YankSelectedRegion()
     let content = @0
     call MoveToEndOfRegion()
-    call InsertStringAfterCursor("@!-|bg=grey|tc=black|keep=</pre>|@")
+    call InsertStringAfterCursor("@!-|bg=grey|tc=black|keep=</code>|@")
     call MoveToStartOfRegion()
-    call InsertStringBeforeCursor("@!+|bg=grey|tc=black|keep=<pre>|@")
+    call InsertStringBeforeCursor("@!+|bg=grey|tc=black|keep=<code>|@")
     call SelectOriginalContent(content)
     "call Cleanup()
 endfunction
@@ -117,9 +117,9 @@ highlight link RegionOutputBlock ThemeOutputBlock
 
 function! AsOutputBlock()
     call MoveToEndOfRegion()
-    call append(GetLineNumber(), ["@!-|bg=lightcyan|tc=red|keep=</pre>@"])
+    call append(GetLineNumber(), ["@!-|bg=lightcyan|tc=red|keep=</pre>|@"])
     call MoveToStartOfRegion()
-    call append(GetLineNumber()-1, ["@!+|bg=lightcyan|tc=red|keep=<pre>@"])
+    call append(GetLineNumber()-1, ["@!+|bg=lightcyan|tc=red|keep=<pre>|@"])
 endfunction
 
 
@@ -139,15 +139,6 @@ function! Generate(selectAll)
     normal! ggVGd
     normal! P
 
-    " handle keep part in the tag
-    :silent execute ":%s/@!.\\{-}|keep=\\(.\\{-}\\)|@/\\1/ge"
-
-    " remove all the tags
-    :silent execute ":%s/@!.\\{-}@//ge"
-
-    " handle the coe block
-    :silent execute "%s/@code-start\\[lang=\\(.\\{-}\\)\\]/<pre><code class=\"\\1\">/e"
-    :silent execute ":%s/@code-end/<\\/code><\\/pre>/e"
 
 endfunction
 
@@ -156,7 +147,40 @@ endfunction
 function! GenerateBlog()
     call Generate(1)
     normal! gg
+
+    let start = 1
+    let startPattern = "^@code-start.\\{-}$\\|^@!\\+.\\{-}keep=<pre>.\\{-}@$"
+    let endPattern   = "^@code-end$\\|^@!-.\\{-}keep=</pre>.\\{-}@$"
+
+    while search(startPattern, 'ce', line('w$'))
+        let ln = GetLineNumber() - 1
+        let command = ":" . start . "," . ln . "s/$/<\\/br>/"
+        :silent echom "start: " . start
+        :silent echom "line number: " . ln
+        :silent echom "command: " . command
+        :silent execute command
+        call search(endPattern, 'ce', line('w$'))
+        let start = GetLineNumber() + 1 
+    endwhile
+
+    " handle keep part in the tag
+    :silent execute ":%s/@!.\\{-}|keep=\\(.\\{-}\\)|@/\\1/ge"
+
+    " remove all the tags
+    :silent execute ":%s/@!.\\{-}@//ge"
+
+    " handle the coe block
+    :silent execute "%s/@code-start\\[lang=\\(.\\{-}\\)\\]\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
+    :silent execute ":%s/@code-end/<\\/code><\\/pre>/e"
+    
+    normal! gg
     execute ":r ~/workspace/Blog/blog_header.txt"
+
 endfunction
 
 
+
+function! GenerateCleanedFile()
+    call Generate(1)
+    :silent execute ":%s/@!.\\{-}@//ge"
+endfunction
