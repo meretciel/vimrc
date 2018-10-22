@@ -202,11 +202,10 @@ endfunction
 
 
 
-function! Cleanup()
+function! Cleanup(isEndOfLine)
     " Get a copy of the original selected text
     call YankSelectedRegion()
     let originalText = @0
-
 
     " Collect field values
     "
@@ -262,7 +261,7 @@ function! Cleanup()
     if p != 0
         normal! d`>
         normal! x
-        if !IsEndOfLine()
+        if !a:isEndOfLine
             call MoveCharBackward(1)
         endif
     endif

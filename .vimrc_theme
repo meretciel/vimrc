@@ -32,11 +32,12 @@ function! InsertPreTag()
     call YankSelectedRegion()
     let content = @0
     call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
     call InsertStringAfterCursor("@!-|bg=grey|tc=black|keep=</code>|@")
     call MoveToStartOfRegion()
     call InsertStringBeforeCursor("@!+|bg=grey|tc=black|keep=<code>|@")
     call SelectOriginalContent(content)
-    "call Cleanup()
+    call Cleanup(isEndOfLine)
 endfunction
 
 
@@ -52,11 +53,12 @@ function! InsertRedtTextTag()
     call YankSelectedRegion()
     let content = @0
     call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
     call InsertStringAfterCursor("@!-|tc=red|keep=</span>|@")
     call MoveToStartOfRegion()
     call InsertStringBeforeCursor("@!+|tc=red|keep=<span style=\"color: red;\">|@")
     call SelectOriginalContent(content)
-    call Cleanup()
+    call Cleanup(isEndOfLine)
 
 endfunction
 
@@ -71,11 +73,12 @@ function! InsertHeaderTagLineMode()
     call YankSelectedRegion()
     let content = @0[:len(@0)-2]
     call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
     call InsertStringAfterCursor("@!-|bg=Yellow|tc=blue|keep=</h3>|@")
     call MoveToStartOfRegion()
     call InsertStringBeforeCursor("@!+|bg=Yellow|tc=blue|keep=<h3>|@")
     call SelectOriginalContent(content)
-    call Cleanup()
+    call Cleanup(isEndOfLine)
 endfunction
 
 
@@ -87,13 +90,14 @@ highlight link RegionHighlight ThemeHighlight
 
 function! InsertHighlightTheme()
     call YankSelectedRegion()
-    let content = @0[:len(@0)-2]
+    let content = @0
     call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
     call InsertStringAfterCursor("@!-|tc=yellow|keep=</b>|@")
     call MoveToStartOfRegion()
     call InsertStringBeforeCursor("@!+|tc=yellow|keep=<b>|@")
     call SelectOriginalContent(content)
-    call Cleanup()
+    call Cleanup(isEndOfLine)
 endfunction
 
 
