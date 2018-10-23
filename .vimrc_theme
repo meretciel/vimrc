@@ -169,7 +169,7 @@ function! GenerateBlog()
     normal! gg
 
     let start = 1
-    let startPattern = "^@code-start.\\{-}$\\|^@!\\+.\\{-}keep=<pre>.\\{-}@$"
+    let startPattern = "^@code-start.\\{-\\}$\\|^@!\\+.\\{-\\}keep=<pre>.\\{-\\}@$"
     let endPattern   = "^@code-end$\\|^@!-.\\{-}keep=</pre>.\\{-}@$"
 
     while search(startPattern, 'ce', line('w$'))
@@ -190,8 +190,8 @@ function! GenerateBlog()
     :silent execute ":%s/@!.\\{-}@//ge"
 
     " handle the coe block
-    :silent execute ":%s/@code-start\\[lang=\\(.\\{-}\\)\\]\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
-    :silent execute ":%s/@code-end/<\\/code><\\/pre>/e"
+    :silent execute ":%s/^@code-start\\[lang=\\(.\\{-\\}\\)\\]\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
+    :silent execute ":%s/^@code-end/<\\/code><\\/pre>/e"
     
 
     call append(0, [""])
