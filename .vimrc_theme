@@ -48,6 +48,12 @@ syntax region RegionTextRed start="@!+[^@]\{-}|tc=red|[^@]\{-}@" end="@!-[^@]\{-
 highlight link RegionTextRed TextRed
 
 
+" Define syntax for black text
+"highlight TextBlack ctermfg=Black guifg=Black
+"syntax region RegionTextBlack start="@!+[^@]\{-}|tc=black|[^@]\{-}@" end="@!-[^@]\{-}|tc=black|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+"highlight link RegionTextBlack TextBlack
+
+
 
 function! InsertRedtTextTag()
     call YankSelectedRegion()
@@ -114,16 +120,26 @@ endfunction
 " Implement the insert method for output block
 
 
-highlight ThemeOutputBlock guifg=Red guibg=LightCyan
-syntax region RegionOutputBlock start="@!+[^@]\{-}|bg=lightcyan|tc=red|[^@]\{-}@" end="@!-[^@]\{-}|bg=lightcyan|tc=red|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight ThemeOutputBlock guifg=Black guibg=LightCyan
+syntax region RegionOutputBlock start="@!+[^@]\{-}|bg=lightcyan|tc=black|[^@]\{-}@" end="@!-[^@]\{-}|bg=lightcyan|tc=black|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
 highlight link RegionOutputBlock ThemeOutputBlock
 
 
 function! AsOutputBlock()
     call MoveToEndOfRegion()
-    call append(GetLineNumber(), ["@!-|bg=lightcyan|tc=red|keep=</pre>|@"])
+    call append(GetLineNumber(), ["@!-|bg=lightcyan|tc=black|keep=</pre>|@"])
     call MoveToStartOfRegion()
-    call append(GetLineNumber()-1, ["@!+|bg=lightcyan|tc=red|keep=<pre>|@"])
+    call append(GetLineNumber()-1, ["@!+|bg=lightcyan|tc=black|keep=<pre>|@"])
+endfunction
+
+
+" Method that inserts html red tag
+
+function! InsertHtmlRedTag()
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("</span>")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("<span style=\"color:red;\">")
 endfunction
 
 
@@ -158,7 +174,7 @@ function! GenerateBlog()
 
     while search(startPattern, 'ce', line('w$'))
         let ln = GetLineNumber() - 1
-        let command = ":" . start . "," . ln . "s/$/<\\/br>/"
+        let command = ":" . start . "," . ln . "s/$/<br \\/>/"
         :silent echom "start: " . start
         :silent echom "line number: " . ln
         :silent echom "command: " . command
@@ -174,9 +190,11 @@ function! GenerateBlog()
     :silent execute ":%s/@!.\\{-}@//ge"
 
     " handle the coe block
-    :silent execute "%s/@code-start\\[lang=\\(.\\{-}\\)\\]\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
+    :silent execute ":%s/@code-start\\[lang=\\(.\\{-}\\)\\]\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
     :silent execute ":%s/@code-end/<\\/code><\\/pre>/e"
     
+
+    call append(0, [""])
     normal! gg
     execute ":r ~/workspace/Blog/blog_header.txt"
 
@@ -187,4 +205,42 @@ endfunction
 function! GenerateCleanedFile()
     call Generate(1)
     :silent execute ":%s/@!.\\{-}@//ge"
+endfunction
+
+
+
+
+function! InsertHtmlSpace()
+    call InsertStringAfterCursor("&nbsp;")
+endfunction
+
+
+
+
+
+function! GetCharUnderCursor()
+    return getline('.')[col('.') -1]
+endfunction
+
+function! EscapeHtml()
+    let ch = GetCharUnderCursor()
+    let isEndOfLine = IsEndOfLine()
+
+    let l:WriteFunc = ""
+
+    if isEndOfLine
+        let l:WriteFunc = function("InsertStringAfterCursor")
+    else
+        let l:WriteFunc = function("InsertStringBeforeCursor")
+    endif
+             
+   
+    normal! x
+
+    if ch == '<'
+        call l:WriteFunc("&lt;")
+    elseif ch == '>'
+        call l:WriteFunc("&gt;")
+    endif
+
 endfunction

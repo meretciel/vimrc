@@ -385,22 +385,59 @@ function! Init()
 endfunction
 
 
-cabbrev init call Init()
-cabbrev insf call InsertFunction()
-"iabbrev insf :call InsertFunction()
-iabbrev :insf :call InsertFunction()
-cabbrev pre call InsertPreTag()
-cabbrev redt call InsertRedtTextTag()
-cabbrev redtext call InsertRedtTextTag()
-cabbrev header call InsertHeaderTagLineMode()
-cabbrev javacode call AsCodeBlock("java")
-cabbrev pythoncode call AsCodeBlock("python")
-cabbrev pycode call AsCodeBlock("python")
-cabbrev output call AsOutputBlock()
-cabbrev gen call Generate(0)
-cabbrev genall call Generate(1)
-cabbrev genb call GenerateBlog()
-cabbrev genblog call GenerateBlog()
-cabbrev tc call ToggleConceal()
-cabbrev hi call InsertHighlightTheme()
-cabbrev cl call GenerateCleanedFile()
+
+
+function! EnableCabbrev()
+    cabbrev init call Init()
+    cabbrev insf call InsertFunction()
+    iabbrev :insf :call InsertFunction()
+    cabbrev pre call InsertPreTag()
+    cabbrev redt call InsertRedtTextTag()
+    cabbrev redtext call InsertRedtTextTag()
+    cabbrev header call InsertHeaderTagLineMode()
+    cabbrev javacode call AsCodeBlock("java")
+    cabbrev pythoncode call AsCodeBlock("python")
+    cabbrev pycode call AsCodeBlock("python")
+    cabbrev output call AsOutputBlock()
+    cabbrev gen call Generate(0)
+    cabbrev genall call Generate(1)
+    cabbrev genb call GenerateBlog()
+    cabbrev genblog call GenerateBlog()
+    cabbrev tc call ToggleConceal()
+    cabbrev hi call InsertHighlightTheme()
+    cabbrev cl call GenerateCleanedFile()
+    cabbrev dca call DisableCabbrev()
+    cabbrev htmlred call InsertHtmlRedTag()
+    cabbrev escape call EscapeHtml()
+    noremap <leader>e :call EscapeHtml()<cr>
+endfunction
+
+
+
+function! DisableCabbrev()
+    cunabbrev init
+    cunabbrev insf
+    iunabbrev :insf
+    cunabbrev pre
+    cunabbrev redt
+    cunabbrev redtext
+    cunabbrev header
+    cunabbrev javacode
+    cunabbrev pythoncode
+    cunabbrev pycode
+    cunabbrev output
+    cunabbrev gen
+    cunabbrev genall
+    cunabbrev genb
+    cunabbrev genblog
+    cunabbrev tc
+    cunabbrev hi
+    cunabbrev cl
+    cunabbrev :dca
+    cunabbrev :htmlred
+    cunabbrev escape
+    nunmap <leader>e
+endfunction
+
+
+call EnableCabbrev()
