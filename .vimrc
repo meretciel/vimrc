@@ -410,6 +410,7 @@ function! EnableCabbrev()
     cabbrev htmlred call InsertHtmlRedTag()
     cabbrev escape call EscapeHtml()
     noremap <leader>e :call EscapeHtml()<cr>
+    cabbrev rmel call RemoveExtraEmptyLines()
 endfunction
 
 
@@ -437,6 +438,7 @@ function! DisableCabbrev()
     cunabbrev :htmlred
     cunabbrev escape
     nunmap <leader>e
+    cunabbrev rmel
 endfunction
 
 

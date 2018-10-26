@@ -331,3 +331,10 @@ function! IsEndOfLine()
         return 0
     endif
 endfunction
+
+
+
+
+function! RemoveExtraEmptyLines()
+   execute ":%s/\\n\\{3,\\}/\\r\\r/g" 
+endfunction
