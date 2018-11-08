@@ -46,6 +46,12 @@ function! MoveToEndOfLine()
 endfunction
 
 
+
+function! MoveToNextLine()
+    normal! j
+endfunction
+
+
 function! AddQuote()
     call MoveToEndOfRegion()
     call InsertStringAfterCursor('"')

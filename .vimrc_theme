@@ -133,6 +133,22 @@ function! AsOutputBlock()
 endfunction
 
 
+
+highlight ThemeHtmlMetaCharacter guifg=Red guibg=Yellow
+syntax match HtmlMetaCharacter "[<>&]"
+"highlight link HtmlMetaCharacter ThemeHtmlMetaCharacter
+
+
+function! HighlightHtmlMetaCharacter()
+    highlight link HtmlMetaCharacter ThemeHtmlMetaCharacter
+endfunction
+
+
+function! NoHighlightHtmlMetaCharacter() 
+    highlight link HtmlMetaCharacter Normal
+
+endfunction
+
 " Method that inserts html red tag
 
 function! InsertHtmlRedTag()
@@ -169,17 +185,17 @@ function! GenerateBlog()
     normal! gg
 
     let start = 1
-    let startPattern = "^@code-start.\\{-\\}$\\|^@!\\+.\\{-\\}keep=<pre>.\\{-\\}@$"
-    let endPattern   = "^@code-end$\\|^@!-.\\{-}keep=</pre>.\\{-}@$"
+    let startPattern = "^@code-start.\\{-\\}$\\|^@!\\+.\\{-\\}keep=<pre>.\\{-\\}@$\\|^<ol>$\\|^<ul>$"
+    let endPattern   = "^@code-end$\\|^@!-.\\{-\\}keep=</pre>.\\{-\\}@$\\|^</ol>$\\|^</ul>$"
 
-    while search(startPattern, 'ce', line('w$'))
+    while search(startPattern, 'ce', line('$'))
         let ln = GetLineNumber() - 1
         let command = ":" . start . "," . ln . "s/$/<br \\/>/"
         :silent echom "start: " . start
         :silent echom "line number: " . ln
         :silent echom "command: " . command
         :silent execute command
-        call search(endPattern, 'ce', line('w$'))
+        call search(endPattern, 'ce', line('$'))
         let start = GetLineNumber() + 1 
     endwhile
 
@@ -190,7 +206,7 @@ function! GenerateBlog()
     :silent execute ":%s/@!.\\{-}@//ge"
 
     " handle the coe block
-    :silent execute ":%s/^@code-start\\[lang=\\(.\\{-\\}\\)\\]\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
+    :silent execute ":%s/^@code-start\\[lang=\\(.\\{-\\}\\)\\]$\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
     :silent execute ":%s/^@code-end/<\\/code><\\/pre>/e"
     
 
@@ -241,6 +257,61 @@ function! EscapeHtml()
         call l:WriteFunc("&lt;")
     elseif ch == '>'
         call l:WriteFunc("&gt;")
+    elseif ch == '&'
+        call l.WriteFunc("&amp;")
     endif
 
+endfunction
+
+
+
+function! InsertTagPair(start, end)
+    call append(GetLineNumber(), [a:start, "", a:end])
+    call MoveToNextLine()
+    call MoveToNextLine()
+    execute ":startinsert"
+endfunction
+
+
+function! InsertOrderedList()
+    call InsertTagPair("<ol>", "</ol>")
+endfunction
+
+
+function! InsertUnorderedList()
+    call InsertTagPair("<ul>", "</ul>")
+endfunction
+
+
+function! InsertHtmlItem()
+    call append(GetLineNumber()-1, ["<li></li>"])
+    normal! kf>l
+    execute ":startinsert"
+endfunction
+
+
+function! AsHtmlItem()
+    call MoveToEndOfRegion()
+    let endLine = GetLineNumber()
+    
+    call MoveToStartOfRegion()
+    while ( GetLineNumber() <= endLine )
+        call MoveToEndOfLine()
+        call InsertStringAfterCursor("</li>") 
+
+        call MoveToStartOfLine()
+        call InsertStringBeforeCursor("<li>") 
+
+        call MoveToNextLine()
+    endwhile
+
+endfunction
+
+
+
+function! AsHtmlBold()
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("</b>")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("<b>")
 endfunction

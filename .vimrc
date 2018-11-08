@@ -399,6 +399,7 @@ function! EnableCabbrev()
     cabbrev pythoncode call AsCodeBlock("python")
     cabbrev pycode call AsCodeBlock("python")
     cabbrev output call AsOutputBlock()
+    cabbrev preblock call AsOutputBlock()
     cabbrev gen call Generate(0)
     cabbrev genall call Generate(1)
     cabbrev genb call GenerateBlog()
@@ -411,6 +412,15 @@ function! EnableCabbrev()
     cabbrev escape call EscapeHtml()
     noremap <leader>e :call EscapeHtml()<cr>
     cabbrev rmel call RemoveExtraEmptyLines()
+    cabbrev hlhtml call HighlightHtmlMetaCharacter()
+    cabbrev nohlhtml call NoHighlightHtmlMetaCharacter()
+
+    iabbrev :ol :call InsertOrderedList()
+    iabbrev :ul :call InsertUnorderedList()
+    iabbrev :li :call InsertHtmlItem()
+    cabbrev asitem call AsHtmlItem()
+    cabbrev asbold call AsHtmlBold()
+
 endfunction
 
 
@@ -427,6 +437,7 @@ function! DisableCabbrev()
     cunabbrev pythoncode
     cunabbrev pycode
     cunabbrev output
+    cunabbrev preblock
     cunabbrev gen
     cunabbrev genall
     cunabbrev genb
@@ -439,6 +450,13 @@ function! DisableCabbrev()
     cunabbrev escape
     nunmap <leader>e
     cunabbrev rmel
+    cunabbrev hlhtml
+    cunabbrev nohlhtml
+    iunabbrev :ol
+    iunabbrev :ul
+    iunabbrev :li
+    cunabbrev asitem
+    cunabbrev asbold
 endfunction
 
 
