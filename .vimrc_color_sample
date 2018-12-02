@@ -1,0 +1,1624 @@
+
+highlight TMP_Red_LightRed guibg=Red guifg=LightRed
+syntax keyword P_Red_LightRed TMP_Red_LightRed
+highlight link P_Red_LightRed TMP_Red_LightRed
+
+highlight TMP_Red_DarkRed guibg=Red guifg=DarkRed
+syntax keyword P_Red_DarkRed TMP_Red_DarkRed
+highlight link P_Red_DarkRed TMP_Red_DarkRed
+
+highlight TMP_Red_Green guibg=Red guifg=Green
+syntax keyword P_Red_Green TMP_Red_Green
+highlight link P_Red_Green TMP_Red_Green
+
+highlight TMP_Red_LightGreen guibg=Red guifg=LightGreen
+syntax keyword P_Red_LightGreen TMP_Red_LightGreen
+highlight link P_Red_LightGreen TMP_Red_LightGreen
+
+highlight TMP_Red_DarkGreen guibg=Red guifg=DarkGreen
+syntax keyword P_Red_DarkGreen TMP_Red_DarkGreen
+highlight link P_Red_DarkGreen TMP_Red_DarkGreen
+
+highlight TMP_Red_SeaGreen guibg=Red guifg=SeaGreen
+syntax keyword P_Red_SeaGreen TMP_Red_SeaGreen
+highlight link P_Red_SeaGreen TMP_Red_SeaGreen
+
+highlight TMP_Red_Blue guibg=Red guifg=Blue
+syntax keyword P_Red_Blue TMP_Red_Blue
+highlight link P_Red_Blue TMP_Red_Blue
+
+highlight TMP_Red_LightBlue guibg=Red guifg=LightBlue
+syntax keyword P_Red_LightBlue TMP_Red_LightBlue
+highlight link P_Red_LightBlue TMP_Red_LightBlue
+
+highlight TMP_Red_DarkBlue guibg=Red guifg=DarkBlue
+syntax keyword P_Red_DarkBlue TMP_Red_DarkBlue
+highlight link P_Red_DarkBlue TMP_Red_DarkBlue
+
+highlight TMP_Red_SlateBlue guibg=Red guifg=SlateBlue
+syntax keyword P_Red_SlateBlue TMP_Red_SlateBlue
+highlight link P_Red_SlateBlue TMP_Red_SlateBlue
+
+highlight TMP_Red_Cyan guibg=Red guifg=Cyan
+syntax keyword P_Red_Cyan TMP_Red_Cyan
+highlight link P_Red_Cyan TMP_Red_Cyan
+
+highlight TMP_Red_LightCyan guibg=Red guifg=LightCyan
+syntax keyword P_Red_LightCyan TMP_Red_LightCyan
+highlight link P_Red_LightCyan TMP_Red_LightCyan
+
+highlight TMP_Red_DarkCyan guibg=Red guifg=DarkCyan
+syntax keyword P_Red_DarkCyan TMP_Red_DarkCyan
+highlight link P_Red_DarkCyan TMP_Red_DarkCyan
+
+highlight TMP_Red_Magenta guibg=Red guifg=Magenta
+syntax keyword P_Red_Magenta TMP_Red_Magenta
+highlight link P_Red_Magenta TMP_Red_Magenta
+
+highlight TMP_Red_LightMagenta guibg=Red guifg=LightMagenta
+syntax keyword P_Red_LightMagenta TMP_Red_LightMagenta
+highlight link P_Red_LightMagenta TMP_Red_LightMagenta
+
+highlight TMP_Red_DarkMagenta guibg=Red guifg=DarkMagenta
+syntax keyword P_Red_DarkMagenta TMP_Red_DarkMagenta
+highlight link P_Red_DarkMagenta TMP_Red_DarkMagenta
+
+highlight TMP_Red_Yellow guibg=Red guifg=Yellow
+syntax keyword P_Red_Yellow TMP_Red_Yellow
+highlight link P_Red_Yellow TMP_Red_Yellow
+
+highlight TMP_Red_LightYellow guibg=Red guifg=LightYellow
+syntax keyword P_Red_LightYellow TMP_Red_LightYellow
+highlight link P_Red_LightYellow TMP_Red_LightYellow
+
+highlight TMP_Red_Brown guibg=Red guifg=Brown
+syntax keyword P_Red_Brown TMP_Red_Brown
+highlight link P_Red_Brown TMP_Red_Brown
+
+highlight TMP_Red_DarkYellow guibg=Red guifg=DarkYellow
+syntax keyword P_Red_DarkYellow TMP_Red_DarkYellow
+highlight link P_Red_DarkYellow TMP_Red_DarkYellow
+
+highlight TMP_Red_Gray guibg=Red guifg=Gray
+syntax keyword P_Red_Gray TMP_Red_Gray
+highlight link P_Red_Gray TMP_Red_Gray
+
+highlight TMP_Red_LightGray guibg=Red guifg=LightGray
+syntax keyword P_Red_LightGray TMP_Red_LightGray
+highlight link P_Red_LightGray TMP_Red_LightGray
+
+highlight TMP_Red_DarkGray guibg=Red guifg=DarkGray
+syntax keyword P_Red_DarkGray TMP_Red_DarkGray
+highlight link P_Red_DarkGray TMP_Red_DarkGray
+
+highlight TMP_Red_Black guibg=Red guifg=Black
+syntax keyword P_Red_Black TMP_Red_Black
+highlight link P_Red_Black TMP_Red_Black
+
+highlight TMP_Red_White guibg=Red guifg=White
+syntax keyword P_Red_White TMP_Red_White
+highlight link P_Red_White TMP_Red_White
+
+highlight TMP_Red_Orange guibg=Red guifg=Orange
+syntax keyword P_Red_Orange TMP_Red_Orange
+highlight link P_Red_Orange TMP_Red_Orange
+
+highlight TMP_Red_Purple guibg=Red guifg=Purple
+syntax keyword P_Red_Purple TMP_Red_Purple
+highlight link P_Red_Purple TMP_Red_Purple
+
+highlight TMP_Red_Violet guibg=Red guifg=Violet
+syntax keyword P_Red_Violet TMP_Red_Violet
+highlight link P_Red_Violet TMP_Red_Violet
+
+highlight TMP_LightRed_DarkRed guibg=LightRed guifg=DarkRed
+syntax keyword P_LightRed_DarkRed TMP_LightRed_DarkRed
+highlight link P_LightRed_DarkRed TMP_LightRed_DarkRed
+
+highlight TMP_LightRed_Green guibg=LightRed guifg=Green
+syntax keyword P_LightRed_Green TMP_LightRed_Green
+highlight link P_LightRed_Green TMP_LightRed_Green
+
+highlight TMP_LightRed_LightGreen guibg=LightRed guifg=LightGreen
+syntax keyword P_LightRed_LightGreen TMP_LightRed_LightGreen
+highlight link P_LightRed_LightGreen TMP_LightRed_LightGreen
+
+highlight TMP_LightRed_DarkGreen guibg=LightRed guifg=DarkGreen
+syntax keyword P_LightRed_DarkGreen TMP_LightRed_DarkGreen
+highlight link P_LightRed_DarkGreen TMP_LightRed_DarkGreen
+
+highlight TMP_LightRed_SeaGreen guibg=LightRed guifg=SeaGreen
+syntax keyword P_LightRed_SeaGreen TMP_LightRed_SeaGreen
+highlight link P_LightRed_SeaGreen TMP_LightRed_SeaGreen
+
+highlight TMP_LightRed_Blue guibg=LightRed guifg=Blue
+syntax keyword P_LightRed_Blue TMP_LightRed_Blue
+highlight link P_LightRed_Blue TMP_LightRed_Blue
+
+highlight TMP_LightRed_LightBlue guibg=LightRed guifg=LightBlue
+syntax keyword P_LightRed_LightBlue TMP_LightRed_LightBlue
+highlight link P_LightRed_LightBlue TMP_LightRed_LightBlue
+
+highlight TMP_LightRed_DarkBlue guibg=LightRed guifg=DarkBlue
+syntax keyword P_LightRed_DarkBlue TMP_LightRed_DarkBlue
+highlight link P_LightRed_DarkBlue TMP_LightRed_DarkBlue
+
+highlight TMP_LightRed_SlateBlue guibg=LightRed guifg=SlateBlue
+syntax keyword P_LightRed_SlateBlue TMP_LightRed_SlateBlue
+highlight link P_LightRed_SlateBlue TMP_LightRed_SlateBlue
+
+highlight TMP_LightRed_Cyan guibg=LightRed guifg=Cyan
+syntax keyword P_LightRed_Cyan TMP_LightRed_Cyan
+highlight link P_LightRed_Cyan TMP_LightRed_Cyan
+
+highlight TMP_LightRed_LightCyan guibg=LightRed guifg=LightCyan
+syntax keyword P_LightRed_LightCyan TMP_LightRed_LightCyan
+highlight link P_LightRed_LightCyan TMP_LightRed_LightCyan
+
+highlight TMP_LightRed_DarkCyan guibg=LightRed guifg=DarkCyan
+syntax keyword P_LightRed_DarkCyan TMP_LightRed_DarkCyan
+highlight link P_LightRed_DarkCyan TMP_LightRed_DarkCyan
+
+highlight TMP_LightRed_Magenta guibg=LightRed guifg=Magenta
+syntax keyword P_LightRed_Magenta TMP_LightRed_Magenta
+highlight link P_LightRed_Magenta TMP_LightRed_Magenta
+
+highlight TMP_LightRed_LightMagenta guibg=LightRed guifg=LightMagenta
+syntax keyword P_LightRed_LightMagenta TMP_LightRed_LightMagenta
+highlight link P_LightRed_LightMagenta TMP_LightRed_LightMagenta
+
+highlight TMP_LightRed_DarkMagenta guibg=LightRed guifg=DarkMagenta
+syntax keyword P_LightRed_DarkMagenta TMP_LightRed_DarkMagenta
+highlight link P_LightRed_DarkMagenta TMP_LightRed_DarkMagenta
+
+highlight TMP_LightRed_Yellow guibg=LightRed guifg=Yellow
+syntax keyword P_LightRed_Yellow TMP_LightRed_Yellow
+highlight link P_LightRed_Yellow TMP_LightRed_Yellow
+
+highlight TMP_LightRed_LightYellow guibg=LightRed guifg=LightYellow
+syntax keyword P_LightRed_LightYellow TMP_LightRed_LightYellow
+highlight link P_LightRed_LightYellow TMP_LightRed_LightYellow
+
+highlight TMP_LightRed_Brown guibg=LightRed guifg=Brown
+syntax keyword P_LightRed_Brown TMP_LightRed_Brown
+highlight link P_LightRed_Brown TMP_LightRed_Brown
+
+highlight TMP_LightRed_DarkYellow guibg=LightRed guifg=DarkYellow
+syntax keyword P_LightRed_DarkYellow TMP_LightRed_DarkYellow
+highlight link P_LightRed_DarkYellow TMP_LightRed_DarkYellow
+
+highlight TMP_LightRed_Gray guibg=LightRed guifg=Gray
+syntax keyword P_LightRed_Gray TMP_LightRed_Gray
+highlight link P_LightRed_Gray TMP_LightRed_Gray
+
+highlight TMP_LightRed_LightGray guibg=LightRed guifg=LightGray
+syntax keyword P_LightRed_LightGray TMP_LightRed_LightGray
+highlight link P_LightRed_LightGray TMP_LightRed_LightGray
+
+highlight TMP_LightRed_DarkGray guibg=LightRed guifg=DarkGray
+syntax keyword P_LightRed_DarkGray TMP_LightRed_DarkGray
+highlight link P_LightRed_DarkGray TMP_LightRed_DarkGray
+
+highlight TMP_LightRed_Black guibg=LightRed guifg=Black
+syntax keyword P_LightRed_Black TMP_LightRed_Black
+highlight link P_LightRed_Black TMP_LightRed_Black
+
+highlight TMP_LightRed_White guibg=LightRed guifg=White
+syntax keyword P_LightRed_White TMP_LightRed_White
+highlight link P_LightRed_White TMP_LightRed_White
+
+highlight TMP_LightRed_Orange guibg=LightRed guifg=Orange
+syntax keyword P_LightRed_Orange TMP_LightRed_Orange
+highlight link P_LightRed_Orange TMP_LightRed_Orange
+
+highlight TMP_LightRed_Purple guibg=LightRed guifg=Purple
+syntax keyword P_LightRed_Purple TMP_LightRed_Purple
+highlight link P_LightRed_Purple TMP_LightRed_Purple
+
+highlight TMP_LightRed_Violet guibg=LightRed guifg=Violet
+syntax keyword P_LightRed_Violet TMP_LightRed_Violet
+highlight link P_LightRed_Violet TMP_LightRed_Violet
+
+highlight TMP_DarkRed_Green guibg=DarkRed guifg=Green
+syntax keyword P_DarkRed_Green TMP_DarkRed_Green
+highlight link P_DarkRed_Green TMP_DarkRed_Green
+
+highlight TMP_DarkRed_LightGreen guibg=DarkRed guifg=LightGreen
+syntax keyword P_DarkRed_LightGreen TMP_DarkRed_LightGreen
+highlight link P_DarkRed_LightGreen TMP_DarkRed_LightGreen
+
+highlight TMP_DarkRed_DarkGreen guibg=DarkRed guifg=DarkGreen
+syntax keyword P_DarkRed_DarkGreen TMP_DarkRed_DarkGreen
+highlight link P_DarkRed_DarkGreen TMP_DarkRed_DarkGreen
+
+highlight TMP_DarkRed_SeaGreen guibg=DarkRed guifg=SeaGreen
+syntax keyword P_DarkRed_SeaGreen TMP_DarkRed_SeaGreen
+highlight link P_DarkRed_SeaGreen TMP_DarkRed_SeaGreen
+
+highlight TMP_DarkRed_Blue guibg=DarkRed guifg=Blue
+syntax keyword P_DarkRed_Blue TMP_DarkRed_Blue
+highlight link P_DarkRed_Blue TMP_DarkRed_Blue
+
+highlight TMP_DarkRed_LightBlue guibg=DarkRed guifg=LightBlue
+syntax keyword P_DarkRed_LightBlue TMP_DarkRed_LightBlue
+highlight link P_DarkRed_LightBlue TMP_DarkRed_LightBlue
+
+highlight TMP_DarkRed_DarkBlue guibg=DarkRed guifg=DarkBlue
+syntax keyword P_DarkRed_DarkBlue TMP_DarkRed_DarkBlue
+highlight link P_DarkRed_DarkBlue TMP_DarkRed_DarkBlue
+
+highlight TMP_DarkRed_SlateBlue guibg=DarkRed guifg=SlateBlue
+syntax keyword P_DarkRed_SlateBlue TMP_DarkRed_SlateBlue
+highlight link P_DarkRed_SlateBlue TMP_DarkRed_SlateBlue
+
+highlight TMP_DarkRed_Cyan guibg=DarkRed guifg=Cyan
+syntax keyword P_DarkRed_Cyan TMP_DarkRed_Cyan
+highlight link P_DarkRed_Cyan TMP_DarkRed_Cyan
+
+highlight TMP_DarkRed_LightCyan guibg=DarkRed guifg=LightCyan
+syntax keyword P_DarkRed_LightCyan TMP_DarkRed_LightCyan
+highlight link P_DarkRed_LightCyan TMP_DarkRed_LightCyan
+
+highlight TMP_DarkRed_DarkCyan guibg=DarkRed guifg=DarkCyan
+syntax keyword P_DarkRed_DarkCyan TMP_DarkRed_DarkCyan
+highlight link P_DarkRed_DarkCyan TMP_DarkRed_DarkCyan
+
+highlight TMP_DarkRed_Magenta guibg=DarkRed guifg=Magenta
+syntax keyword P_DarkRed_Magenta TMP_DarkRed_Magenta
+highlight link P_DarkRed_Magenta TMP_DarkRed_Magenta
+
+highlight TMP_DarkRed_LightMagenta guibg=DarkRed guifg=LightMagenta
+syntax keyword P_DarkRed_LightMagenta TMP_DarkRed_LightMagenta
+highlight link P_DarkRed_LightMagenta TMP_DarkRed_LightMagenta
+
+highlight TMP_DarkRed_DarkMagenta guibg=DarkRed guifg=DarkMagenta
+syntax keyword P_DarkRed_DarkMagenta TMP_DarkRed_DarkMagenta
+highlight link P_DarkRed_DarkMagenta TMP_DarkRed_DarkMagenta
+
+highlight TMP_DarkRed_Yellow guibg=DarkRed guifg=Yellow
+syntax keyword P_DarkRed_Yellow TMP_DarkRed_Yellow
+highlight link P_DarkRed_Yellow TMP_DarkRed_Yellow
+
+highlight TMP_DarkRed_LightYellow guibg=DarkRed guifg=LightYellow
+syntax keyword P_DarkRed_LightYellow TMP_DarkRed_LightYellow
+highlight link P_DarkRed_LightYellow TMP_DarkRed_LightYellow
+
+highlight TMP_DarkRed_Brown guibg=DarkRed guifg=Brown
+syntax keyword P_DarkRed_Brown TMP_DarkRed_Brown
+highlight link P_DarkRed_Brown TMP_DarkRed_Brown
+
+highlight TMP_DarkRed_DarkYellow guibg=DarkRed guifg=DarkYellow
+syntax keyword P_DarkRed_DarkYellow TMP_DarkRed_DarkYellow
+highlight link P_DarkRed_DarkYellow TMP_DarkRed_DarkYellow
+
+highlight TMP_DarkRed_Gray guibg=DarkRed guifg=Gray
+syntax keyword P_DarkRed_Gray TMP_DarkRed_Gray
+highlight link P_DarkRed_Gray TMP_DarkRed_Gray
+
+highlight TMP_DarkRed_LightGray guibg=DarkRed guifg=LightGray
+syntax keyword P_DarkRed_LightGray TMP_DarkRed_LightGray
+highlight link P_DarkRed_LightGray TMP_DarkRed_LightGray
+
+highlight TMP_DarkRed_DarkGray guibg=DarkRed guifg=DarkGray
+syntax keyword P_DarkRed_DarkGray TMP_DarkRed_DarkGray
+highlight link P_DarkRed_DarkGray TMP_DarkRed_DarkGray
+
+highlight TMP_DarkRed_Black guibg=DarkRed guifg=Black
+syntax keyword P_DarkRed_Black TMP_DarkRed_Black
+highlight link P_DarkRed_Black TMP_DarkRed_Black
+
+highlight TMP_DarkRed_White guibg=DarkRed guifg=White
+syntax keyword P_DarkRed_White TMP_DarkRed_White
+highlight link P_DarkRed_White TMP_DarkRed_White
+
+highlight TMP_DarkRed_Orange guibg=DarkRed guifg=Orange
+syntax keyword P_DarkRed_Orange TMP_DarkRed_Orange
+highlight link P_DarkRed_Orange TMP_DarkRed_Orange
+
+highlight TMP_DarkRed_Purple guibg=DarkRed guifg=Purple
+syntax keyword P_DarkRed_Purple TMP_DarkRed_Purple
+highlight link P_DarkRed_Purple TMP_DarkRed_Purple
+
+highlight TMP_DarkRed_Violet guibg=DarkRed guifg=Violet
+syntax keyword P_DarkRed_Violet TMP_DarkRed_Violet
+highlight link P_DarkRed_Violet TMP_DarkRed_Violet
+
+highlight TMP_Green_LightGreen guibg=Green guifg=LightGreen
+syntax keyword P_Green_LightGreen TMP_Green_LightGreen
+highlight link P_Green_LightGreen TMP_Green_LightGreen
+
+highlight TMP_Green_DarkGreen guibg=Green guifg=DarkGreen
+syntax keyword P_Green_DarkGreen TMP_Green_DarkGreen
+highlight link P_Green_DarkGreen TMP_Green_DarkGreen
+
+highlight TMP_Green_SeaGreen guibg=Green guifg=SeaGreen
+syntax keyword P_Green_SeaGreen TMP_Green_SeaGreen
+highlight link P_Green_SeaGreen TMP_Green_SeaGreen
+
+highlight TMP_Green_Blue guibg=Green guifg=Blue
+syntax keyword P_Green_Blue TMP_Green_Blue
+highlight link P_Green_Blue TMP_Green_Blue
+
+highlight TMP_Green_LightBlue guibg=Green guifg=LightBlue
+syntax keyword P_Green_LightBlue TMP_Green_LightBlue
+highlight link P_Green_LightBlue TMP_Green_LightBlue
+
+highlight TMP_Green_DarkBlue guibg=Green guifg=DarkBlue
+syntax keyword P_Green_DarkBlue TMP_Green_DarkBlue
+highlight link P_Green_DarkBlue TMP_Green_DarkBlue
+
+highlight TMP_Green_SlateBlue guibg=Green guifg=SlateBlue
+syntax keyword P_Green_SlateBlue TMP_Green_SlateBlue
+highlight link P_Green_SlateBlue TMP_Green_SlateBlue
+
+highlight TMP_Green_Cyan guibg=Green guifg=Cyan
+syntax keyword P_Green_Cyan TMP_Green_Cyan
+highlight link P_Green_Cyan TMP_Green_Cyan
+
+highlight TMP_Green_LightCyan guibg=Green guifg=LightCyan
+syntax keyword P_Green_LightCyan TMP_Green_LightCyan
+highlight link P_Green_LightCyan TMP_Green_LightCyan
+
+highlight TMP_Green_DarkCyan guibg=Green guifg=DarkCyan
+syntax keyword P_Green_DarkCyan TMP_Green_DarkCyan
+highlight link P_Green_DarkCyan TMP_Green_DarkCyan
+
+highlight TMP_Green_Magenta guibg=Green guifg=Magenta
+syntax keyword P_Green_Magenta TMP_Green_Magenta
+highlight link P_Green_Magenta TMP_Green_Magenta
+
+highlight TMP_Green_LightMagenta guibg=Green guifg=LightMagenta
+syntax keyword P_Green_LightMagenta TMP_Green_LightMagenta
+highlight link P_Green_LightMagenta TMP_Green_LightMagenta
+
+highlight TMP_Green_DarkMagenta guibg=Green guifg=DarkMagenta
+syntax keyword P_Green_DarkMagenta TMP_Green_DarkMagenta
+highlight link P_Green_DarkMagenta TMP_Green_DarkMagenta
+
+highlight TMP_Green_Yellow guibg=Green guifg=Yellow
+syntax keyword P_Green_Yellow TMP_Green_Yellow
+highlight link P_Green_Yellow TMP_Green_Yellow
+
+highlight TMP_Green_LightYellow guibg=Green guifg=LightYellow
+syntax keyword P_Green_LightYellow TMP_Green_LightYellow
+highlight link P_Green_LightYellow TMP_Green_LightYellow
+
+highlight TMP_Green_Brown guibg=Green guifg=Brown
+syntax keyword P_Green_Brown TMP_Green_Brown
+highlight link P_Green_Brown TMP_Green_Brown
+
+highlight TMP_Green_DarkYellow guibg=Green guifg=DarkYellow
+syntax keyword P_Green_DarkYellow TMP_Green_DarkYellow
+highlight link P_Green_DarkYellow TMP_Green_DarkYellow
+
+highlight TMP_Green_Gray guibg=Green guifg=Gray
+syntax keyword P_Green_Gray TMP_Green_Gray
+highlight link P_Green_Gray TMP_Green_Gray
+
+highlight TMP_Green_LightGray guibg=Green guifg=LightGray
+syntax keyword P_Green_LightGray TMP_Green_LightGray
+highlight link P_Green_LightGray TMP_Green_LightGray
+
+highlight TMP_Green_DarkGray guibg=Green guifg=DarkGray
+syntax keyword P_Green_DarkGray TMP_Green_DarkGray
+highlight link P_Green_DarkGray TMP_Green_DarkGray
+
+highlight TMP_Green_Black guibg=Green guifg=Black
+syntax keyword P_Green_Black TMP_Green_Black
+highlight link P_Green_Black TMP_Green_Black
+
+highlight TMP_Green_White guibg=Green guifg=White
+syntax keyword P_Green_White TMP_Green_White
+highlight link P_Green_White TMP_Green_White
+
+highlight TMP_Green_Orange guibg=Green guifg=Orange
+syntax keyword P_Green_Orange TMP_Green_Orange
+highlight link P_Green_Orange TMP_Green_Orange
+
+highlight TMP_Green_Purple guibg=Green guifg=Purple
+syntax keyword P_Green_Purple TMP_Green_Purple
+highlight link P_Green_Purple TMP_Green_Purple
+
+highlight TMP_Green_Violet guibg=Green guifg=Violet
+syntax keyword P_Green_Violet TMP_Green_Violet
+highlight link P_Green_Violet TMP_Green_Violet
+
+highlight TMP_LightGreen_DarkGreen guibg=LightGreen guifg=DarkGreen
+syntax keyword P_LightGreen_DarkGreen TMP_LightGreen_DarkGreen
+highlight link P_LightGreen_DarkGreen TMP_LightGreen_DarkGreen
+
+highlight TMP_LightGreen_SeaGreen guibg=LightGreen guifg=SeaGreen
+syntax keyword P_LightGreen_SeaGreen TMP_LightGreen_SeaGreen
+highlight link P_LightGreen_SeaGreen TMP_LightGreen_SeaGreen
+
+highlight TMP_LightGreen_Blue guibg=LightGreen guifg=Blue
+syntax keyword P_LightGreen_Blue TMP_LightGreen_Blue
+highlight link P_LightGreen_Blue TMP_LightGreen_Blue
+
+highlight TMP_LightGreen_LightBlue guibg=LightGreen guifg=LightBlue
+syntax keyword P_LightGreen_LightBlue TMP_LightGreen_LightBlue
+highlight link P_LightGreen_LightBlue TMP_LightGreen_LightBlue
+
+highlight TMP_LightGreen_DarkBlue guibg=LightGreen guifg=DarkBlue
+syntax keyword P_LightGreen_DarkBlue TMP_LightGreen_DarkBlue
+highlight link P_LightGreen_DarkBlue TMP_LightGreen_DarkBlue
+
+highlight TMP_LightGreen_SlateBlue guibg=LightGreen guifg=SlateBlue
+syntax keyword P_LightGreen_SlateBlue TMP_LightGreen_SlateBlue
+highlight link P_LightGreen_SlateBlue TMP_LightGreen_SlateBlue
+
+highlight TMP_LightGreen_Cyan guibg=LightGreen guifg=Cyan
+syntax keyword P_LightGreen_Cyan TMP_LightGreen_Cyan
+highlight link P_LightGreen_Cyan TMP_LightGreen_Cyan
+
+highlight TMP_LightGreen_LightCyan guibg=LightGreen guifg=LightCyan
+syntax keyword P_LightGreen_LightCyan TMP_LightGreen_LightCyan
+highlight link P_LightGreen_LightCyan TMP_LightGreen_LightCyan
+
+highlight TMP_LightGreen_DarkCyan guibg=LightGreen guifg=DarkCyan
+syntax keyword P_LightGreen_DarkCyan TMP_LightGreen_DarkCyan
+highlight link P_LightGreen_DarkCyan TMP_LightGreen_DarkCyan
+
+highlight TMP_LightGreen_Magenta guibg=LightGreen guifg=Magenta
+syntax keyword P_LightGreen_Magenta TMP_LightGreen_Magenta
+highlight link P_LightGreen_Magenta TMP_LightGreen_Magenta
+
+highlight TMP_LightGreen_LightMagenta guibg=LightGreen guifg=LightMagenta
+syntax keyword P_LightGreen_LightMagenta TMP_LightGreen_LightMagenta
+highlight link P_LightGreen_LightMagenta TMP_LightGreen_LightMagenta
+
+highlight TMP_LightGreen_DarkMagenta guibg=LightGreen guifg=DarkMagenta
+syntax keyword P_LightGreen_DarkMagenta TMP_LightGreen_DarkMagenta
+highlight link P_LightGreen_DarkMagenta TMP_LightGreen_DarkMagenta
+
+highlight TMP_LightGreen_Yellow guibg=LightGreen guifg=Yellow
+syntax keyword P_LightGreen_Yellow TMP_LightGreen_Yellow
+highlight link P_LightGreen_Yellow TMP_LightGreen_Yellow
+
+highlight TMP_LightGreen_LightYellow guibg=LightGreen guifg=LightYellow
+syntax keyword P_LightGreen_LightYellow TMP_LightGreen_LightYellow
+highlight link P_LightGreen_LightYellow TMP_LightGreen_LightYellow
+
+highlight TMP_LightGreen_Brown guibg=LightGreen guifg=Brown
+syntax keyword P_LightGreen_Brown TMP_LightGreen_Brown
+highlight link P_LightGreen_Brown TMP_LightGreen_Brown
+
+highlight TMP_LightGreen_DarkYellow guibg=LightGreen guifg=DarkYellow
+syntax keyword P_LightGreen_DarkYellow TMP_LightGreen_DarkYellow
+highlight link P_LightGreen_DarkYellow TMP_LightGreen_DarkYellow
+
+highlight TMP_LightGreen_Gray guibg=LightGreen guifg=Gray
+syntax keyword P_LightGreen_Gray TMP_LightGreen_Gray
+highlight link P_LightGreen_Gray TMP_LightGreen_Gray
+
+highlight TMP_LightGreen_LightGray guibg=LightGreen guifg=LightGray
+syntax keyword P_LightGreen_LightGray TMP_LightGreen_LightGray
+highlight link P_LightGreen_LightGray TMP_LightGreen_LightGray
+
+highlight TMP_LightGreen_DarkGray guibg=LightGreen guifg=DarkGray
+syntax keyword P_LightGreen_DarkGray TMP_LightGreen_DarkGray
+highlight link P_LightGreen_DarkGray TMP_LightGreen_DarkGray
+
+highlight TMP_LightGreen_Black guibg=LightGreen guifg=Black
+syntax keyword P_LightGreen_Black TMP_LightGreen_Black
+highlight link P_LightGreen_Black TMP_LightGreen_Black
+
+highlight TMP_LightGreen_White guibg=LightGreen guifg=White
+syntax keyword P_LightGreen_White TMP_LightGreen_White
+highlight link P_LightGreen_White TMP_LightGreen_White
+
+highlight TMP_LightGreen_Orange guibg=LightGreen guifg=Orange
+syntax keyword P_LightGreen_Orange TMP_LightGreen_Orange
+highlight link P_LightGreen_Orange TMP_LightGreen_Orange
+
+highlight TMP_LightGreen_Purple guibg=LightGreen guifg=Purple
+syntax keyword P_LightGreen_Purple TMP_LightGreen_Purple
+highlight link P_LightGreen_Purple TMP_LightGreen_Purple
+
+highlight TMP_LightGreen_Violet guibg=LightGreen guifg=Violet
+syntax keyword P_LightGreen_Violet TMP_LightGreen_Violet
+highlight link P_LightGreen_Violet TMP_LightGreen_Violet
+
+highlight TMP_DarkGreen_SeaGreen guibg=DarkGreen guifg=SeaGreen
+syntax keyword P_DarkGreen_SeaGreen TMP_DarkGreen_SeaGreen
+highlight link P_DarkGreen_SeaGreen TMP_DarkGreen_SeaGreen
+
+highlight TMP_DarkGreen_Blue guibg=DarkGreen guifg=Blue
+syntax keyword P_DarkGreen_Blue TMP_DarkGreen_Blue
+highlight link P_DarkGreen_Blue TMP_DarkGreen_Blue
+
+highlight TMP_DarkGreen_LightBlue guibg=DarkGreen guifg=LightBlue
+syntax keyword P_DarkGreen_LightBlue TMP_DarkGreen_LightBlue
+highlight link P_DarkGreen_LightBlue TMP_DarkGreen_LightBlue
+
+highlight TMP_DarkGreen_DarkBlue guibg=DarkGreen guifg=DarkBlue
+syntax keyword P_DarkGreen_DarkBlue TMP_DarkGreen_DarkBlue
+highlight link P_DarkGreen_DarkBlue TMP_DarkGreen_DarkBlue
+
+highlight TMP_DarkGreen_SlateBlue guibg=DarkGreen guifg=SlateBlue
+syntax keyword P_DarkGreen_SlateBlue TMP_DarkGreen_SlateBlue
+highlight link P_DarkGreen_SlateBlue TMP_DarkGreen_SlateBlue
+
+highlight TMP_DarkGreen_Cyan guibg=DarkGreen guifg=Cyan
+syntax keyword P_DarkGreen_Cyan TMP_DarkGreen_Cyan
+highlight link P_DarkGreen_Cyan TMP_DarkGreen_Cyan
+
+highlight TMP_DarkGreen_LightCyan guibg=DarkGreen guifg=LightCyan
+syntax keyword P_DarkGreen_LightCyan TMP_DarkGreen_LightCyan
+highlight link P_DarkGreen_LightCyan TMP_DarkGreen_LightCyan
+
+highlight TMP_DarkGreen_DarkCyan guibg=DarkGreen guifg=DarkCyan
+syntax keyword P_DarkGreen_DarkCyan TMP_DarkGreen_DarkCyan
+highlight link P_DarkGreen_DarkCyan TMP_DarkGreen_DarkCyan
+
+highlight TMP_DarkGreen_Magenta guibg=DarkGreen guifg=Magenta
+syntax keyword P_DarkGreen_Magenta TMP_DarkGreen_Magenta
+highlight link P_DarkGreen_Magenta TMP_DarkGreen_Magenta
+
+highlight TMP_DarkGreen_LightMagenta guibg=DarkGreen guifg=LightMagenta
+syntax keyword P_DarkGreen_LightMagenta TMP_DarkGreen_LightMagenta
+highlight link P_DarkGreen_LightMagenta TMP_DarkGreen_LightMagenta
+
+highlight TMP_DarkGreen_DarkMagenta guibg=DarkGreen guifg=DarkMagenta
+syntax keyword P_DarkGreen_DarkMagenta TMP_DarkGreen_DarkMagenta
+highlight link P_DarkGreen_DarkMagenta TMP_DarkGreen_DarkMagenta
+
+highlight TMP_DarkGreen_Yellow guibg=DarkGreen guifg=Yellow
+syntax keyword P_DarkGreen_Yellow TMP_DarkGreen_Yellow
+highlight link P_DarkGreen_Yellow TMP_DarkGreen_Yellow
+
+highlight TMP_DarkGreen_LightYellow guibg=DarkGreen guifg=LightYellow
+syntax keyword P_DarkGreen_LightYellow TMP_DarkGreen_LightYellow
+highlight link P_DarkGreen_LightYellow TMP_DarkGreen_LightYellow
+
+highlight TMP_DarkGreen_Brown guibg=DarkGreen guifg=Brown
+syntax keyword P_DarkGreen_Brown TMP_DarkGreen_Brown
+highlight link P_DarkGreen_Brown TMP_DarkGreen_Brown
+
+highlight TMP_DarkGreen_DarkYellow guibg=DarkGreen guifg=DarkYellow
+syntax keyword P_DarkGreen_DarkYellow TMP_DarkGreen_DarkYellow
+highlight link P_DarkGreen_DarkYellow TMP_DarkGreen_DarkYellow
+
+highlight TMP_DarkGreen_Gray guibg=DarkGreen guifg=Gray
+syntax keyword P_DarkGreen_Gray TMP_DarkGreen_Gray
+highlight link P_DarkGreen_Gray TMP_DarkGreen_Gray
+
+highlight TMP_DarkGreen_LightGray guibg=DarkGreen guifg=LightGray
+syntax keyword P_DarkGreen_LightGray TMP_DarkGreen_LightGray
+highlight link P_DarkGreen_LightGray TMP_DarkGreen_LightGray
+
+highlight TMP_DarkGreen_DarkGray guibg=DarkGreen guifg=DarkGray
+syntax keyword P_DarkGreen_DarkGray TMP_DarkGreen_DarkGray
+highlight link P_DarkGreen_DarkGray TMP_DarkGreen_DarkGray
+
+highlight TMP_DarkGreen_Black guibg=DarkGreen guifg=Black
+syntax keyword P_DarkGreen_Black TMP_DarkGreen_Black
+highlight link P_DarkGreen_Black TMP_DarkGreen_Black
+
+highlight TMP_DarkGreen_White guibg=DarkGreen guifg=White
+syntax keyword P_DarkGreen_White TMP_DarkGreen_White
+highlight link P_DarkGreen_White TMP_DarkGreen_White
+
+highlight TMP_DarkGreen_Orange guibg=DarkGreen guifg=Orange
+syntax keyword P_DarkGreen_Orange TMP_DarkGreen_Orange
+highlight link P_DarkGreen_Orange TMP_DarkGreen_Orange
+
+highlight TMP_DarkGreen_Purple guibg=DarkGreen guifg=Purple
+syntax keyword P_DarkGreen_Purple TMP_DarkGreen_Purple
+highlight link P_DarkGreen_Purple TMP_DarkGreen_Purple
+
+highlight TMP_DarkGreen_Violet guibg=DarkGreen guifg=Violet
+syntax keyword P_DarkGreen_Violet TMP_DarkGreen_Violet
+highlight link P_DarkGreen_Violet TMP_DarkGreen_Violet
+
+highlight TMP_SeaGreen_Blue guibg=SeaGreen guifg=Blue
+syntax keyword P_SeaGreen_Blue TMP_SeaGreen_Blue
+highlight link P_SeaGreen_Blue TMP_SeaGreen_Blue
+
+highlight TMP_SeaGreen_LightBlue guibg=SeaGreen guifg=LightBlue
+syntax keyword P_SeaGreen_LightBlue TMP_SeaGreen_LightBlue
+highlight link P_SeaGreen_LightBlue TMP_SeaGreen_LightBlue
+
+highlight TMP_SeaGreen_DarkBlue guibg=SeaGreen guifg=DarkBlue
+syntax keyword P_SeaGreen_DarkBlue TMP_SeaGreen_DarkBlue
+highlight link P_SeaGreen_DarkBlue TMP_SeaGreen_DarkBlue
+
+highlight TMP_SeaGreen_SlateBlue guibg=SeaGreen guifg=SlateBlue
+syntax keyword P_SeaGreen_SlateBlue TMP_SeaGreen_SlateBlue
+highlight link P_SeaGreen_SlateBlue TMP_SeaGreen_SlateBlue
+
+highlight TMP_SeaGreen_Cyan guibg=SeaGreen guifg=Cyan
+syntax keyword P_SeaGreen_Cyan TMP_SeaGreen_Cyan
+highlight link P_SeaGreen_Cyan TMP_SeaGreen_Cyan
+
+highlight TMP_SeaGreen_LightCyan guibg=SeaGreen guifg=LightCyan
+syntax keyword P_SeaGreen_LightCyan TMP_SeaGreen_LightCyan
+highlight link P_SeaGreen_LightCyan TMP_SeaGreen_LightCyan
+
+highlight TMP_SeaGreen_DarkCyan guibg=SeaGreen guifg=DarkCyan
+syntax keyword P_SeaGreen_DarkCyan TMP_SeaGreen_DarkCyan
+highlight link P_SeaGreen_DarkCyan TMP_SeaGreen_DarkCyan
+
+highlight TMP_SeaGreen_Magenta guibg=SeaGreen guifg=Magenta
+syntax keyword P_SeaGreen_Magenta TMP_SeaGreen_Magenta
+highlight link P_SeaGreen_Magenta TMP_SeaGreen_Magenta
+
+highlight TMP_SeaGreen_LightMagenta guibg=SeaGreen guifg=LightMagenta
+syntax keyword P_SeaGreen_LightMagenta TMP_SeaGreen_LightMagenta
+highlight link P_SeaGreen_LightMagenta TMP_SeaGreen_LightMagenta
+
+highlight TMP_SeaGreen_DarkMagenta guibg=SeaGreen guifg=DarkMagenta
+syntax keyword P_SeaGreen_DarkMagenta TMP_SeaGreen_DarkMagenta
+highlight link P_SeaGreen_DarkMagenta TMP_SeaGreen_DarkMagenta
+
+highlight TMP_SeaGreen_Yellow guibg=SeaGreen guifg=Yellow
+syntax keyword P_SeaGreen_Yellow TMP_SeaGreen_Yellow
+highlight link P_SeaGreen_Yellow TMP_SeaGreen_Yellow
+
+highlight TMP_SeaGreen_LightYellow guibg=SeaGreen guifg=LightYellow
+syntax keyword P_SeaGreen_LightYellow TMP_SeaGreen_LightYellow
+highlight link P_SeaGreen_LightYellow TMP_SeaGreen_LightYellow
+
+highlight TMP_SeaGreen_Brown guibg=SeaGreen guifg=Brown
+syntax keyword P_SeaGreen_Brown TMP_SeaGreen_Brown
+highlight link P_SeaGreen_Brown TMP_SeaGreen_Brown
+
+highlight TMP_SeaGreen_DarkYellow guibg=SeaGreen guifg=DarkYellow
+syntax keyword P_SeaGreen_DarkYellow TMP_SeaGreen_DarkYellow
+highlight link P_SeaGreen_DarkYellow TMP_SeaGreen_DarkYellow
+
+highlight TMP_SeaGreen_Gray guibg=SeaGreen guifg=Gray
+syntax keyword P_SeaGreen_Gray TMP_SeaGreen_Gray
+highlight link P_SeaGreen_Gray TMP_SeaGreen_Gray
+
+highlight TMP_SeaGreen_LightGray guibg=SeaGreen guifg=LightGray
+syntax keyword P_SeaGreen_LightGray TMP_SeaGreen_LightGray
+highlight link P_SeaGreen_LightGray TMP_SeaGreen_LightGray
+
+highlight TMP_SeaGreen_DarkGray guibg=SeaGreen guifg=DarkGray
+syntax keyword P_SeaGreen_DarkGray TMP_SeaGreen_DarkGray
+highlight link P_SeaGreen_DarkGray TMP_SeaGreen_DarkGray
+
+highlight TMP_SeaGreen_Black guibg=SeaGreen guifg=Black
+syntax keyword P_SeaGreen_Black TMP_SeaGreen_Black
+highlight link P_SeaGreen_Black TMP_SeaGreen_Black
+
+highlight TMP_SeaGreen_White guibg=SeaGreen guifg=White
+syntax keyword P_SeaGreen_White TMP_SeaGreen_White
+highlight link P_SeaGreen_White TMP_SeaGreen_White
+
+highlight TMP_SeaGreen_Orange guibg=SeaGreen guifg=Orange
+syntax keyword P_SeaGreen_Orange TMP_SeaGreen_Orange
+highlight link P_SeaGreen_Orange TMP_SeaGreen_Orange
+
+highlight TMP_SeaGreen_Purple guibg=SeaGreen guifg=Purple
+syntax keyword P_SeaGreen_Purple TMP_SeaGreen_Purple
+highlight link P_SeaGreen_Purple TMP_SeaGreen_Purple
+
+highlight TMP_SeaGreen_Violet guibg=SeaGreen guifg=Violet
+syntax keyword P_SeaGreen_Violet TMP_SeaGreen_Violet
+highlight link P_SeaGreen_Violet TMP_SeaGreen_Violet
+
+highlight TMP_Blue_LightBlue guibg=Blue guifg=LightBlue
+syntax keyword P_Blue_LightBlue TMP_Blue_LightBlue
+highlight link P_Blue_LightBlue TMP_Blue_LightBlue
+
+highlight TMP_Blue_DarkBlue guibg=Blue guifg=DarkBlue
+syntax keyword P_Blue_DarkBlue TMP_Blue_DarkBlue
+highlight link P_Blue_DarkBlue TMP_Blue_DarkBlue
+
+highlight TMP_Blue_SlateBlue guibg=Blue guifg=SlateBlue
+syntax keyword P_Blue_SlateBlue TMP_Blue_SlateBlue
+highlight link P_Blue_SlateBlue TMP_Blue_SlateBlue
+
+highlight TMP_Blue_Cyan guibg=Blue guifg=Cyan
+syntax keyword P_Blue_Cyan TMP_Blue_Cyan
+highlight link P_Blue_Cyan TMP_Blue_Cyan
+
+highlight TMP_Blue_LightCyan guibg=Blue guifg=LightCyan
+syntax keyword P_Blue_LightCyan TMP_Blue_LightCyan
+highlight link P_Blue_LightCyan TMP_Blue_LightCyan
+
+highlight TMP_Blue_DarkCyan guibg=Blue guifg=DarkCyan
+syntax keyword P_Blue_DarkCyan TMP_Blue_DarkCyan
+highlight link P_Blue_DarkCyan TMP_Blue_DarkCyan
+
+highlight TMP_Blue_Magenta guibg=Blue guifg=Magenta
+syntax keyword P_Blue_Magenta TMP_Blue_Magenta
+highlight link P_Blue_Magenta TMP_Blue_Magenta
+
+highlight TMP_Blue_LightMagenta guibg=Blue guifg=LightMagenta
+syntax keyword P_Blue_LightMagenta TMP_Blue_LightMagenta
+highlight link P_Blue_LightMagenta TMP_Blue_LightMagenta
+
+highlight TMP_Blue_DarkMagenta guibg=Blue guifg=DarkMagenta
+syntax keyword P_Blue_DarkMagenta TMP_Blue_DarkMagenta
+highlight link P_Blue_DarkMagenta TMP_Blue_DarkMagenta
+
+highlight TMP_Blue_Yellow guibg=Blue guifg=Yellow
+syntax keyword P_Blue_Yellow TMP_Blue_Yellow
+highlight link P_Blue_Yellow TMP_Blue_Yellow
+
+highlight TMP_Blue_LightYellow guibg=Blue guifg=LightYellow
+syntax keyword P_Blue_LightYellow TMP_Blue_LightYellow
+highlight link P_Blue_LightYellow TMP_Blue_LightYellow
+
+highlight TMP_Blue_Brown guibg=Blue guifg=Brown
+syntax keyword P_Blue_Brown TMP_Blue_Brown
+highlight link P_Blue_Brown TMP_Blue_Brown
+
+highlight TMP_Blue_DarkYellow guibg=Blue guifg=DarkYellow
+syntax keyword P_Blue_DarkYellow TMP_Blue_DarkYellow
+highlight link P_Blue_DarkYellow TMP_Blue_DarkYellow
+
+highlight TMP_Blue_Gray guibg=Blue guifg=Gray
+syntax keyword P_Blue_Gray TMP_Blue_Gray
+highlight link P_Blue_Gray TMP_Blue_Gray
+
+highlight TMP_Blue_LightGray guibg=Blue guifg=LightGray
+syntax keyword P_Blue_LightGray TMP_Blue_LightGray
+highlight link P_Blue_LightGray TMP_Blue_LightGray
+
+highlight TMP_Blue_DarkGray guibg=Blue guifg=DarkGray
+syntax keyword P_Blue_DarkGray TMP_Blue_DarkGray
+highlight link P_Blue_DarkGray TMP_Blue_DarkGray
+
+highlight TMP_Blue_Black guibg=Blue guifg=Black
+syntax keyword P_Blue_Black TMP_Blue_Black
+highlight link P_Blue_Black TMP_Blue_Black
+
+highlight TMP_Blue_White guibg=Blue guifg=White
+syntax keyword P_Blue_White TMP_Blue_White
+highlight link P_Blue_White TMP_Blue_White
+
+highlight TMP_Blue_Orange guibg=Blue guifg=Orange
+syntax keyword P_Blue_Orange TMP_Blue_Orange
+highlight link P_Blue_Orange TMP_Blue_Orange
+
+highlight TMP_Blue_Purple guibg=Blue guifg=Purple
+syntax keyword P_Blue_Purple TMP_Blue_Purple
+highlight link P_Blue_Purple TMP_Blue_Purple
+
+highlight TMP_Blue_Violet guibg=Blue guifg=Violet
+syntax keyword P_Blue_Violet TMP_Blue_Violet
+highlight link P_Blue_Violet TMP_Blue_Violet
+
+highlight TMP_LightBlue_DarkBlue guibg=LightBlue guifg=DarkBlue
+syntax keyword P_LightBlue_DarkBlue TMP_LightBlue_DarkBlue
+highlight link P_LightBlue_DarkBlue TMP_LightBlue_DarkBlue
+
+highlight TMP_LightBlue_SlateBlue guibg=LightBlue guifg=SlateBlue
+syntax keyword P_LightBlue_SlateBlue TMP_LightBlue_SlateBlue
+highlight link P_LightBlue_SlateBlue TMP_LightBlue_SlateBlue
+
+highlight TMP_LightBlue_Cyan guibg=LightBlue guifg=Cyan
+syntax keyword P_LightBlue_Cyan TMP_LightBlue_Cyan
+highlight link P_LightBlue_Cyan TMP_LightBlue_Cyan
+
+highlight TMP_LightBlue_LightCyan guibg=LightBlue guifg=LightCyan
+syntax keyword P_LightBlue_LightCyan TMP_LightBlue_LightCyan
+highlight link P_LightBlue_LightCyan TMP_LightBlue_LightCyan
+
+highlight TMP_LightBlue_DarkCyan guibg=LightBlue guifg=DarkCyan
+syntax keyword P_LightBlue_DarkCyan TMP_LightBlue_DarkCyan
+highlight link P_LightBlue_DarkCyan TMP_LightBlue_DarkCyan
+
+highlight TMP_LightBlue_Magenta guibg=LightBlue guifg=Magenta
+syntax keyword P_LightBlue_Magenta TMP_LightBlue_Magenta
+highlight link P_LightBlue_Magenta TMP_LightBlue_Magenta
+
+highlight TMP_LightBlue_LightMagenta guibg=LightBlue guifg=LightMagenta
+syntax keyword P_LightBlue_LightMagenta TMP_LightBlue_LightMagenta
+highlight link P_LightBlue_LightMagenta TMP_LightBlue_LightMagenta
+
+highlight TMP_LightBlue_DarkMagenta guibg=LightBlue guifg=DarkMagenta
+syntax keyword P_LightBlue_DarkMagenta TMP_LightBlue_DarkMagenta
+highlight link P_LightBlue_DarkMagenta TMP_LightBlue_DarkMagenta
+
+highlight TMP_LightBlue_Yellow guibg=LightBlue guifg=Yellow
+syntax keyword P_LightBlue_Yellow TMP_LightBlue_Yellow
+highlight link P_LightBlue_Yellow TMP_LightBlue_Yellow
+
+highlight TMP_LightBlue_LightYellow guibg=LightBlue guifg=LightYellow
+syntax keyword P_LightBlue_LightYellow TMP_LightBlue_LightYellow
+highlight link P_LightBlue_LightYellow TMP_LightBlue_LightYellow
+
+highlight TMP_LightBlue_Brown guibg=LightBlue guifg=Brown
+syntax keyword P_LightBlue_Brown TMP_LightBlue_Brown
+highlight link P_LightBlue_Brown TMP_LightBlue_Brown
+
+highlight TMP_LightBlue_DarkYellow guibg=LightBlue guifg=DarkYellow
+syntax keyword P_LightBlue_DarkYellow TMP_LightBlue_DarkYellow
+highlight link P_LightBlue_DarkYellow TMP_LightBlue_DarkYellow
+
+highlight TMP_LightBlue_Gray guibg=LightBlue guifg=Gray
+syntax keyword P_LightBlue_Gray TMP_LightBlue_Gray
+highlight link P_LightBlue_Gray TMP_LightBlue_Gray
+
+highlight TMP_LightBlue_LightGray guibg=LightBlue guifg=LightGray
+syntax keyword P_LightBlue_LightGray TMP_LightBlue_LightGray
+highlight link P_LightBlue_LightGray TMP_LightBlue_LightGray
+
+highlight TMP_LightBlue_DarkGray guibg=LightBlue guifg=DarkGray
+syntax keyword P_LightBlue_DarkGray TMP_LightBlue_DarkGray
+highlight link P_LightBlue_DarkGray TMP_LightBlue_DarkGray
+
+highlight TMP_LightBlue_Black guibg=LightBlue guifg=Black
+syntax keyword P_LightBlue_Black TMP_LightBlue_Black
+highlight link P_LightBlue_Black TMP_LightBlue_Black
+
+highlight TMP_LightBlue_White guibg=LightBlue guifg=White
+syntax keyword P_LightBlue_White TMP_LightBlue_White
+highlight link P_LightBlue_White TMP_LightBlue_White
+
+highlight TMP_LightBlue_Orange guibg=LightBlue guifg=Orange
+syntax keyword P_LightBlue_Orange TMP_LightBlue_Orange
+highlight link P_LightBlue_Orange TMP_LightBlue_Orange
+
+highlight TMP_LightBlue_Purple guibg=LightBlue guifg=Purple
+syntax keyword P_LightBlue_Purple TMP_LightBlue_Purple
+highlight link P_LightBlue_Purple TMP_LightBlue_Purple
+
+highlight TMP_LightBlue_Violet guibg=LightBlue guifg=Violet
+syntax keyword P_LightBlue_Violet TMP_LightBlue_Violet
+highlight link P_LightBlue_Violet TMP_LightBlue_Violet
+
+highlight TMP_DarkBlue_SlateBlue guibg=DarkBlue guifg=SlateBlue
+syntax keyword P_DarkBlue_SlateBlue TMP_DarkBlue_SlateBlue
+highlight link P_DarkBlue_SlateBlue TMP_DarkBlue_SlateBlue
+
+highlight TMP_DarkBlue_Cyan guibg=DarkBlue guifg=Cyan
+syntax keyword P_DarkBlue_Cyan TMP_DarkBlue_Cyan
+highlight link P_DarkBlue_Cyan TMP_DarkBlue_Cyan
+
+highlight TMP_DarkBlue_LightCyan guibg=DarkBlue guifg=LightCyan
+syntax keyword P_DarkBlue_LightCyan TMP_DarkBlue_LightCyan
+highlight link P_DarkBlue_LightCyan TMP_DarkBlue_LightCyan
+
+highlight TMP_DarkBlue_DarkCyan guibg=DarkBlue guifg=DarkCyan
+syntax keyword P_DarkBlue_DarkCyan TMP_DarkBlue_DarkCyan
+highlight link P_DarkBlue_DarkCyan TMP_DarkBlue_DarkCyan
+
+highlight TMP_DarkBlue_Magenta guibg=DarkBlue guifg=Magenta
+syntax keyword P_DarkBlue_Magenta TMP_DarkBlue_Magenta
+highlight link P_DarkBlue_Magenta TMP_DarkBlue_Magenta
+
+highlight TMP_DarkBlue_LightMagenta guibg=DarkBlue guifg=LightMagenta
+syntax keyword P_DarkBlue_LightMagenta TMP_DarkBlue_LightMagenta
+highlight link P_DarkBlue_LightMagenta TMP_DarkBlue_LightMagenta
+
+highlight TMP_DarkBlue_DarkMagenta guibg=DarkBlue guifg=DarkMagenta
+syntax keyword P_DarkBlue_DarkMagenta TMP_DarkBlue_DarkMagenta
+highlight link P_DarkBlue_DarkMagenta TMP_DarkBlue_DarkMagenta
+
+highlight TMP_DarkBlue_Yellow guibg=DarkBlue guifg=Yellow
+syntax keyword P_DarkBlue_Yellow TMP_DarkBlue_Yellow
+highlight link P_DarkBlue_Yellow TMP_DarkBlue_Yellow
+
+highlight TMP_DarkBlue_LightYellow guibg=DarkBlue guifg=LightYellow
+syntax keyword P_DarkBlue_LightYellow TMP_DarkBlue_LightYellow
+highlight link P_DarkBlue_LightYellow TMP_DarkBlue_LightYellow
+
+highlight TMP_DarkBlue_Brown guibg=DarkBlue guifg=Brown
+syntax keyword P_DarkBlue_Brown TMP_DarkBlue_Brown
+highlight link P_DarkBlue_Brown TMP_DarkBlue_Brown
+
+highlight TMP_DarkBlue_DarkYellow guibg=DarkBlue guifg=DarkYellow
+syntax keyword P_DarkBlue_DarkYellow TMP_DarkBlue_DarkYellow
+highlight link P_DarkBlue_DarkYellow TMP_DarkBlue_DarkYellow
+
+highlight TMP_DarkBlue_Gray guibg=DarkBlue guifg=Gray
+syntax keyword P_DarkBlue_Gray TMP_DarkBlue_Gray
+highlight link P_DarkBlue_Gray TMP_DarkBlue_Gray
+
+highlight TMP_DarkBlue_LightGray guibg=DarkBlue guifg=LightGray
+syntax keyword P_DarkBlue_LightGray TMP_DarkBlue_LightGray
+highlight link P_DarkBlue_LightGray TMP_DarkBlue_LightGray
+
+highlight TMP_DarkBlue_DarkGray guibg=DarkBlue guifg=DarkGray
+syntax keyword P_DarkBlue_DarkGray TMP_DarkBlue_DarkGray
+highlight link P_DarkBlue_DarkGray TMP_DarkBlue_DarkGray
+
+highlight TMP_DarkBlue_Black guibg=DarkBlue guifg=Black
+syntax keyword P_DarkBlue_Black TMP_DarkBlue_Black
+highlight link P_DarkBlue_Black TMP_DarkBlue_Black
+
+highlight TMP_DarkBlue_White guibg=DarkBlue guifg=White
+syntax keyword P_DarkBlue_White TMP_DarkBlue_White
+highlight link P_DarkBlue_White TMP_DarkBlue_White
+
+highlight TMP_DarkBlue_Orange guibg=DarkBlue guifg=Orange
+syntax keyword P_DarkBlue_Orange TMP_DarkBlue_Orange
+highlight link P_DarkBlue_Orange TMP_DarkBlue_Orange
+
+highlight TMP_DarkBlue_Purple guibg=DarkBlue guifg=Purple
+syntax keyword P_DarkBlue_Purple TMP_DarkBlue_Purple
+highlight link P_DarkBlue_Purple TMP_DarkBlue_Purple
+
+highlight TMP_DarkBlue_Violet guibg=DarkBlue guifg=Violet
+syntax keyword P_DarkBlue_Violet TMP_DarkBlue_Violet
+highlight link P_DarkBlue_Violet TMP_DarkBlue_Violet
+
+highlight TMP_SlateBlue_Cyan guibg=SlateBlue guifg=Cyan
+syntax keyword P_SlateBlue_Cyan TMP_SlateBlue_Cyan
+highlight link P_SlateBlue_Cyan TMP_SlateBlue_Cyan
+
+highlight TMP_SlateBlue_LightCyan guibg=SlateBlue guifg=LightCyan
+syntax keyword P_SlateBlue_LightCyan TMP_SlateBlue_LightCyan
+highlight link P_SlateBlue_LightCyan TMP_SlateBlue_LightCyan
+
+highlight TMP_SlateBlue_DarkCyan guibg=SlateBlue guifg=DarkCyan
+syntax keyword P_SlateBlue_DarkCyan TMP_SlateBlue_DarkCyan
+highlight link P_SlateBlue_DarkCyan TMP_SlateBlue_DarkCyan
+
+highlight TMP_SlateBlue_Magenta guibg=SlateBlue guifg=Magenta
+syntax keyword P_SlateBlue_Magenta TMP_SlateBlue_Magenta
+highlight link P_SlateBlue_Magenta TMP_SlateBlue_Magenta
+
+highlight TMP_SlateBlue_LightMagenta guibg=SlateBlue guifg=LightMagenta
+syntax keyword P_SlateBlue_LightMagenta TMP_SlateBlue_LightMagenta
+highlight link P_SlateBlue_LightMagenta TMP_SlateBlue_LightMagenta
+
+highlight TMP_SlateBlue_DarkMagenta guibg=SlateBlue guifg=DarkMagenta
+syntax keyword P_SlateBlue_DarkMagenta TMP_SlateBlue_DarkMagenta
+highlight link P_SlateBlue_DarkMagenta TMP_SlateBlue_DarkMagenta
+
+highlight TMP_SlateBlue_Yellow guibg=SlateBlue guifg=Yellow
+syntax keyword P_SlateBlue_Yellow TMP_SlateBlue_Yellow
+highlight link P_SlateBlue_Yellow TMP_SlateBlue_Yellow
+
+highlight TMP_SlateBlue_LightYellow guibg=SlateBlue guifg=LightYellow
+syntax keyword P_SlateBlue_LightYellow TMP_SlateBlue_LightYellow
+highlight link P_SlateBlue_LightYellow TMP_SlateBlue_LightYellow
+
+highlight TMP_SlateBlue_Brown guibg=SlateBlue guifg=Brown
+syntax keyword P_SlateBlue_Brown TMP_SlateBlue_Brown
+highlight link P_SlateBlue_Brown TMP_SlateBlue_Brown
+
+highlight TMP_SlateBlue_DarkYellow guibg=SlateBlue guifg=DarkYellow
+syntax keyword P_SlateBlue_DarkYellow TMP_SlateBlue_DarkYellow
+highlight link P_SlateBlue_DarkYellow TMP_SlateBlue_DarkYellow
+
+highlight TMP_SlateBlue_Gray guibg=SlateBlue guifg=Gray
+syntax keyword P_SlateBlue_Gray TMP_SlateBlue_Gray
+highlight link P_SlateBlue_Gray TMP_SlateBlue_Gray
+
+highlight TMP_SlateBlue_LightGray guibg=SlateBlue guifg=LightGray
+syntax keyword P_SlateBlue_LightGray TMP_SlateBlue_LightGray
+highlight link P_SlateBlue_LightGray TMP_SlateBlue_LightGray
+
+highlight TMP_SlateBlue_DarkGray guibg=SlateBlue guifg=DarkGray
+syntax keyword P_SlateBlue_DarkGray TMP_SlateBlue_DarkGray
+highlight link P_SlateBlue_DarkGray TMP_SlateBlue_DarkGray
+
+highlight TMP_SlateBlue_Black guibg=SlateBlue guifg=Black
+syntax keyword P_SlateBlue_Black TMP_SlateBlue_Black
+highlight link P_SlateBlue_Black TMP_SlateBlue_Black
+
+highlight TMP_SlateBlue_White guibg=SlateBlue guifg=White
+syntax keyword P_SlateBlue_White TMP_SlateBlue_White
+highlight link P_SlateBlue_White TMP_SlateBlue_White
+
+highlight TMP_SlateBlue_Orange guibg=SlateBlue guifg=Orange
+syntax keyword P_SlateBlue_Orange TMP_SlateBlue_Orange
+highlight link P_SlateBlue_Orange TMP_SlateBlue_Orange
+
+highlight TMP_SlateBlue_Purple guibg=SlateBlue guifg=Purple
+syntax keyword P_SlateBlue_Purple TMP_SlateBlue_Purple
+highlight link P_SlateBlue_Purple TMP_SlateBlue_Purple
+
+highlight TMP_SlateBlue_Violet guibg=SlateBlue guifg=Violet
+syntax keyword P_SlateBlue_Violet TMP_SlateBlue_Violet
+highlight link P_SlateBlue_Violet TMP_SlateBlue_Violet
+
+highlight TMP_Cyan_LightCyan guibg=Cyan guifg=LightCyan
+syntax keyword P_Cyan_LightCyan TMP_Cyan_LightCyan
+highlight link P_Cyan_LightCyan TMP_Cyan_LightCyan
+
+highlight TMP_Cyan_DarkCyan guibg=Cyan guifg=DarkCyan
+syntax keyword P_Cyan_DarkCyan TMP_Cyan_DarkCyan
+highlight link P_Cyan_DarkCyan TMP_Cyan_DarkCyan
+
+highlight TMP_Cyan_Magenta guibg=Cyan guifg=Magenta
+syntax keyword P_Cyan_Magenta TMP_Cyan_Magenta
+highlight link P_Cyan_Magenta TMP_Cyan_Magenta
+
+highlight TMP_Cyan_LightMagenta guibg=Cyan guifg=LightMagenta
+syntax keyword P_Cyan_LightMagenta TMP_Cyan_LightMagenta
+highlight link P_Cyan_LightMagenta TMP_Cyan_LightMagenta
+
+highlight TMP_Cyan_DarkMagenta guibg=Cyan guifg=DarkMagenta
+syntax keyword P_Cyan_DarkMagenta TMP_Cyan_DarkMagenta
+highlight link P_Cyan_DarkMagenta TMP_Cyan_DarkMagenta
+
+highlight TMP_Cyan_Yellow guibg=Cyan guifg=Yellow
+syntax keyword P_Cyan_Yellow TMP_Cyan_Yellow
+highlight link P_Cyan_Yellow TMP_Cyan_Yellow
+
+highlight TMP_Cyan_LightYellow guibg=Cyan guifg=LightYellow
+syntax keyword P_Cyan_LightYellow TMP_Cyan_LightYellow
+highlight link P_Cyan_LightYellow TMP_Cyan_LightYellow
+
+highlight TMP_Cyan_Brown guibg=Cyan guifg=Brown
+syntax keyword P_Cyan_Brown TMP_Cyan_Brown
+highlight link P_Cyan_Brown TMP_Cyan_Brown
+
+highlight TMP_Cyan_DarkYellow guibg=Cyan guifg=DarkYellow
+syntax keyword P_Cyan_DarkYellow TMP_Cyan_DarkYellow
+highlight link P_Cyan_DarkYellow TMP_Cyan_DarkYellow
+
+highlight TMP_Cyan_Gray guibg=Cyan guifg=Gray
+syntax keyword P_Cyan_Gray TMP_Cyan_Gray
+highlight link P_Cyan_Gray TMP_Cyan_Gray
+
+highlight TMP_Cyan_LightGray guibg=Cyan guifg=LightGray
+syntax keyword P_Cyan_LightGray TMP_Cyan_LightGray
+highlight link P_Cyan_LightGray TMP_Cyan_LightGray
+
+highlight TMP_Cyan_DarkGray guibg=Cyan guifg=DarkGray
+syntax keyword P_Cyan_DarkGray TMP_Cyan_DarkGray
+highlight link P_Cyan_DarkGray TMP_Cyan_DarkGray
+
+highlight TMP_Cyan_Black guibg=Cyan guifg=Black
+syntax keyword P_Cyan_Black TMP_Cyan_Black
+highlight link P_Cyan_Black TMP_Cyan_Black
+
+highlight TMP_Cyan_White guibg=Cyan guifg=White
+syntax keyword P_Cyan_White TMP_Cyan_White
+highlight link P_Cyan_White TMP_Cyan_White
+
+highlight TMP_Cyan_Orange guibg=Cyan guifg=Orange
+syntax keyword P_Cyan_Orange TMP_Cyan_Orange
+highlight link P_Cyan_Orange TMP_Cyan_Orange
+
+highlight TMP_Cyan_Purple guibg=Cyan guifg=Purple
+syntax keyword P_Cyan_Purple TMP_Cyan_Purple
+highlight link P_Cyan_Purple TMP_Cyan_Purple
+
+highlight TMP_Cyan_Violet guibg=Cyan guifg=Violet
+syntax keyword P_Cyan_Violet TMP_Cyan_Violet
+highlight link P_Cyan_Violet TMP_Cyan_Violet
+
+highlight TMP_LightCyan_DarkCyan guibg=LightCyan guifg=DarkCyan
+syntax keyword P_LightCyan_DarkCyan TMP_LightCyan_DarkCyan
+highlight link P_LightCyan_DarkCyan TMP_LightCyan_DarkCyan
+
+highlight TMP_LightCyan_Magenta guibg=LightCyan guifg=Magenta
+syntax keyword P_LightCyan_Magenta TMP_LightCyan_Magenta
+highlight link P_LightCyan_Magenta TMP_LightCyan_Magenta
+
+highlight TMP_LightCyan_LightMagenta guibg=LightCyan guifg=LightMagenta
+syntax keyword P_LightCyan_LightMagenta TMP_LightCyan_LightMagenta
+highlight link P_LightCyan_LightMagenta TMP_LightCyan_LightMagenta
+
+highlight TMP_LightCyan_DarkMagenta guibg=LightCyan guifg=DarkMagenta
+syntax keyword P_LightCyan_DarkMagenta TMP_LightCyan_DarkMagenta
+highlight link P_LightCyan_DarkMagenta TMP_LightCyan_DarkMagenta
+
+highlight TMP_LightCyan_Yellow guibg=LightCyan guifg=Yellow
+syntax keyword P_LightCyan_Yellow TMP_LightCyan_Yellow
+highlight link P_LightCyan_Yellow TMP_LightCyan_Yellow
+
+highlight TMP_LightCyan_LightYellow guibg=LightCyan guifg=LightYellow
+syntax keyword P_LightCyan_LightYellow TMP_LightCyan_LightYellow
+highlight link P_LightCyan_LightYellow TMP_LightCyan_LightYellow
+
+highlight TMP_LightCyan_Brown guibg=LightCyan guifg=Brown
+syntax keyword P_LightCyan_Brown TMP_LightCyan_Brown
+highlight link P_LightCyan_Brown TMP_LightCyan_Brown
+
+highlight TMP_LightCyan_DarkYellow guibg=LightCyan guifg=DarkYellow
+syntax keyword P_LightCyan_DarkYellow TMP_LightCyan_DarkYellow
+highlight link P_LightCyan_DarkYellow TMP_LightCyan_DarkYellow
+
+highlight TMP_LightCyan_Gray guibg=LightCyan guifg=Gray
+syntax keyword P_LightCyan_Gray TMP_LightCyan_Gray
+highlight link P_LightCyan_Gray TMP_LightCyan_Gray
+
+highlight TMP_LightCyan_LightGray guibg=LightCyan guifg=LightGray
+syntax keyword P_LightCyan_LightGray TMP_LightCyan_LightGray
+highlight link P_LightCyan_LightGray TMP_LightCyan_LightGray
+
+highlight TMP_LightCyan_DarkGray guibg=LightCyan guifg=DarkGray
+syntax keyword P_LightCyan_DarkGray TMP_LightCyan_DarkGray
+highlight link P_LightCyan_DarkGray TMP_LightCyan_DarkGray
+
+highlight TMP_LightCyan_Black guibg=LightCyan guifg=Black
+syntax keyword P_LightCyan_Black TMP_LightCyan_Black
+highlight link P_LightCyan_Black TMP_LightCyan_Black
+
+highlight TMP_LightCyan_White guibg=LightCyan guifg=White
+syntax keyword P_LightCyan_White TMP_LightCyan_White
+highlight link P_LightCyan_White TMP_LightCyan_White
+
+highlight TMP_LightCyan_Orange guibg=LightCyan guifg=Orange
+syntax keyword P_LightCyan_Orange TMP_LightCyan_Orange
+highlight link P_LightCyan_Orange TMP_LightCyan_Orange
+
+highlight TMP_LightCyan_Purple guibg=LightCyan guifg=Purple
+syntax keyword P_LightCyan_Purple TMP_LightCyan_Purple
+highlight link P_LightCyan_Purple TMP_LightCyan_Purple
+
+highlight TMP_LightCyan_Violet guibg=LightCyan guifg=Violet
+syntax keyword P_LightCyan_Violet TMP_LightCyan_Violet
+highlight link P_LightCyan_Violet TMP_LightCyan_Violet
+
+highlight TMP_DarkCyan_Magenta guibg=DarkCyan guifg=Magenta
+syntax keyword P_DarkCyan_Magenta TMP_DarkCyan_Magenta
+highlight link P_DarkCyan_Magenta TMP_DarkCyan_Magenta
+
+highlight TMP_DarkCyan_LightMagenta guibg=DarkCyan guifg=LightMagenta
+syntax keyword P_DarkCyan_LightMagenta TMP_DarkCyan_LightMagenta
+highlight link P_DarkCyan_LightMagenta TMP_DarkCyan_LightMagenta
+
+highlight TMP_DarkCyan_DarkMagenta guibg=DarkCyan guifg=DarkMagenta
+syntax keyword P_DarkCyan_DarkMagenta TMP_DarkCyan_DarkMagenta
+highlight link P_DarkCyan_DarkMagenta TMP_DarkCyan_DarkMagenta
+
+highlight TMP_DarkCyan_Yellow guibg=DarkCyan guifg=Yellow
+syntax keyword P_DarkCyan_Yellow TMP_DarkCyan_Yellow
+highlight link P_DarkCyan_Yellow TMP_DarkCyan_Yellow
+
+highlight TMP_DarkCyan_LightYellow guibg=DarkCyan guifg=LightYellow
+syntax keyword P_DarkCyan_LightYellow TMP_DarkCyan_LightYellow
+highlight link P_DarkCyan_LightYellow TMP_DarkCyan_LightYellow
+
+highlight TMP_DarkCyan_Brown guibg=DarkCyan guifg=Brown
+syntax keyword P_DarkCyan_Brown TMP_DarkCyan_Brown
+highlight link P_DarkCyan_Brown TMP_DarkCyan_Brown
+
+highlight TMP_DarkCyan_DarkYellow guibg=DarkCyan guifg=DarkYellow
+syntax keyword P_DarkCyan_DarkYellow TMP_DarkCyan_DarkYellow
+highlight link P_DarkCyan_DarkYellow TMP_DarkCyan_DarkYellow
+
+highlight TMP_DarkCyan_Gray guibg=DarkCyan guifg=Gray
+syntax keyword P_DarkCyan_Gray TMP_DarkCyan_Gray
+highlight link P_DarkCyan_Gray TMP_DarkCyan_Gray
+
+highlight TMP_DarkCyan_LightGray guibg=DarkCyan guifg=LightGray
+syntax keyword P_DarkCyan_LightGray TMP_DarkCyan_LightGray
+highlight link P_DarkCyan_LightGray TMP_DarkCyan_LightGray
+
+highlight TMP_DarkCyan_DarkGray guibg=DarkCyan guifg=DarkGray
+syntax keyword P_DarkCyan_DarkGray TMP_DarkCyan_DarkGray
+highlight link P_DarkCyan_DarkGray TMP_DarkCyan_DarkGray
+
+highlight TMP_DarkCyan_Black guibg=DarkCyan guifg=Black
+syntax keyword P_DarkCyan_Black TMP_DarkCyan_Black
+highlight link P_DarkCyan_Black TMP_DarkCyan_Black
+
+highlight TMP_DarkCyan_White guibg=DarkCyan guifg=White
+syntax keyword P_DarkCyan_White TMP_DarkCyan_White
+highlight link P_DarkCyan_White TMP_DarkCyan_White
+
+highlight TMP_DarkCyan_Orange guibg=DarkCyan guifg=Orange
+syntax keyword P_DarkCyan_Orange TMP_DarkCyan_Orange
+highlight link P_DarkCyan_Orange TMP_DarkCyan_Orange
+
+highlight TMP_DarkCyan_Purple guibg=DarkCyan guifg=Purple
+syntax keyword P_DarkCyan_Purple TMP_DarkCyan_Purple
+highlight link P_DarkCyan_Purple TMP_DarkCyan_Purple
+
+highlight TMP_DarkCyan_Violet guibg=DarkCyan guifg=Violet
+syntax keyword P_DarkCyan_Violet TMP_DarkCyan_Violet
+highlight link P_DarkCyan_Violet TMP_DarkCyan_Violet
+
+highlight TMP_Magenta_LightMagenta guibg=Magenta guifg=LightMagenta
+syntax keyword P_Magenta_LightMagenta TMP_Magenta_LightMagenta
+highlight link P_Magenta_LightMagenta TMP_Magenta_LightMagenta
+
+highlight TMP_Magenta_DarkMagenta guibg=Magenta guifg=DarkMagenta
+syntax keyword P_Magenta_DarkMagenta TMP_Magenta_DarkMagenta
+highlight link P_Magenta_DarkMagenta TMP_Magenta_DarkMagenta
+
+highlight TMP_Magenta_Yellow guibg=Magenta guifg=Yellow
+syntax keyword P_Magenta_Yellow TMP_Magenta_Yellow
+highlight link P_Magenta_Yellow TMP_Magenta_Yellow
+
+highlight TMP_Magenta_LightYellow guibg=Magenta guifg=LightYellow
+syntax keyword P_Magenta_LightYellow TMP_Magenta_LightYellow
+highlight link P_Magenta_LightYellow TMP_Magenta_LightYellow
+
+highlight TMP_Magenta_Brown guibg=Magenta guifg=Brown
+syntax keyword P_Magenta_Brown TMP_Magenta_Brown
+highlight link P_Magenta_Brown TMP_Magenta_Brown
+
+highlight TMP_Magenta_DarkYellow guibg=Magenta guifg=DarkYellow
+syntax keyword P_Magenta_DarkYellow TMP_Magenta_DarkYellow
+highlight link P_Magenta_DarkYellow TMP_Magenta_DarkYellow
+
+highlight TMP_Magenta_Gray guibg=Magenta guifg=Gray
+syntax keyword P_Magenta_Gray TMP_Magenta_Gray
+highlight link P_Magenta_Gray TMP_Magenta_Gray
+
+highlight TMP_Magenta_LightGray guibg=Magenta guifg=LightGray
+syntax keyword P_Magenta_LightGray TMP_Magenta_LightGray
+highlight link P_Magenta_LightGray TMP_Magenta_LightGray
+
+highlight TMP_Magenta_DarkGray guibg=Magenta guifg=DarkGray
+syntax keyword P_Magenta_DarkGray TMP_Magenta_DarkGray
+highlight link P_Magenta_DarkGray TMP_Magenta_DarkGray
+
+highlight TMP_Magenta_Black guibg=Magenta guifg=Black
+syntax keyword P_Magenta_Black TMP_Magenta_Black
+highlight link P_Magenta_Black TMP_Magenta_Black
+
+highlight TMP_Magenta_White guibg=Magenta guifg=White
+syntax keyword P_Magenta_White TMP_Magenta_White
+highlight link P_Magenta_White TMP_Magenta_White
+
+highlight TMP_Magenta_Orange guibg=Magenta guifg=Orange
+syntax keyword P_Magenta_Orange TMP_Magenta_Orange
+highlight link P_Magenta_Orange TMP_Magenta_Orange
+
+highlight TMP_Magenta_Purple guibg=Magenta guifg=Purple
+syntax keyword P_Magenta_Purple TMP_Magenta_Purple
+highlight link P_Magenta_Purple TMP_Magenta_Purple
+
+highlight TMP_Magenta_Violet guibg=Magenta guifg=Violet
+syntax keyword P_Magenta_Violet TMP_Magenta_Violet
+highlight link P_Magenta_Violet TMP_Magenta_Violet
+
+highlight TMP_LightMagenta_DarkMagenta guibg=LightMagenta guifg=DarkMagenta
+syntax keyword P_LightMagenta_DarkMagenta TMP_LightMagenta_DarkMagenta
+highlight link P_LightMagenta_DarkMagenta TMP_LightMagenta_DarkMagenta
+
+highlight TMP_LightMagenta_Yellow guibg=LightMagenta guifg=Yellow
+syntax keyword P_LightMagenta_Yellow TMP_LightMagenta_Yellow
+highlight link P_LightMagenta_Yellow TMP_LightMagenta_Yellow
+
+highlight TMP_LightMagenta_LightYellow guibg=LightMagenta guifg=LightYellow
+syntax keyword P_LightMagenta_LightYellow TMP_LightMagenta_LightYellow
+highlight link P_LightMagenta_LightYellow TMP_LightMagenta_LightYellow
+
+highlight TMP_LightMagenta_Brown guibg=LightMagenta guifg=Brown
+syntax keyword P_LightMagenta_Brown TMP_LightMagenta_Brown
+highlight link P_LightMagenta_Brown TMP_LightMagenta_Brown
+
+highlight TMP_LightMagenta_DarkYellow guibg=LightMagenta guifg=DarkYellow
+syntax keyword P_LightMagenta_DarkYellow TMP_LightMagenta_DarkYellow
+highlight link P_LightMagenta_DarkYellow TMP_LightMagenta_DarkYellow
+
+highlight TMP_LightMagenta_Gray guibg=LightMagenta guifg=Gray
+syntax keyword P_LightMagenta_Gray TMP_LightMagenta_Gray
+highlight link P_LightMagenta_Gray TMP_LightMagenta_Gray
+
+highlight TMP_LightMagenta_LightGray guibg=LightMagenta guifg=LightGray
+syntax keyword P_LightMagenta_LightGray TMP_LightMagenta_LightGray
+highlight link P_LightMagenta_LightGray TMP_LightMagenta_LightGray
+
+highlight TMP_LightMagenta_DarkGray guibg=LightMagenta guifg=DarkGray
+syntax keyword P_LightMagenta_DarkGray TMP_LightMagenta_DarkGray
+highlight link P_LightMagenta_DarkGray TMP_LightMagenta_DarkGray
+
+highlight TMP_LightMagenta_Black guibg=LightMagenta guifg=Black
+syntax keyword P_LightMagenta_Black TMP_LightMagenta_Black
+highlight link P_LightMagenta_Black TMP_LightMagenta_Black
+
+highlight TMP_LightMagenta_White guibg=LightMagenta guifg=White
+syntax keyword P_LightMagenta_White TMP_LightMagenta_White
+highlight link P_LightMagenta_White TMP_LightMagenta_White
+
+highlight TMP_LightMagenta_Orange guibg=LightMagenta guifg=Orange
+syntax keyword P_LightMagenta_Orange TMP_LightMagenta_Orange
+highlight link P_LightMagenta_Orange TMP_LightMagenta_Orange
+
+highlight TMP_LightMagenta_Purple guibg=LightMagenta guifg=Purple
+syntax keyword P_LightMagenta_Purple TMP_LightMagenta_Purple
+highlight link P_LightMagenta_Purple TMP_LightMagenta_Purple
+
+highlight TMP_LightMagenta_Violet guibg=LightMagenta guifg=Violet
+syntax keyword P_LightMagenta_Violet TMP_LightMagenta_Violet
+highlight link P_LightMagenta_Violet TMP_LightMagenta_Violet
+
+highlight TMP_DarkMagenta_Yellow guibg=DarkMagenta guifg=Yellow
+syntax keyword P_DarkMagenta_Yellow TMP_DarkMagenta_Yellow
+highlight link P_DarkMagenta_Yellow TMP_DarkMagenta_Yellow
+
+highlight TMP_DarkMagenta_LightYellow guibg=DarkMagenta guifg=LightYellow
+syntax keyword P_DarkMagenta_LightYellow TMP_DarkMagenta_LightYellow
+highlight link P_DarkMagenta_LightYellow TMP_DarkMagenta_LightYellow
+
+highlight TMP_DarkMagenta_Brown guibg=DarkMagenta guifg=Brown
+syntax keyword P_DarkMagenta_Brown TMP_DarkMagenta_Brown
+highlight link P_DarkMagenta_Brown TMP_DarkMagenta_Brown
+
+highlight TMP_DarkMagenta_DarkYellow guibg=DarkMagenta guifg=DarkYellow
+syntax keyword P_DarkMagenta_DarkYellow TMP_DarkMagenta_DarkYellow
+highlight link P_DarkMagenta_DarkYellow TMP_DarkMagenta_DarkYellow
+
+highlight TMP_DarkMagenta_Gray guibg=DarkMagenta guifg=Gray
+syntax keyword P_DarkMagenta_Gray TMP_DarkMagenta_Gray
+highlight link P_DarkMagenta_Gray TMP_DarkMagenta_Gray
+
+highlight TMP_DarkMagenta_LightGray guibg=DarkMagenta guifg=LightGray
+syntax keyword P_DarkMagenta_LightGray TMP_DarkMagenta_LightGray
+highlight link P_DarkMagenta_LightGray TMP_DarkMagenta_LightGray
+
+highlight TMP_DarkMagenta_DarkGray guibg=DarkMagenta guifg=DarkGray
+syntax keyword P_DarkMagenta_DarkGray TMP_DarkMagenta_DarkGray
+highlight link P_DarkMagenta_DarkGray TMP_DarkMagenta_DarkGray
+
+highlight TMP_DarkMagenta_Black guibg=DarkMagenta guifg=Black
+syntax keyword P_DarkMagenta_Black TMP_DarkMagenta_Black
+highlight link P_DarkMagenta_Black TMP_DarkMagenta_Black
+
+highlight TMP_DarkMagenta_White guibg=DarkMagenta guifg=White
+syntax keyword P_DarkMagenta_White TMP_DarkMagenta_White
+highlight link P_DarkMagenta_White TMP_DarkMagenta_White
+
+highlight TMP_DarkMagenta_Orange guibg=DarkMagenta guifg=Orange
+syntax keyword P_DarkMagenta_Orange TMP_DarkMagenta_Orange
+highlight link P_DarkMagenta_Orange TMP_DarkMagenta_Orange
+
+highlight TMP_DarkMagenta_Purple guibg=DarkMagenta guifg=Purple
+syntax keyword P_DarkMagenta_Purple TMP_DarkMagenta_Purple
+highlight link P_DarkMagenta_Purple TMP_DarkMagenta_Purple
+
+highlight TMP_DarkMagenta_Violet guibg=DarkMagenta guifg=Violet
+syntax keyword P_DarkMagenta_Violet TMP_DarkMagenta_Violet
+highlight link P_DarkMagenta_Violet TMP_DarkMagenta_Violet
+
+highlight TMP_Yellow_LightYellow guibg=Yellow guifg=LightYellow
+syntax keyword P_Yellow_LightYellow TMP_Yellow_LightYellow
+highlight link P_Yellow_LightYellow TMP_Yellow_LightYellow
+
+highlight TMP_Yellow_Brown guibg=Yellow guifg=Brown
+syntax keyword P_Yellow_Brown TMP_Yellow_Brown
+highlight link P_Yellow_Brown TMP_Yellow_Brown
+
+highlight TMP_Yellow_DarkYellow guibg=Yellow guifg=DarkYellow
+syntax keyword P_Yellow_DarkYellow TMP_Yellow_DarkYellow
+highlight link P_Yellow_DarkYellow TMP_Yellow_DarkYellow
+
+highlight TMP_Yellow_Gray guibg=Yellow guifg=Gray
+syntax keyword P_Yellow_Gray TMP_Yellow_Gray
+highlight link P_Yellow_Gray TMP_Yellow_Gray
+
+highlight TMP_Yellow_LightGray guibg=Yellow guifg=LightGray
+syntax keyword P_Yellow_LightGray TMP_Yellow_LightGray
+highlight link P_Yellow_LightGray TMP_Yellow_LightGray
+
+highlight TMP_Yellow_DarkGray guibg=Yellow guifg=DarkGray
+syntax keyword P_Yellow_DarkGray TMP_Yellow_DarkGray
+highlight link P_Yellow_DarkGray TMP_Yellow_DarkGray
+
+highlight TMP_Yellow_Black guibg=Yellow guifg=Black
+syntax keyword P_Yellow_Black TMP_Yellow_Black
+highlight link P_Yellow_Black TMP_Yellow_Black
+
+highlight TMP_Yellow_White guibg=Yellow guifg=White
+syntax keyword P_Yellow_White TMP_Yellow_White
+highlight link P_Yellow_White TMP_Yellow_White
+
+highlight TMP_Yellow_Orange guibg=Yellow guifg=Orange
+syntax keyword P_Yellow_Orange TMP_Yellow_Orange
+highlight link P_Yellow_Orange TMP_Yellow_Orange
+
+highlight TMP_Yellow_Purple guibg=Yellow guifg=Purple
+syntax keyword P_Yellow_Purple TMP_Yellow_Purple
+highlight link P_Yellow_Purple TMP_Yellow_Purple
+
+highlight TMP_Yellow_Violet guibg=Yellow guifg=Violet
+syntax keyword P_Yellow_Violet TMP_Yellow_Violet
+highlight link P_Yellow_Violet TMP_Yellow_Violet
+
+highlight TMP_LightYellow_Brown guibg=LightYellow guifg=Brown
+syntax keyword P_LightYellow_Brown TMP_LightYellow_Brown
+highlight link P_LightYellow_Brown TMP_LightYellow_Brown
+
+highlight TMP_LightYellow_DarkYellow guibg=LightYellow guifg=DarkYellow
+syntax keyword P_LightYellow_DarkYellow TMP_LightYellow_DarkYellow
+highlight link P_LightYellow_DarkYellow TMP_LightYellow_DarkYellow
+
+highlight TMP_LightYellow_Gray guibg=LightYellow guifg=Gray
+syntax keyword P_LightYellow_Gray TMP_LightYellow_Gray
+highlight link P_LightYellow_Gray TMP_LightYellow_Gray
+
+highlight TMP_LightYellow_LightGray guibg=LightYellow guifg=LightGray
+syntax keyword P_LightYellow_LightGray TMP_LightYellow_LightGray
+highlight link P_LightYellow_LightGray TMP_LightYellow_LightGray
+
+highlight TMP_LightYellow_DarkGray guibg=LightYellow guifg=DarkGray
+syntax keyword P_LightYellow_DarkGray TMP_LightYellow_DarkGray
+highlight link P_LightYellow_DarkGray TMP_LightYellow_DarkGray
+
+highlight TMP_LightYellow_Black guibg=LightYellow guifg=Black
+syntax keyword P_LightYellow_Black TMP_LightYellow_Black
+highlight link P_LightYellow_Black TMP_LightYellow_Black
+
+highlight TMP_LightYellow_White guibg=LightYellow guifg=White
+syntax keyword P_LightYellow_White TMP_LightYellow_White
+highlight link P_LightYellow_White TMP_LightYellow_White
+
+highlight TMP_LightYellow_Orange guibg=LightYellow guifg=Orange
+syntax keyword P_LightYellow_Orange TMP_LightYellow_Orange
+highlight link P_LightYellow_Orange TMP_LightYellow_Orange
+
+highlight TMP_LightYellow_Purple guibg=LightYellow guifg=Purple
+syntax keyword P_LightYellow_Purple TMP_LightYellow_Purple
+highlight link P_LightYellow_Purple TMP_LightYellow_Purple
+
+highlight TMP_LightYellow_Violet guibg=LightYellow guifg=Violet
+syntax keyword P_LightYellow_Violet TMP_LightYellow_Violet
+highlight link P_LightYellow_Violet TMP_LightYellow_Violet
+
+highlight TMP_Brown_DarkYellow guibg=Brown guifg=DarkYellow
+syntax keyword P_Brown_DarkYellow TMP_Brown_DarkYellow
+highlight link P_Brown_DarkYellow TMP_Brown_DarkYellow
+
+highlight TMP_Brown_Gray guibg=Brown guifg=Gray
+syntax keyword P_Brown_Gray TMP_Brown_Gray
+highlight link P_Brown_Gray TMP_Brown_Gray
+
+highlight TMP_Brown_LightGray guibg=Brown guifg=LightGray
+syntax keyword P_Brown_LightGray TMP_Brown_LightGray
+highlight link P_Brown_LightGray TMP_Brown_LightGray
+
+highlight TMP_Brown_DarkGray guibg=Brown guifg=DarkGray
+syntax keyword P_Brown_DarkGray TMP_Brown_DarkGray
+highlight link P_Brown_DarkGray TMP_Brown_DarkGray
+
+highlight TMP_Brown_Black guibg=Brown guifg=Black
+syntax keyword P_Brown_Black TMP_Brown_Black
+highlight link P_Brown_Black TMP_Brown_Black
+
+highlight TMP_Brown_White guibg=Brown guifg=White
+syntax keyword P_Brown_White TMP_Brown_White
+highlight link P_Brown_White TMP_Brown_White
+
+highlight TMP_Brown_Orange guibg=Brown guifg=Orange
+syntax keyword P_Brown_Orange TMP_Brown_Orange
+highlight link P_Brown_Orange TMP_Brown_Orange
+
+highlight TMP_Brown_Purple guibg=Brown guifg=Purple
+syntax keyword P_Brown_Purple TMP_Brown_Purple
+highlight link P_Brown_Purple TMP_Brown_Purple
+
+highlight TMP_Brown_Violet guibg=Brown guifg=Violet
+syntax keyword P_Brown_Violet TMP_Brown_Violet
+highlight link P_Brown_Violet TMP_Brown_Violet
+
+highlight TMP_DarkYellow_Gray guibg=DarkYellow guifg=Gray
+syntax keyword P_DarkYellow_Gray TMP_DarkYellow_Gray
+highlight link P_DarkYellow_Gray TMP_DarkYellow_Gray
+
+highlight TMP_DarkYellow_LightGray guibg=DarkYellow guifg=LightGray
+syntax keyword P_DarkYellow_LightGray TMP_DarkYellow_LightGray
+highlight link P_DarkYellow_LightGray TMP_DarkYellow_LightGray
+
+highlight TMP_DarkYellow_DarkGray guibg=DarkYellow guifg=DarkGray
+syntax keyword P_DarkYellow_DarkGray TMP_DarkYellow_DarkGray
+highlight link P_DarkYellow_DarkGray TMP_DarkYellow_DarkGray
+
+highlight TMP_DarkYellow_Black guibg=DarkYellow guifg=Black
+syntax keyword P_DarkYellow_Black TMP_DarkYellow_Black
+highlight link P_DarkYellow_Black TMP_DarkYellow_Black
+
+highlight TMP_DarkYellow_White guibg=DarkYellow guifg=White
+syntax keyword P_DarkYellow_White TMP_DarkYellow_White
+highlight link P_DarkYellow_White TMP_DarkYellow_White
+
+highlight TMP_DarkYellow_Orange guibg=DarkYellow guifg=Orange
+syntax keyword P_DarkYellow_Orange TMP_DarkYellow_Orange
+highlight link P_DarkYellow_Orange TMP_DarkYellow_Orange
+
+highlight TMP_DarkYellow_Purple guibg=DarkYellow guifg=Purple
+syntax keyword P_DarkYellow_Purple TMP_DarkYellow_Purple
+highlight link P_DarkYellow_Purple TMP_DarkYellow_Purple
+
+highlight TMP_DarkYellow_Violet guibg=DarkYellow guifg=Violet
+syntax keyword P_DarkYellow_Violet TMP_DarkYellow_Violet
+highlight link P_DarkYellow_Violet TMP_DarkYellow_Violet
+
+highlight TMP_Gray_LightGray guibg=Gray guifg=LightGray
+syntax keyword P_Gray_LightGray TMP_Gray_LightGray
+highlight link P_Gray_LightGray TMP_Gray_LightGray
+
+highlight TMP_Gray_DarkGray guibg=Gray guifg=DarkGray
+syntax keyword P_Gray_DarkGray TMP_Gray_DarkGray
+highlight link P_Gray_DarkGray TMP_Gray_DarkGray
+
+highlight TMP_Gray_Black guibg=Gray guifg=Black
+syntax keyword P_Gray_Black TMP_Gray_Black
+highlight link P_Gray_Black TMP_Gray_Black
+
+highlight TMP_Gray_White guibg=Gray guifg=White
+syntax keyword P_Gray_White TMP_Gray_White
+highlight link P_Gray_White TMP_Gray_White
+
+highlight TMP_Gray_Orange guibg=Gray guifg=Orange
+syntax keyword P_Gray_Orange TMP_Gray_Orange
+highlight link P_Gray_Orange TMP_Gray_Orange
+
+highlight TMP_Gray_Purple guibg=Gray guifg=Purple
+syntax keyword P_Gray_Purple TMP_Gray_Purple
+highlight link P_Gray_Purple TMP_Gray_Purple
+
+highlight TMP_Gray_Violet guibg=Gray guifg=Violet
+syntax keyword P_Gray_Violet TMP_Gray_Violet
+highlight link P_Gray_Violet TMP_Gray_Violet
+
+highlight TMP_LightGray_DarkGray guibg=LightGray guifg=DarkGray
+syntax keyword P_LightGray_DarkGray TMP_LightGray_DarkGray
+highlight link P_LightGray_DarkGray TMP_LightGray_DarkGray
+
+highlight TMP_LightGray_Black guibg=LightGray guifg=Black
+syntax keyword P_LightGray_Black TMP_LightGray_Black
+highlight link P_LightGray_Black TMP_LightGray_Black
+
+highlight TMP_LightGray_White guibg=LightGray guifg=White
+syntax keyword P_LightGray_White TMP_LightGray_White
+highlight link P_LightGray_White TMP_LightGray_White
+
+highlight TMP_LightGray_Orange guibg=LightGray guifg=Orange
+syntax keyword P_LightGray_Orange TMP_LightGray_Orange
+highlight link P_LightGray_Orange TMP_LightGray_Orange
+
+highlight TMP_LightGray_Purple guibg=LightGray guifg=Purple
+syntax keyword P_LightGray_Purple TMP_LightGray_Purple
+highlight link P_LightGray_Purple TMP_LightGray_Purple
+
+highlight TMP_LightGray_Violet guibg=LightGray guifg=Violet
+syntax keyword P_LightGray_Violet TMP_LightGray_Violet
+highlight link P_LightGray_Violet TMP_LightGray_Violet
+
+highlight TMP_DarkGray_Black guibg=DarkGray guifg=Black
+syntax keyword P_DarkGray_Black TMP_DarkGray_Black
+highlight link P_DarkGray_Black TMP_DarkGray_Black
+
+highlight TMP_DarkGray_White guibg=DarkGray guifg=White
+syntax keyword P_DarkGray_White TMP_DarkGray_White
+highlight link P_DarkGray_White TMP_DarkGray_White
+
+highlight TMP_DarkGray_Orange guibg=DarkGray guifg=Orange
+syntax keyword P_DarkGray_Orange TMP_DarkGray_Orange
+highlight link P_DarkGray_Orange TMP_DarkGray_Orange
+
+highlight TMP_DarkGray_Purple guibg=DarkGray guifg=Purple
+syntax keyword P_DarkGray_Purple TMP_DarkGray_Purple
+highlight link P_DarkGray_Purple TMP_DarkGray_Purple
+
+highlight TMP_DarkGray_Violet guibg=DarkGray guifg=Violet
+syntax keyword P_DarkGray_Violet TMP_DarkGray_Violet
+highlight link P_DarkGray_Violet TMP_DarkGray_Violet
+
+highlight TMP_Black_White guibg=Black guifg=White
+syntax keyword P_Black_White TMP_Black_White
+highlight link P_Black_White TMP_Black_White
+
+highlight TMP_Black_Orange guibg=Black guifg=Orange
+syntax keyword P_Black_Orange TMP_Black_Orange
+highlight link P_Black_Orange TMP_Black_Orange
+
+highlight TMP_Black_Purple guibg=Black guifg=Purple
+syntax keyword P_Black_Purple TMP_Black_Purple
+highlight link P_Black_Purple TMP_Black_Purple
+
+highlight TMP_Black_Violet guibg=Black guifg=Violet
+syntax keyword P_Black_Violet TMP_Black_Violet
+highlight link P_Black_Violet TMP_Black_Violet
+
+highlight TMP_White_Orange guibg=White guifg=Orange
+syntax keyword P_White_Orange TMP_White_Orange
+highlight link P_White_Orange TMP_White_Orange
+
+highlight TMP_White_Purple guibg=White guifg=Purple
+syntax keyword P_White_Purple TMP_White_Purple
+highlight link P_White_Purple TMP_White_Purple
+
+highlight TMP_White_Violet guibg=White guifg=Violet
+syntax keyword P_White_Violet TMP_White_Violet
+highlight link P_White_Violet TMP_White_Violet
+
+highlight TMP_Orange_Purple guibg=Orange guifg=Purple
+syntax keyword P_Orange_Purple TMP_Orange_Purple
+highlight link P_Orange_Purple TMP_Orange_Purple
+
+highlight TMP_Orange_Violet guibg=Orange guifg=Violet
+syntax keyword P_Orange_Violet TMP_Orange_Violet
+highlight link P_Orange_Violet TMP_Orange_Violet
+
+highlight TMP_Purple_Violet guibg=Purple guifg=Violet
+syntax keyword P_Purple_Violet TMP_Purple_Violet
+highlight link P_Purple_Violet TMP_Purple_Violet

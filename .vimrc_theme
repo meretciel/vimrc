@@ -1,0 +1,317 @@
+
+
+
+set conceallevel=0
+set concealcursor=""
+
+" Define syntax of Conceal
+
+highlight ThemeConceal ctermfg=DarkCyan guifg=DarkCyan 
+syntax match PatternTextConcealed "@!.\{-}@" conceal
+highlight link PatternTextConcealed ThemeConceal
+
+
+
+
+highlight BgBlue ctermbg=Blue
+highlight BgGrey ctermbg=Grey guibg=Grey
+
+highlight TextBlack ctermbg=Black guibg=Black
+
+
+syntax region RegionBgGrey start="@!+[^@]\{-}bg=grey[^@]\{-}@" end="@!-[^@]\{-}bg=grey[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionBgGrey BgGrey
+
+
+" Define syntax for pre tag
+highlight ThemePreTag ctermbg=Grey guibg=Grey ctermfg=Black guifg=Black
+syntax region RegionPreTag start="@!+[^@]\{-}|bg=grey|tc=black|[^@]\{-}@" end="@!-[^@]\{-}|bg=grey|tc=black|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionPreTag ThemePreTag
+
+function! InsertPreTag()
+    call YankSelectedRegion()
+    let content = @0
+    call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
+    call InsertStringAfterCursor("@!-|bg=grey|tc=black|keep=</code>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|bg=grey|tc=black|keep=<code>|@")
+    call SelectOriginalContent(content)
+    call Cleanup(isEndOfLine)
+endfunction
+
+
+" Define syntax for red text
+
+highlight TextRed ctermfg=Red guifg=Red
+syntax region RegionTextRed start="@!+[^@]\{-}|tc=red|[^@]\{-}@" end="@!-[^@]\{-}|tc=red|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionTextRed TextRed
+
+
+" Define syntax for black text
+"highlight TextBlack ctermfg=Black guifg=Black
+"syntax region RegionTextBlack start="@!+[^@]\{-}|tc=black|[^@]\{-}@" end="@!-[^@]\{-}|tc=black|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+"highlight link RegionTextBlack TextBlack
+
+
+
+function! InsertRedtTextTag()
+    call YankSelectedRegion()
+    let content = @0
+    call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
+    call InsertStringAfterCursor("@!-|tc=red|keep=</span>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|tc=red|keep=<span style=\"color: red;\">|@")
+    call SelectOriginalContent(content)
+    call Cleanup(isEndOfLine)
+
+endfunction
+
+" Define syntax for header
+
+highlight ThemeHeader cterm=bold gui=bold ctermfg=Blue guifg=Blue ctermbg=Yellow guibg=Yellow
+syntax region RegionHeader start="@!+[^@]\{-}|bg=Yellow|tc=blue|[^@]\{-}@" end="@!-[^@]\{-}|bg=Yellow|tc=blue|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionHeader ThemeHeader
+
+
+function! InsertHeaderTagLineMode()
+    call YankSelectedRegion()
+    let content = @0[:len(@0)-2]
+    call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
+    call InsertStringAfterCursor("@!-|bg=Yellow|tc=blue|keep=</h3>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|bg=Yellow|tc=blue|keep=<h3>|@")
+    call SelectOriginalContent(content)
+    call Cleanup(isEndOfLine)
+endfunction
+
+
+" Define syntax for highlight(bold)
+
+highlight ThemeHighlight ctermfg=Yellow guifg=Yellow
+syntax region RegionHighlight start="@!+[^@]\{-}|tc=yellow|[^@]\{-}@" end="@!-[^@]\{-}|tc=yellow|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionHighlight ThemeHighlight
+
+function! InsertHighlightTheme()
+    call YankSelectedRegion()
+    let content = @0
+    call MoveToEndOfRegion()
+    let isEndOfLine = IsEndOfLine()
+    call InsertStringAfterCursor("@!-|tc=yellow|keep=</b>|@")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("@!+|tc=yellow|keep=<b>|@")
+    call SelectOriginalContent(content)
+    call Cleanup(isEndOfLine)
+endfunction
+
+
+" Define utilities related to Code Block
+
+function! AsCodeBlock(lang)
+    call MoveToEndOfRegion()
+    call append(GetLineNumber(), ["@code-end"])
+    call MoveToStartOfRegion()
+    call append(GetLineNumber()-1, ["@code-start[lang=" . a:lang . "]"])
+endfunction
+
+
+" Implement the insert method for output block
+
+
+highlight ThemeOutputBlock guifg=Black guibg=LightCyan
+syntax region RegionOutputBlock start="@!+[^@]\{-}|bg=lightcyan|tc=black|[^@]\{-}@" end="@!-[^@]\{-}|bg=lightcyan|tc=black|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
+highlight link RegionOutputBlock ThemeOutputBlock
+
+
+function! AsOutputBlock()
+    call MoveToEndOfRegion()
+    call append(GetLineNumber(), ["@!-|bg=lightcyan|tc=black|keep=</pre>|@"])
+    call MoveToStartOfRegion()
+    call append(GetLineNumber()-1, ["@!+|bg=lightcyan|tc=black|keep=<pre>|@"])
+endfunction
+
+
+
+highlight ThemeHtmlMetaCharacter guifg=Red guibg=Yellow
+syntax match HtmlMetaCharacter "[<>&]"
+"highlight link HtmlMetaCharacter ThemeHtmlMetaCharacter
+
+
+function! HighlightHtmlMetaCharacter()
+    highlight link HtmlMetaCharacter ThemeHtmlMetaCharacter
+endfunction
+
+
+function! NoHighlightHtmlMetaCharacter() 
+    highlight link HtmlMetaCharacter Normal
+
+endfunction
+
+" Method that inserts html red tag
+
+function! InsertHtmlRedTag()
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("</span>")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("<span style=\"color:red;\">")
+endfunction
+
+
+" Implement a helper method to generate the final version of the content in a
+" separate buffer.
+
+
+function! Generate(selectAll)
+    if a:selectAll == 1
+        normal! ggVGy
+    else
+        normal! gvy
+    endif
+    let command = ":vnew __TMP__" . strftime("%Y%m%d%H%M%S")
+    execute command
+    sleep 300m
+    normal! ggVGd
+    normal! P
+
+
+endfunction
+
+
+
+function! GenerateBlog()
+    call Generate(1)
+    normal! gg
+
+    let start = 1
+    let startPattern = "^@code-start.\\{-\\}$\\|^@!\\+.\\{-\\}keep=<pre>.\\{-\\}@$\\|^<ol>$\\|^<ul>$"
+    let endPattern   = "^@code-end$\\|^@!-.\\{-\\}keep=</pre>.\\{-\\}@$\\|^</ol>$\\|^</ul>$"
+
+    while search(startPattern, 'ce', line('$'))
+        let ln = GetLineNumber() - 1
+        let command = ":" . start . "," . ln . "s/$/<br \\/>/"
+        :silent echom "start: " . start
+        :silent echom "line number: " . ln
+        :silent echom "command: " . command
+        :silent execute command
+        call search(endPattern, 'ce', line('$'))
+        let start = GetLineNumber() + 1 
+    endwhile
+
+    " handle keep part in the tag
+    :silent execute ":%s/@!.\\{-}|keep=\\(.\\{-}\\)|@/\\1/ge"
+
+    " remove all the tags
+    :silent execute ":%s/@!.\\{-}@//ge"
+
+    " handle the coe block
+    :silent execute ":%s/^@code-start\\[lang=\\(.\\{-\\}\\)\\]$\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
+    :silent execute ":%s/^@code-end/<\\/code><\\/pre>/e"
+    
+
+    call append(0, [""])
+    normal! gg
+    execute ":r ~/workspace/Blog/blog_header.txt"
+
+endfunction
+
+
+
+function! GenerateCleanedFile()
+    call Generate(1)
+    :silent execute ":%s/@!.\\{-}@//ge"
+endfunction
+
+
+
+
+function! InsertHtmlSpace()
+    call InsertStringAfterCursor("&nbsp;")
+endfunction
+
+
+
+
+
+function! GetCharUnderCursor()
+    return getline('.')[col('.') -1]
+endfunction
+
+function! EscapeHtml()
+    let ch = GetCharUnderCursor()
+    let isEndOfLine = IsEndOfLine()
+
+    let l:WriteFunc = ""
+
+    if isEndOfLine
+        let l:WriteFunc = function("InsertStringAfterCursor")
+    else
+        let l:WriteFunc = function("InsertStringBeforeCursor")
+    endif
+             
+   
+    normal! x
+
+    if ch == '<'
+        call l:WriteFunc("&lt;")
+    elseif ch == '>'
+        call l:WriteFunc("&gt;")
+    elseif ch == '&'
+        call l.WriteFunc("&amp;")
+    endif
+
+endfunction
+
+
+
+function! InsertTagPair(start, end)
+    call append(GetLineNumber(), [a:start, "", a:end])
+    call MoveToNextLine()
+    call MoveToNextLine()
+    execute ":startinsert"
+endfunction
+
+
+function! InsertOrderedList()
+    call InsertTagPair("<ol>", "</ol>")
+endfunction
+
+
+function! InsertUnorderedList()
+    call InsertTagPair("<ul>", "</ul>")
+endfunction
+
+
+function! InsertHtmlItem()
+    call append(GetLineNumber()-1, ["<li></li>"])
+    normal! kf>l
+    execute ":startinsert"
+endfunction
+
+
+function! AsHtmlItem()
+    call MoveToEndOfRegion()
+    let endLine = GetLineNumber()
+    
+    call MoveToStartOfRegion()
+    while ( GetLineNumber() <= endLine )
+        call MoveToEndOfLine()
+        call InsertStringAfterCursor("</li>") 
+
+        call MoveToStartOfLine()
+        call InsertStringBeforeCursor("<li>") 
+
+        call MoveToNextLine()
+    endwhile
+
+endfunction
+
+
+
+function! AsHtmlBold()
+    call MoveToEndOfRegion()
+    call InsertStringAfterCursor("</b>")
+    call MoveToStartOfRegion()
+    call InsertStringBeforeCursor("<b>")
+endfunction
