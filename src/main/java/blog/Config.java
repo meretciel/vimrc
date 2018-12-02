@@ -21,13 +21,36 @@ public class Config {
     final static public AnnotationPattern WARNING = new InlineReplacementAnnotationPattern("\\warning{", PATTERN_END, "<span style=\"color:orange;\">", "</span>");
     final static public AnnotationPattern INFO = new InlineReplacementAnnotationPattern("\\info{", PATTERN_END, "<span style=\"color:cyan;\">", "</span>");
     final static public AnnotationPattern RED_TEXT = new InlineReplacementAnnotationPattern("\\red{", PATTERN_END, "<span style=\"color:red;\">", "</span>");
-    final static public AnnotationPattern OUTPUT_BLOCK = new InlineReplacementAnnotationPattern("@output", "@end-output", "<pre>", "</pre>");
+
     final static public AnnotationPattern HEADER_1 = new SingleLineAnnotationPattern("@h1", "<h1>", "</h1>");
     final static public AnnotationPattern HEADER_2 = new SingleLineAnnotationPattern("@h2", "<h2>", "</h2>");
     final static public AnnotationPattern HEADER_3 = new SingleLineAnnotationPattern("@h3", "<h3>", "</h3>");
 
     final static public AnnotationPattern HTML_ORDERED_LIST = new HtmlBlockPattern("<ol>", "</ol>");
     final static public AnnotationPattern HTML_UNORDERED_LIST = new HtmlBlockPattern("<ul>", "</ul>");
+
+    final static public AnnotationPattern OUTPUT_BLOCK = new BlockAnnotationPattern("@output", "@end-output") {
+
+        @Override
+        public String getNewStart(final String line) {
+            return "<pre>";
+        }
+
+        @Override
+        public String getNewEnd(final String line) {
+            return "</pre>";
+        }
+
+        @Override
+        public boolean isNewStartPresent(final String linePostChange) {
+            return linePostChange.equals("<pre>");
+        }
+
+        @Override
+        public boolean isNewEndPresent(final String linePostChange) {
+            return linePostChange.equals("</pre>");
+        }
+    };
 
     final static public AnnotationPattern CODE_BLOCK = new BlockAnnotationPattern("@code", "@end-code", true) {
 

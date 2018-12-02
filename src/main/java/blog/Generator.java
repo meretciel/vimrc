@@ -37,22 +37,27 @@ public class Generator {
                     lines.set(lineNumber, line + NEW_LINE_TAG);
                 }
 
+                canAdd = canAdd && !hasSingleLinePattern;
+
                 if (hasBlockPattern) {
                     boolean hasStart = Config.BLOCK_PATTERNS.stream()
                             .anyMatch((p) -> p.isNewStartPresent(line));
                     canAdd = !hasStart;
                 }
-
             }
-//            else {
-//                boolean isNextLineEmpty = lines.get(lineNumber + 1).isEmpty();
-//                boolean isNextLineBlock = Config.BLOCK_PATTERNS.stream()
-//                                            .anyMatch((p) -> p.isNewStartPresent(line));
-//
-//                if (!isNextLineEmpty && !isNextLineBlock && canAdd) {
-//                    lines.set(lineNumber, line + NEW_LINE_TAG);
-//                }
-//            }
+            else {
+                final String nextLine = lines.get(lineNumber + 1);
+                boolean isNextLineEmpty = nextLine.isEmpty();
+                boolean isNextLineBlock = Config.BLOCK_PATTERNS.stream()
+                                            .anyMatch((p) -> p.isNewStartPresent(nextLine));
+
+                if (!isNextLineEmpty && !isNextLineBlock && canAdd) {
+                    lines.set(lineNumber, line + NEW_LINE_TAG);
+                }
+                else {
+                    lines.set(lineNumber, "");
+                }
+            }
 
             ++lineNumber;
         }
@@ -98,6 +103,11 @@ public class Generator {
                     writer.write(l);
                     writer.write("\n");
                 }
+            }
+        }
+        catch (RuntimeException e) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(TMP_FILE, true))) {
+                writer.write(e.getMessage());
             }
         }
     }

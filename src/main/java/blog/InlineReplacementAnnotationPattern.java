@@ -45,7 +45,7 @@ public class InlineReplacementAnnotationPattern implements AnnotationPattern {
                     writingIndex = endIndex + end.length();
                 }
                 else {
-                    throw new RuntimeException("Pattern at line " + lineNumber + "does not match.");
+                    throw new RuntimeException("Pattern at line " + (lineNumber + 1) + " does not match.");
                 }
             }
 
