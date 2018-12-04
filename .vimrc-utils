@@ -175,3 +175,20 @@ function! GenerateBlog()
     :silent execute ":r /Users/Ruikun/workspace/Programs/tmp/transformed.log"
 
 endfunction
+
+
+function! AsOutputBlock()
+    call MoveToEndOfRegion()
+    call append(GetLineNumber(), ["@end-output"])
+    call MoveToStartOfRegion()
+    call append(GetLineNumber()-1, ["@output"])
+endfunction
+
+
+
+
+function! DeleteHighlightedText()
+    normal! f}F{ldt\
+    normal! diW
+endfunction
+
