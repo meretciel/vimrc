@@ -64,6 +64,8 @@ set shell=/bin/bash\ -i
 colorscheme koehler
 let maplocalleader=","
 let mapleader=","
+set conceallevel=3
+set concealcursor=ncv
 
 
 set iskeyword=@,48-57,_,192-255,:
@@ -93,6 +95,10 @@ nnoremap <tab>5 5gt
 
 
 
+nnoremap <leader>s f{l
+nnoremap <leader>sh f}F{lvt\
+nnoremap <leader>vih f}F{lvt\
+nnoremap <leader>sd :call DeleteHighlightedText()<cr>
 
 nnoremap zj 15j
 nnoremap zk 15k
@@ -307,7 +313,7 @@ set modelines=1
 filetype indent on
 filetype plugin on
 set autoindent
-set cindent
+"set cindent
 set smartindent
 "set indentexpr
 
@@ -373,14 +379,16 @@ nnoremap <F5> :call SourceCurrentScript()
 
 
 source ~/.vimrc_utils
+source ~/.vimrc-utils
 source ~/.vimrc_theme
 
 
 
-function! Init()
+function! Config()
+    execute ":tabedit ~/.vimrc"
+    execute ":tabedit ~/.vimrc-utils"
     execute ":tabedit ~/.vimrc_theme"
     execute ":tabedit ~/.vimrc_utils"
-    execute ":tabedit ~/.vimrc"
     execute ":tabnext"
 endfunction
 
@@ -388,7 +396,7 @@ endfunction
 
 
 function! EnableCabbrev()
-    cabbrev init call Init()
+    cabbrev :config  call Config()
     cabbrev insf call InsertFunction()
     iabbrev :insf :call InsertFunction()
     cabbrev pre call InsertPreTag()
@@ -403,7 +411,7 @@ function! EnableCabbrev()
     cabbrev gen call Generate(0)
     cabbrev genall call Generate(1)
     cabbrev genb call GenerateBlog()
-    cabbrev genblog call GenerateBlog()
+    "cabbrev genblog call GenerateBlog()
     cabbrev tc call ToggleConceal()
     cabbrev hi call InsertHighlightTheme()
     cabbrev cl call GenerateCleanedFile()
@@ -411,22 +419,43 @@ function! EnableCabbrev()
     cabbrev htmlred call InsertHtmlRedTag()
     cabbrev escape call EscapeHtml()
     noremap <leader>e :call EscapeHtml()<cr>
-    cabbrev rmel call RemoveExtraEmptyLines()
-    cabbrev hlhtml call HighlightHtmlMetaCharacter()
-    cabbrev nohlhtml call NoHighlightHtmlMetaCharacter()
+
+
+
+
+    cabbrev :gen call GenerateBlog()
 
     iabbrev :ol :call InsertOrderedList()
     iabbrev :ul :call InsertUnorderedList()
     iabbrev :li :call InsertHtmlItem()
-    cabbrev asitem call AsHtmlItem()
-    cabbrev asbold call AsHtmlBold()
 
+    cabbrev :rmel call RemoveExtraEmptyLines()
+    cabbrev :hlhtml call HighlightHtmlMetaCharacter()
+    cabbrev :nohlhtml call NoHighlightHtmlMetaCharacter()
+
+    cabbrev :item call AsHtmlItem()
+    cabbrev :bold call AsHtmlBold()
+    cabbrev :red call RedText()
+    cabbrev :danger call DangerText()
+    cabbrev :warning call WarningText()
+    cabbrev :info call InfoText()
+    cabbrev :note call NoteText()
+    cabbrev :good call GoodText()
+    cabbrev :command call CommandBlock()
+    cabbrev :cmd call CommandBlock()
+    cabbrev :hl call HighlightText()
+    cabbrev :unformat call Unformat()
+    cabbrev :unf call Unformat()
+    cabbrev :showall call ShowAll()
+    cabbrev :conceal call Conceal()
+    cabbrev :java call AsCodeBlock("java")
+    cabbrev :open call XEdit()
+    cabbrev :output call AsOutputBlock()
 endfunction
 
 
 
 function! DisableCabbrev()
-    cunabbrev init
     cunabbrev insf
     iunabbrev :insf
     cunabbrev pre
@@ -457,6 +486,22 @@ function! DisableCabbrev()
     iunabbrev :li
     cunabbrev asitem
     cunabbrev asbold
+
+    cunabbrev :config
+    cunabbrev :red
+    cunabbrev :danger
+    cunabbrev :warning
+    cunabbrev :good
+    cunabbrev :info
+    cunabbrev :note
+    cunabbrev :command
+    cunabbrev :cmd
+    cunabbrev :unformat
+    cunabbrev :unf
+    cunabbrev :showall
+    cunabbrev :conceal
+    cunabbrev :open
+    cunabbrev :java
 endfunction
 
 
