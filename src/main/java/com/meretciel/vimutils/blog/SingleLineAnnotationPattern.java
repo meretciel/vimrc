@@ -1,4 +1,4 @@
-package blog;
+package com.meretciel.vimutils.blog;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

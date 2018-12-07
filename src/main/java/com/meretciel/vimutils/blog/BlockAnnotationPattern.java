@@ -1,7 +1,6 @@
-package blog;
+package com.meretciel.vimutils.blog;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.Validate;

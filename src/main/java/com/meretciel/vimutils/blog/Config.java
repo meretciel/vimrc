@@ -1,13 +1,10 @@
-package blog;
+package com.meretciel.vimutils.blog;
 
 import com.google.common.collect.ImmutableList;
-import lombok.NonNull;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 

@@ -56,7 +56,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
                 <configuration>
-                    <mainClass>blog.Generator</mainClass>
+                    <mainClass>com.meretciel.vimutils.blog.Generator</mainClass>
                 </configuration>
             </plugin>
         </plugins>

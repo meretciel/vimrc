@@ -1,4 +1,4 @@
-package blog;
+package com.meretciel.vimutils.blog;
 
 import org.apache.commons.lang3.Validate;
 

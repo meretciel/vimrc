@@ -1,15 +1,8 @@
-package blog;
-
-import com.google.common.collect.ImmutableList;
-import org.apache.commons.lang3.Validate;
+package com.meretciel.vimutils.blog;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import com.google.common.collect.ImmutableList;
 
 
 public class Generator {
@@ -69,7 +62,7 @@ public class Generator {
 
     public static void main(String[] args) throws IOException {
 
-        // read the blog header and print to standard output
+        // read the com.meretciel.vimutils.blog header and print to standard output
         try (BufferedReader reader = new BufferedReader(new FileReader(BLOG_HEADER_FILE));
              BufferedWriter writer = new BufferedWriter(new FileWriter(TMP_FILE))
         ) {

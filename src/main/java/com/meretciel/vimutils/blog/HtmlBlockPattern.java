@@ -1,4 +1,4 @@
-package blog;
+package com.meretciel.vimutils.blog;
 
 public class HtmlBlockPattern extends BlockAnnotationPattern {
 
