@@ -451,6 +451,7 @@ function! EnableCabbrev()
     cabbrev :java call AsCodeBlock("java")
     cabbrev :open call XEdit()
     cabbrev :output call AsOutputBlock()
+    cabbrev :alignall '<,'> !columnsAlignment 
 endfunction
 
 
@@ -502,6 +503,7 @@ function! DisableCabbrev()
     cunabbrev :conceal
     cunabbrev :open
     cunabbrev :java
+    cunabbrev :alignall
 endfunction
 
 
