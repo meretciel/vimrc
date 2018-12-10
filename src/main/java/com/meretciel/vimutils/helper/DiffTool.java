@@ -58,7 +58,12 @@ public class DiffTool {
                 ++startingLineOfSecondPart;
             }
 
-            for (int i = ln; i < startingLineOfSecondPart; ++i) {
+            int stopLine = startingLineOfSecondPart - 1;
+            while (stopLine >= ln && lines.get(stopLine).isEmpty()) {
+                --stopLine;
+            }
+
+            for (int i = ln; i <= stopLine; ++i) {
                 writer.write(lines.get(i));
                 writer.write("\n");
             }
@@ -75,7 +80,13 @@ public class DiffTool {
 
             startingLineOfSecondPart = skipEmptyLine(startingLineOfSecondPart, lines);
 
-            for (int i = startingLineOfSecondPart; i < lines.size(); ++i) {
+            int stopLine = lines.size() - 1;
+
+            while (stopLine >= startingLineOfSecondPart && lines.get(stopLine).isEmpty()) {
+                --stopLine;
+            }
+
+            for (int i = startingLineOfSecondPart; i <= stopLine; ++i) {
                 writer.write(lines.get(i));
                 writer.write("\n");
             }
@@ -127,7 +138,7 @@ public class DiffTool {
             }
         }
     }
-    
+
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
 

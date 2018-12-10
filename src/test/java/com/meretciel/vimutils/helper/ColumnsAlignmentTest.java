@@ -24,11 +24,9 @@ public class ColumnsAlignmentTest {
         expected.add("10,         20,         30,         ");
         expected.add("10,         ,           ");
         expected.add("10,         ,           30,         ");
-        
+
         List<String> outputs = ColumnsAlignment.process(lines, delimiter);
 
         assertThat(outputs).isEqualTo(expected);
-
-
     }
 }
