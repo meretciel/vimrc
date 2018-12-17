@@ -7,8 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class InlineReplacementAnnotationPatternTest {
 
-
-
     @Test
     public void testProcess() {
         AnnotationPattern p = Config.INFO;

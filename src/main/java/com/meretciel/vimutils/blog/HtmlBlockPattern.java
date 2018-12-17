@@ -4,6 +4,7 @@ public class HtmlBlockPattern extends BlockAnnotationPattern {
 
     public HtmlBlockPattern(final String start, final String end) {
         super(start, end);
+        freezeLine = Integer.MAX_VALUE;
     }
 
     @Override
