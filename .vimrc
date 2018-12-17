@@ -68,7 +68,7 @@ set conceallevel=3
 set concealcursor=ncv
 
 
-set iskeyword=@,48-57,_,192-255,:
+set iskeyword=@,48-57,_,192-255,:,-
 
 
 " =======================
@@ -93,7 +93,7 @@ nnoremap <tab>4 4gt
 nnoremap <tab>5 5gt
 
 
-
+nnoremap <leader>sc 0v$h
 
 nnoremap <leader>s f{l
 nnoremap <leader>sh f}F{lvt\
@@ -451,7 +451,10 @@ function! EnableCabbrev()
     cabbrev :java call AsCodeBlock("java")
     cabbrev :open call XEdit()
     cabbrev :output call AsOutputBlock()
-    cabbrev :alignall '<,'> !columnsAlignment 
+    cabbrev :block call AsBlockBlock()
+    cabbrev :alignall '<,'> !columnsAlignment
+    cabbrev :align-all '<,'> !columnsAlignment
+    cabbrev :diff call DiffTool()
 endfunction
 
 
@@ -504,6 +507,9 @@ function! DisableCabbrev()
     cunabbrev :open
     cunabbrev :java
     cunabbrev :alignall
+    cunabbrev :align-all
+    cunabbrev :diff
+    cunabbrev :block
 endfunction
 
 

@@ -185,6 +185,12 @@ function! AsOutputBlock()
 endfunction
 
 
+function! AsBlockBlock()
+    call MoveToEndOfRegion()
+    call append(GetLineNumber(), ["@end-block"])
+    call MoveToStartOfRegion()
+    call append(GetLineNumber()-1, ["@block"])
+endfunction
 
 
 function! DeleteHighlightedText()
@@ -192,3 +198,8 @@ function! DeleteHighlightedText()
     normal! diW
 endfunction
 
+
+
+function! DiffTool()
+    :silent execute ":'<,'> !difftool"
+endfunction

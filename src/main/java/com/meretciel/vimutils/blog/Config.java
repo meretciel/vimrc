@@ -49,6 +49,31 @@ public class Config {
         }
     };
 
+    final static public AnnotationPattern BLOCK_BLOCK = new BlockAnnotationPattern("@block", "@end-block") {
+
+        @Override
+        public String getNewStart(final String line) {
+            return "<pre>";
+        }
+
+        @Override
+        public String getNewEnd(final String line) {
+            return "</pre>";
+        }
+
+        @Override
+        public boolean isNewStartPresent(final String linePostChange) {
+            return linePostChange.equals("<pre>");
+        }
+
+        @Override
+        public boolean isNewEndPresent(final String linePostChange) {
+            return linePostChange.equals("</pre>");
+        }
+    };
+
+
+
     final static public AnnotationPattern CODE_BLOCK = new BlockAnnotationPattern("@code", "@end-code", true) {
 
         @Override
@@ -86,7 +111,7 @@ public class Config {
             .add(HIGHLIGHT, NOTE, COMMAND, DANGER, WARNING)
             .add(INFO, RED_TEXT, OUTPUT_BLOCK)
             .add(HEADER_1, HEADER_2, HEADER_3)
-            .add(CODE_BLOCK)
+            .add(CODE_BLOCK, BLOCK_BLOCK)
             .add(HTML_ORDERED_LIST, HTML_UNORDERED_LIST)
             .build();
 
