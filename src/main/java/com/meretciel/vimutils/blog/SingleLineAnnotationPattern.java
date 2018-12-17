@@ -12,8 +12,6 @@ public class SingleLineAnnotationPattern implements AnnotationPattern {
     final private String newStart;
     final private String newEnd;
 
-
-
     public List<String> process(final List<String> lines) {
 
         int lineNumber = 0;

@@ -13,6 +13,7 @@ public class Generator {
 
     public static List<String> addNewLineHtmlTag(final List<String> lines) {
         int lineNumber = 0;
+        int freezeLine = -1;
         int totalLineNumber = lines.size();
         boolean canAdd = true;
 
@@ -26,7 +27,8 @@ public class Generator {
                 boolean hasBlockPattern = Config.BLOCK_PATTERNS.stream()
                         .anyMatch((p) -> p.isNewStartPresent(line) || p.isNewEndPresent(line));
 
-                if (!hasSingleLinePattern && !hasBlockPattern && canAdd) {
+                if (!hasSingleLinePattern && !hasBlockPattern && canAdd
+                        && (lineNumber > freezeLine)) {
                     lines.set(lineNumber, line + NEW_LINE_TAG);
                 }
 
@@ -36,6 +38,7 @@ public class Generator {
                     boolean hasStart = Config.BLOCK_PATTERNS.stream()
                             .anyMatch((p) -> p.isNewStartPresent(line));
                     canAdd = !hasStart;
+                    freezeLine = lineNumber + 1;
                 }
             }
             else {
@@ -43,8 +46,11 @@ public class Generator {
                 boolean isNextLineEmpty = nextLine.isEmpty();
                 boolean isNextLineBlock = Config.BLOCK_PATTERNS.stream()
                                             .anyMatch((p) -> p.isNewStartPresent(nextLine));
+                boolean isNextLineSingleLine = Config.SINGLE_LINE_PATTERNS.stream()
+                                                .anyMatch((p) -> nextLine.contains(p.getNewStart()));
 
-                if (!isNextLineEmpty && !isNextLineBlock && canAdd) {
+                if (!isNextLineEmpty && !isNextLineBlock && !isNextLineSingleLine && canAdd
+                        && (lineNumber > freezeLine)) {
                     lines.set(lineNumber, line + NEW_LINE_TAG);
                 }
                 else {

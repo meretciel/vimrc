@@ -18,4 +18,6 @@ interface AnnotationPattern {
         Validate.notNull(line);
         return line.contains(getStart());
     }
+
+
 }
