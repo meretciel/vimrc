@@ -8,6 +8,8 @@
 $(document).ready(function() {
   $('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
+    block.style.fontSize="12px";
+    block.style.fontFamily="courier";
   });
 });
 </script>

@@ -10,13 +10,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @Getter
 public abstract class BlockAnnotationPattern implements AnnotationPattern{
-    final private String start;
-    final private String end;
-    private boolean canMergeWithFirstLine = false;
+    final protected String start;
+    final protected String end;
+    protected boolean canMergeWithFirstLine = false;
 
     // Indicates if the block annotation is active.
     // The block annotation needs to be active so that it can modify the contents.
-    private boolean isActive = false;
+    protected boolean isActive = false;
 
     /**
      * If the current line number is less than or equal to the freezeLine,
@@ -33,11 +33,11 @@ public abstract class BlockAnnotationPattern implements AnnotationPattern{
      * @param line contents of the line
      * @return if the block annotation starts in line.
      */
-    private boolean startsInThisLine(final String line) {
+    protected boolean startsInThisLine(final String line) {
         return line.contains(start);
     }
 
-    private boolean endsInThisLine(final String line) {
+    protected boolean endsInThisLine(final String line) {
         return line.contains(end);
     }
 
@@ -55,7 +55,7 @@ public abstract class BlockAnnotationPattern implements AnnotationPattern{
     final public boolean canMergeWithFirstLine() { return canMergeWithFirstLine; }
 
     @Override
-    final public List<String> process(final List<String> lines) {
+    public List<String> process(final List<String> lines) {
 
         int lineNumber = 0;
         int totalLine = lines.size();

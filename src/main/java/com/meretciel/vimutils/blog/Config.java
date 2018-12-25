@@ -12,7 +12,7 @@ public class Config {
 
     final static public String PATTERN_END = "\\}";
     final static public AnnotationPattern HIGHLIGHT = new InlineReplacementAnnotationPattern("\\hl{", PATTERN_END, "<b>", "</b>");
-    final static public AnnotationPattern NOTE = new InlineReplacementAnnotationPattern("\\note{", PATTERN_END, "", "");
+    final static public AnnotationPattern NOTE = new InlineReplacementAnnotationPattern("\\note{", PATTERN_END, "<span style=\"color:blue;\">", "</span>");
     final static public AnnotationPattern COMMAND = new InlineReplacementAnnotationPattern("\\command{", PATTERN_END, "<code>", "</code>");
     final static public AnnotationPattern DANGER = new InlineReplacementAnnotationPattern("\\danger{", PATTERN_END, "<span style=\"color:red;\">", "</span>");
     final static public AnnotationPattern WARNING = new InlineReplacementAnnotationPattern("\\warning{", PATTERN_END, "<span style=\"color:orange;\">", "</span>");
@@ -72,9 +72,9 @@ public class Config {
         }
     };
 
+    final static public AnnotationPattern CODE_BLOCK = new CodeBlockAnnotationPattern("@code", "@end-code", true);
 
-
-    final static public AnnotationPattern CODE_BLOCK = new BlockAnnotationPattern("@code", "@end-code", true) {
+    final static public AnnotationPattern CODE_BLOCK_ = new BlockAnnotationPattern("@code", "@end-code", true) {
 
         @Override
         public String getNewStart(final String line) {

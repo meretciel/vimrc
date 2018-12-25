@@ -113,7 +113,7 @@ nnoremap <leader>y viwy
 nnoremap <leader>Y viWy
 
 nnoremap <leader>d ggdG
-
+nnoremap <leader>o :call OpenFileUnderCursor()<cr>
 nnoremap <leader>r ciw0
 nnoremap <leader>R ciW0
 nnoremap <leader>sr mB:tabe __run_result<cr>
@@ -124,6 +124,9 @@ nnoremap <leader>fq :bd! %<cr>
 
 nnoremap <F5> :call RHCompile()<cr>
 nnoremap <F6> :call RHRun()<cr>
+
+nnoremap <c-[> <c-t>
+nnoremap <c-g> 1<c-g>
 
 
 function! RHTabBack()
@@ -234,6 +237,9 @@ inoremap jk <Esc>
 inoremap <localleader>w <c-w>
 inoremap <localleader>W <esc>vBs
 inoremap <c-v> <esc>"+pa
+
+" Insert the current name to the buffer
+inoremap :@fn <c-r>=expand("%:p")<cr>
 
 " =======================
 " Visual Mode Key Mapping
@@ -449,7 +455,7 @@ function! EnableCabbrev()
     cabbrev :showall call ShowAll()
     cabbrev :conceal call Conceal()
     cabbrev :java call AsCodeBlock("java")
-    cabbrev :open call XEdit()
+    cabbrev :open call OpenFileUnderCursor()
     cabbrev :output call AsOutputBlock()
     cabbrev :block call AsBlockBlock()
     cabbrev :alignall '<,'> !columnsAlignment
