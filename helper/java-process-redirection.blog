@@ -1,0 +1,72 @@
+
+
+@section Here is the Section 
+
+@heading1 Introduction
+
+
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+In this post, we will see how we can execute a system command in Java and redirect its output and error message. 
+
+@image[0.7] /Users/Ruikun/workspace/Programs/vimutils/helper/test-image.png
+
+@heading2 Some Description
+
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+In order to execute a system command in Java, we need to create a \command{Process\} object. There are different ways doing that and one option is to create a \command{ProcessBuilder\}. For instance, the example below shows how we can execute the \command{diff\} command.
+
+
+
+@code[lang=java]
+ProcessBuilder builder = new ProcessBuilder("diff", "-u", FIRST_FILE, SECOND_FILE);
+
+Process p = builder.start();
+p.waitFor();
+@end-code
+
+Both of \command{Process\} class and \command{Process\} class provide methods to redirect outputs and error message of the underlying process that they represent. In our case, we will use the \command{getInputStream()\} and \command{getErrorSream()\} mtehods from the Process class. Note that the \command{getInputStream()\} is the output stream of the subprocess. It is called input stream because from the point of the client of the \command{Process\} object, the output of the subprocess is its input.
+
+
+
+@code[lang=java]
+BufferedReader readerOfOutput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+String line;
+while ((line = readerOfOutput.readLine()) != null) {
+    System.out.println(line);
+}
+
+BufferedReader readerOfError = new BufferedReader((new InputStreamReader(p.getErrorStream())));
+
+while ((line = readerOfError.readLine()) != null) {
+    System.out.println(line);
+}
+@end-code
+
+
+
+
+

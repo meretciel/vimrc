@@ -1,0 +1,109 @@
+
+
+body {
+    overflow: scroll;
+}
+
+#main-div {
+    width: 900px;
+    margin-left: 100px;
+    margin-bottom: 200px;
+    margin-top: 20px;
+
+    position: relative;
+    border: 1px solid #20948b;
+    padding: 4em;
+    //white-space: nowrap;
+    overflow: scroll;   
+}
+
+
+.section {
+    color : #003b46;
+}
+
+.heading1 {
+    color : #07575b;
+}
+
+.heading2 {
+    color : #66a5ad;
+}
+
+
+.danger {
+    color : red;
+}
+
+
+.important {
+    color : #df5446;
+}
+
+.warning {
+    color : orange;
+}
+
+.info {
+    color : #23dbd4;
+}
+
+.good {
+    color : #61db3f;
+}
+
+.note {
+    color : #589ff8;
+}
+
+.meta {
+    color : #c4dfe6;
+}
+
+
+
+div.codeblock {
+    font-family: Courier;
+    font-size: 12px;
+    line-height: 19px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    position: relative;
+    right: 1em;
+
+}
+
+div.codeblock-linenumber {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    color: #5DADE2;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+
+div.codeblock-code {
+    width: 850px;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    margin-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    overflow: auto;
+}
+
+div.codeblock-code pre {
+    padding: 0px;
+    margin: 0px;
+}
+
+div.codeblock-code pre code {
+    padding: 0px;
+    padding-left: 1em;
+}
+
+div.img-div {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
