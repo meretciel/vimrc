@@ -94,7 +94,15 @@ public class MainApp {
         loadBeforeContent();
 
 //        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-         try (BufferedReader reader = new BufferedReader(new FileReader("/Users/Ruikun/workspace/Programs/vimutils/helper/java-process-redirection.blog"))) {
+
+        final String inputFile;
+        if (args.length == 0) {
+            inputFile = "/Users/Ruikun/workspace/Programs/vimutils/helper/java-process-redirection.blog";
+        } else {
+            inputFile = args[0];
+        }
+
+         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             List<String> lines = new ArrayList<>();
 
             String line = null;

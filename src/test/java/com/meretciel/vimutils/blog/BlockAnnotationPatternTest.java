@@ -1,12 +1,13 @@
 package com.meretciel.vimutils.blog;
 
 
+import org.junit.Ignore;
 import org.junit.Test;
 import java.util.List;
 import java.util.ArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 public class BlockAnnotationPatternTest {
-
+    @Ignore
     @Test
     public void testCodeBlockPattern() {
         AnnotationPattern p = Config.CODE_BLOCK;

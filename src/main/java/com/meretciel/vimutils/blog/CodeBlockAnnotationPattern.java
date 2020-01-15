@@ -33,7 +33,7 @@ public class CodeBlockAnnotationPattern extends BlockAnnotationPattern {
 
     @Override
     public boolean isNewStartPresent(final String linePostChange) {
-        return linePostChange.startsWith("<div class=\"codeblock\" ");
+        return linePostChange.startsWith("<div class=\"codeblock\"");
     }
 
     @Override
@@ -108,6 +108,25 @@ public class CodeBlockAnnotationPattern extends BlockAnnotationPattern {
 
         sb.append("</div></div>\n" +
                 "<div style=\"display: inline-block;vertical-align:top;position:relative;left:-3px\">");
+
+        return sb.toString();
+
+    }
+
+
+    private String generatePrefixWithLineNumber(final int linesInBlock) {
+        final int width = (int) Math.log10((linesInBlock)) + 1;
+        final String template = "%" + width + "d";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("<div class=\"codeblock\">");
+        sb.append("<div class=\"codeblock-linenumber\">");
+
+        for (int i = 0; i < linesInBlock; ++i) {
+            sb.append(String.format(template, i + 1).replace(" ", "&nbsp;") + "<br/>");
+        }
+        sb.append("</div>");
+        sb.append("<div class=\"codeblock-code\">");
 
         return sb.toString();
 

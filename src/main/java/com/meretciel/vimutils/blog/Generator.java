@@ -69,16 +69,16 @@ public class Generator {
     public static void main(String[] args) throws IOException {
 
         // read the com.meretciel.vimutils.blog header and print to standard output
-        try (BufferedReader reader = new BufferedReader(new FileReader(BLOG_HEADER_FILE));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(TMP_FILE))
+        try (BufferedReader reader = new BufferedReader(new FileReader(Config.BEFORE_CONTENT_FILE));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(Config.TMP_FILE))
         ) {
+
             String line = null;
             while ((line = reader.readLine()) != null) {
                 writer.write(line);
                 writer.write("\n");
             }
         }
-
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             List<String> lines = new ArrayList<>();
@@ -87,7 +87,6 @@ public class Generator {
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
             }
-
             // iterate each line and transform the tags
             final int nLines = lines.size();
 
@@ -102,9 +101,24 @@ public class Generator {
                     writer.write(l);
                     writer.write("\n");
                 }
+                try(BufferedReader afterContentReader = new BufferedReader(new FileReader(Config.AFTER_CONTENT_FILE))) {
+                    while ((line = afterContentReader.readLine()) != null) {
+                        writer.write(line);
+                        writer.write("\n");
+                    }
+                }
             }
-        }
-        catch (RuntimeException e) {
+
+            // Print the transformed log.
+            try (final BufferedReader resultFile = new BufferedReader(new FileReader(Config.TMP_FILE))) {
+                String oneLine;
+                while ((oneLine = resultFile.readLine()) != null) {
+                    System.out.println(oneLine);
+                }
+            }
+
+
+        } catch (final RuntimeException e) {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(TMP_FILE, true))) {
                 writer.write(e.getMessage());
             }
