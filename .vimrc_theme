@@ -1,8 +1,6 @@
 
 
 
-set conceallevel=0
-set concealcursor=""
 
 " Define syntax of Conceal
 
@@ -28,17 +26,17 @@ highlight ThemePreTag ctermbg=Grey guibg=Grey ctermfg=Black guifg=Black
 syntax region RegionPreTag start="@!+[^@]\{-}|bg=grey|tc=black|[^@]\{-}@" end="@!-[^@]\{-}|bg=grey|tc=black|[^@]\{-}@" matchgroup=PatternTextConcealed contains=PatternTextConcealed keepend
 highlight link RegionPreTag ThemePreTag
 
-function! InsertPreTag()
-    call YankSelectedRegion()
-    let content = @0
-    call MoveToEndOfRegion()
-    let isEndOfLine = IsEndOfLine()
-    call InsertStringAfterCursor("@!-|bg=grey|tc=black|keep=</code>|@")
-    call MoveToStartOfRegion()
-    call InsertStringBeforeCursor("@!+|bg=grey|tc=black|keep=<code>|@")
-    call SelectOriginalContent(content)
-    call Cleanup(isEndOfLine)
-endfunction
+"function! InsertPreTag()
+"    call YankSelectedRegion()
+"    let content = @0
+"    call MoveToEndOfRegion()
+"    let isEndOfLine = IsEndOfLine()
+"    call InsertStringAfterCursor("@!-|bg=grey|tc=black|keep=</code>|@")
+"    call MoveToStartOfRegion()
+"    call InsertStringBeforeCursor("@!+|bg=grey|tc=black|keep=<code>|@")
+"    call SelectOriginalContent(content)
+"    call Cleanup(isEndOfLine)
+"endfunction
 
 
 " Define syntax for red text
@@ -111,9 +109,9 @@ endfunction
 
 function! AsCodeBlock(lang)
     call MoveToEndOfRegion()
-    call append(GetLineNumber(), ["@code-end"])
+    call append(GetLineNumber(), ["@end-code"])
     call MoveToStartOfRegion()
-    call append(GetLineNumber()-1, ["@code-start[lang=" . a:lang . "]"])
+    call append(GetLineNumber()-1, ["@code[lang=" . a:lang . "]"])
 endfunction
 
 
@@ -125,12 +123,6 @@ syntax region RegionOutputBlock start="@!+[^@]\{-}|bg=lightcyan|tc=black|[^@]\{-
 highlight link RegionOutputBlock ThemeOutputBlock
 
 
-function! AsOutputBlock()
-    call MoveToEndOfRegion()
-    call append(GetLineNumber(), ["@!-|bg=lightcyan|tc=black|keep=</pre>|@"])
-    call MoveToStartOfRegion()
-    call append(GetLineNumber()-1, ["@!+|bg=lightcyan|tc=black|keep=<pre>|@"])
-endfunction
 
 
 
@@ -163,58 +155,56 @@ endfunction
 " separate buffer.
 
 
-function! Generate(selectAll)
-    if a:selectAll == 1
-        normal! ggVGy
-    else
-        normal! gvy
-    endif
-    let command = ":vnew __TMP__" . strftime("%Y%m%d%H%M%S")
-    execute command
-    sleep 300m
-    normal! ggVGd
-    normal! P
-
-
-endfunction
+"function! Generate(selectAll)
+"    if a:selectAll == 1
+"        normal! ggVGy
+"    else
+"        normal! gvy
+"    endif
+"    let command = ":vnew __TMP__" . strftime("%Y%m%d%H%M%S")
+"    execute command
+"    sleep 300m
+"    normal! ggVGd
+"    normal! P
+"endfunction
 
 
 
-function! GenerateBlog()
-    call Generate(1)
-    normal! gg
-
-    let start = 1
-    let startPattern = "^@code-start.\\{-\\}$\\|^@!\\+.\\{-\\}keep=<pre>.\\{-\\}@$\\|^<ol>$\\|^<ul>$"
-    let endPattern   = "^@code-end$\\|^@!-.\\{-\\}keep=</pre>.\\{-\\}@$\\|^</ol>$\\|^</ul>$"
-
-    while search(startPattern, 'ce', line('$'))
-        let ln = GetLineNumber() - 1
-        let command = ":" . start . "," . ln . "s/$/<br \\/>/"
-        :silent echom "start: " . start
-        :silent echom "line number: " . ln
-        :silent echom "command: " . command
-        :silent execute command
-        call search(endPattern, 'ce', line('$'))
-        let start = GetLineNumber() + 1 
-    endwhile
-
-    " handle keep part in the tag
-    :silent execute ":%s/@!.\\{-}|keep=\\(.\\{-}\\)|@/\\1/ge"
-
-    " remove all the tags
-    :silent execute ":%s/@!.\\{-}@//ge"
-
-    " handle the coe block
-    :silent execute ":%s/^@code-start\\[lang=\\(.\\{-\\}\\)\\]$\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
-    :silent execute ":%s/^@code-end/<\\/code><\\/pre>/e"
-    
-
-    call append(0, [""])
-    normal! gg
-    execute ":r ~/workspace/Blog/blog_header.txt"
-
-endfunction
+"function! GenerateBlog()
+"    call Generate(1)
+"    normal! gg
+"
+"    let start = 1
+"    let startPattern = "^@code-start.\\{-\\}$\\|^@!\\+.\\{-\\}keep=<pre>.\\{-\\}@$\\|^<ol>$\\|^<ul>$"
+"    let endPattern   = "^@code-end$\\|^@!-.\\{-\\}keep=</pre>.\\{-\\}@$\\|^</ol>$\\|^</ul>$"
+"
+"    while search(startPattern, 'ce', line('$'))
+"        let ln = GetLineNumber() - 1
+"        let command = ":" . start . "," . ln . "s/$/<br \\/>/"
+"        :silent echom "start: " . start
+"        :silent echom "line number: " . ln
+"        :silent echom "command: " . command
+"        :silent execute command
+"        call search(endPattern, 'ce', line('$'))
+"        let start = GetLineNumber() + 1 
+"    endwhile
+"
+"    " handle keep part in the tag
+"    :silent execute ":%s/@!.\\{-}|keep=\\(.\\{-}\\)|@/\\1/ge"
+"
+"    " remove all the tags
+"    :silent execute ":%s/@!.\\{-}@//ge"
+"
+"    " handle the coe block
+"    :silent execute ":%s/^@code-start\\[lang=\\(.\\{-\\}\\)\\]$\\n/<pre style=\"padding: 0px;\"><code class=\"\\1\">/e"
+"    :silent execute ":%s/^@code-end/<\\/code><\\/pre>/e"
+"    
+"
+"    call append(0, [""])
+"    normal! gg
+"    execute ":r ~/workspace/Blog/blog_header.txt"
+"
+"endfunction
 
 
 
@@ -224,14 +214,9 @@ function! GenerateCleanedFile()
 endfunction
 
 
-
-
 function! InsertHtmlSpace()
     call InsertStringAfterCursor("&nbsp;")
 endfunction
-
-
-
 
 
 function! GetCharUnderCursor()

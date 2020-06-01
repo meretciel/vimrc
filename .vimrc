@@ -17,9 +17,9 @@ runtime! debian.vim
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+" if has("syntax")
+"  syntax on
+"endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -60,14 +60,20 @@ set number
 set nowrap
 set ignorecase
 set hlsearch
-set shell=/bin/bash\ -i
+"set shell=/bin/bash\ -i
 colorscheme koehler
 let maplocalleader=","
 let mapleader=","
 set conceallevel=3
 set concealcursor=ncv
+set guioptions+=b
+set mouse=a
 
+if &diff == 'nodiff'
+    set shellcmdflag=-ic
+endif
 
+set splitright
 set iskeyword=@,48-57,_,192-255,:,-
 
 
@@ -91,14 +97,16 @@ nnoremap <tab>2 2gt
 nnoremap <tab>3 3gt
 nnoremap <tab>4 4gt
 nnoremap <tab>5 5gt
-
+nnoremap <C-tab> gt
+nnoremap <C-S-tab> gT
 
 nnoremap <leader>sc 0v$h
 
 nnoremap <leader>s f{l
-nnoremap <leader>sh f}F{lvt\
-nnoremap <leader>vih f}F{lvt\
-nnoremap <leader>sd :call DeleteHighlightedText()<cr>
+"nnoremap <leader>sh f}F{lvt\
+"nnoremap <leader>vih f}F{lvt\
+"nnoremap <leader>sd :call DeleteHighlightedText()<cr>
+nnoremap <D-s> :w<cr>
 
 nnoremap zj 15j
 nnoremap zk 15k
@@ -117,7 +125,7 @@ nnoremap <leader>o :call OpenFileUnderCursor()<cr>
 nnoremap <leader>r ciw0
 nnoremap <leader>R ciW0
 nnoremap <leader>sr mB:tabe __run_result<cr>
-nnoremap <leader>scr mB:tabe __compile_result<cr>
+"nnoremap <leader>scr mB:tabe __compile_result<cr>
 nnoremap <leader>b :call RHTabBack()<cr>
 nnoremap <leader>fq :bd! %<cr>
 
@@ -125,7 +133,7 @@ nnoremap <leader>fq :bd! %<cr>
 nnoremap <F5> :call RHCompile()<cr>
 nnoremap <F6> :call RHRun()<cr>
 
-nnoremap <c-[> <c-t>
+"nnoremap <c-[> <c-t>
 nnoremap <c-g> 1<c-g>
 
 
@@ -326,25 +334,6 @@ set smartindent
 :inoremap # X#
 
 
-set rtp+=~/Programmes/ocp-indent-vim
-
-au BufEnter *.ml setf ocaml
-au BufEnter *.mli setf ocaml
-au FileType ocaml call FT_ocaml()
-"function FT_ocaml()
-"    set textwidth=80
-"    "set colorcolumn=80
-"    set shiftwidth=2
-"    set tabstop=2
-"    " ocp-indent with ocp-indent-vim
-"    let opamshare=system("opam config var share | tr -d '\n'")
-"    execute "autocmd FileType ocaml source".opamshare."/vim/syntax/ocp-indent.vim"
-"    filetype indent on
-"    filetype plugin indent on
-"endfunction
-
-
-
 
 " ================== Tmp ===================
 
@@ -405,7 +394,6 @@ function! EnableCabbrev()
     cabbrev :config  call Config()
     cabbrev insf call InsertFunction()
     iabbrev :insf :call InsertFunction()
-    cabbrev pre call InsertPreTag()
     cabbrev redt call InsertRedtTextTag()
     cabbrev redtext call InsertRedtTextTag()
     cabbrev header call InsertHeaderTagLineMode()
@@ -446,8 +434,11 @@ function! EnableCabbrev()
     cabbrev :warning call WarningText()
     cabbrev :info call InfoText()
     cabbrev :note call NoteText()
+    cabbrev :blue call NoteText()
     cabbrev :good call GoodText()
+    cabbrev :green call GoodText()
     cabbrev :command call CommandBlock()
+    cabbrev :code call CommandBlock()
     cabbrev :cmd call CommandBlock()
     cabbrev :hl call HighlightText()
     cabbrev :unformat call Unformat()
@@ -455,12 +446,17 @@ function! EnableCabbrev()
     cabbrev :showall call ShowAll()
     cabbrev :conceal call Conceal()
     cabbrev :java call AsCodeBlock("java")
+    cabbrev :javacode call AsCodeBlock("java")
+    cabbrev :python call AsCodeBlock("python")
+    cabbrev :pythoncode call AsCodeBlock("python")
+    cabbrev :bash call AsCodeBlock("bash")
     cabbrev :open call OpenFileUnderCursor()
     cabbrev :output call AsOutputBlock()
     cabbrev :block call AsBlockBlock()
     cabbrev :alignall '<,'> !columnsAlignment
     cabbrev :align-all '<,'> !columnsAlignment
     cabbrev :diff call DiffTool()
+    cabbrev :pre call InsertPreTag()
 endfunction
 
 
@@ -468,7 +464,7 @@ endfunction
 function! DisableCabbrev()
     cunabbrev insf
     iunabbrev :insf
-    cunabbrev pre
+    cunabbrev :pre
     cunabbrev redt
     cunabbrev redtext
     cunabbrev header
@@ -512,6 +508,7 @@ function! DisableCabbrev()
     cunabbrev :conceal
     cunabbrev :open
     cunabbrev :java
+    cunabbrev :bash
     cunabbrev :alignall
     cunabbrev :align-all
     cunabbrev :diff
@@ -520,3 +517,40 @@ endfunction
 
 
 call EnableCabbrev()
+" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
+"let s:opam_share_dir = system("opam config var share")
+"let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
+"
+"let s:opam_configuration = {}
+
+"function! OpamConfOcpIndent()
+"  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
+"endfunction
+"let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
+"
+"function! OpamConfOcpIndex()
+"  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
+"endfunction
+"let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
+"
+"function! OpamConfMerlin()
+"  let l:dir = s:opam_share_dir . "/merlin/vim"
+"  execute "set rtp+=" . l:dir
+"endfunction
+"let s:opam_configuration['merlin'] = function('OpamConfMerlin')
+"
+"let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
+"let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
+"let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
+"for tool in s:opam_packages
+"  " Respect package order (merlin should be after ocp-index)
+"  if count(s:opam_available_tools, tool) > 0
+"    call s:opam_configuration[tool]()
+"  endif
+"endfor
+"" ## end of OPAM user-setup addition for vim / base ## keep this line
+"" ## added by OPAM user-setup for vim / ocp-indent ## 009cb4ab5b9ce24d5e0baafbdc851b08 ## you can edit, but keep this line
+"if count(s:opam_available_tools,"ocp-indent") == 0
+"  source "/Users/Ruikun/.opam/default/share/ocp-indent/vim/indent/ocaml.vim"
+"endif
+"" ## end of OPAM user-setup addition for vim / ocp-indent ## keep this line

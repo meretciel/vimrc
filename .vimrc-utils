@@ -4,50 +4,59 @@
 source ~/.vimrc_utils
 
 " highlight configuration
+"
+"
 
-syntax match ConcealEnd "\\}" conceal
+function! Init() 
 
-syntax match ConcealHighlight "\\hl{" conceal
-syntax match ConcealRedText "\\red{" conceal
-syntax match ConcealInfoText "\\info{" conceal
-syntax match ConcealWarningText "\\warning{" conceal
-syntax match ConcealDangerText "\\danger{" conceal
-syntax match ConcealGoodText "\\good{" conceal
-syntax match ConcealNote "\\note{" conceal
-syntax match ConcealCommand "\\command{" conceal
+    syntax match ConcealEnd "\\}" conceal
+
+    syntax match ConcealHighlight "\\hl{" conceal
+    syntax match ConcealRedText "\\red{" conceal
+    syntax match ConcealInfoText "\\info{" conceal
+    syntax match ConcealWarningText "\\warning{" conceal
+    syntax match ConcealDangerText "\\danger{" conceal
+    syntax match ConcealGoodText "\\good{" conceal
+    syntax match ConcealNote "\\note{" conceal
+    syntax match ConcealCommand "\\command{" conceal
 
 
-highlight HighlightTextColor guibg=Yellow guifg=Purple
-syntax region HighlightText start="\\hl{" end="\\}" keepend contains=ConcealHighlight,ConcealEnd
-highlight link HighlightText HighlightTextColor
+    highlight HighlightTextColor guibg=Yellow guifg=Purple
+    syntax region HighlightText start="\\hl{" end="\\}" keepend contains=ConcealHighlight,ConcealEnd
+    highlight link HighlightText HighlightTextColor
 
-highlight RedTextColor guifg=#DF5446
-syntax region RedText start="\\red{" end="\\}" keepend contains=ConcealRedText,ConcealEnd
-highlight link  RedText RedTextColor
+    highlight RedTextColor guifg=#DF5446
+    syntax region RedText start="\\red{" end="\\}" keepend contains=ConcealRedText,ConcealEnd
+    highlight link  RedText RedTextColor
 
-highlight InfoTextColor guifg=Cyan
-syntax region InfoText start="\\info{" end="\\}" keepend contains=ConcealInfoText,ConcealEnd
-highlight link InfoText InfoTextColor
+    highlight InfoTextColor guifg=Cyan
+    syntax region InfoText start="\\info{" end="\\}" keepend contains=ConcealInfoText,ConcealEnd
+    highlight link InfoText InfoTextColor
 
-highlight DangerTextColor guifg=Red
-syntax region DangerText start="\\danger{" end="\\}" keepend contains=ConcealDangerText,ConcealEnd
-highlight link DangerText DangerTextColor
+    highlight DangerTextColor guifg=Red
+    syntax region DangerText start="\\danger{" end="\\}" keepend contains=ConcealDangerText,ConcealEnd
+    highlight link DangerText DangerTextColor
 
-highlight WarningTextColor guifg=Orange
-syntax region WarningText start="\\warning{" end="\\}" keepend contains=ConcealWarningText,ConcealEnd
-highlight link WarningText WarningTextColor
+    highlight WarningTextColor guifg=Orange
+    syntax region WarningText start="\\warning{" end="\\}" keepend contains=ConcealWarningText,ConcealEnd
+    highlight link WarningText WarningTextColor
 
-highlight GoodTextColor guifg=#91F975
-syntax region GoodText start="\\good{" end="\\}" keepend contains=ConcealGoodText,ConcealEnd
-highlight link GoodText GoodTextColor
+    highlight GoodTextColor guifg=#91F975
+    syntax region GoodText start="\\good{" end="\\}" keepend contains=ConcealGoodText,ConcealEnd
+    highlight link GoodText GoodTextColor
 
-highlight NoteColor guifg=#85A2F8
-syntax region Note start="\\note{" end="\\}" keepend contains=ConcealNote,ConcealEnd
-highlight link Note NoteColor
+    highlight NoteColor guifg=#85A2F8
+    syntax region Note start="\\note{" end="\\}" keepend contains=ConcealNote,ConcealEnd
+    highlight link Note NoteColor
 
-highlight CommandColor guibg=#1D516E guifg=#ABABAD
-syntax region Command start="\\command{" end="\\}" keepend contains=ConcealCommand,ConcealEnd
-highlight link Command CommandColor
+    highlight CommandColor guibg=#1D516E guifg=#ABABAD
+    syntax region Command start="\\command{" end="\\}" keepend contains=ConcealCommand,ConcealEnd
+    highlight link Command CommandColor
+
+endfunction
+
+
+call Init()
 
 
 function! InsertAround(textBefore, textAfter)
@@ -108,7 +117,7 @@ function! GoodText()
 endfunction
 
 function! InfoText()
-    call InsertAround("\\note{", "\\}")
+    call InsertAround("\\info{", "\\}")
 endfunction
 
 function! CommandBlock()
@@ -120,10 +129,21 @@ function! NoteText()
 endfunction
 
 
+function! InsertPreTag()
+    call InsertAround("<pre>", "</pre>")
+endfunction
+
 function! XEdit()
     call YankSelectedRegion()
-    let command = ":tabeidt" . @0
+    let command = ":tabedit " . @0
     execute command
+endfunction
+
+
+function! OpenFileUnderCursor()
+    call PressEsc()
+    normal! viW<cr>
+    call XEdit()
 endfunction
 
 
