@@ -178,6 +178,7 @@ def transformList(lines):
                 # exit from the current level
                 addListCloseTag(stack[-1][1], output)
                 stack.pop()
+        output.append("")
 
     return output
 
