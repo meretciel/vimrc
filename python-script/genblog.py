@@ -17,7 +17,7 @@ TEXT = "text"
 CODE = "code"
 HTML_LINE = "html-line"
 HTML_BLOCK = "html-block"
-LINK_TEMPLATE = r'<a href="{link}">{content}</a>'
+LINK_TEMPLATE = r'<a href="{link}" target="_blank">{content}</a>'
 CODE_FIRST_LINE_TEMPLATE = r'<pre style="padding: 0px;"><code class={lang}>'
 
 def transformHeader(rawLine):
@@ -81,7 +81,7 @@ def transformLink(line):
 
         if startIndex != -1 and endIndexOfContent != -1 and endIndex != -1:
             content = line[startIndex + len('@link['): endIndexOfContent]
-            link = line[endIndexOfContent : endIndex]
+            link = line[endIndexOfContent + 2: endIndex]
             output.append(line[prevIndex : startIndex])
             output.append(LINK_TEMPLATE.format(content=content, link=link))
             k = endIndex + 1
