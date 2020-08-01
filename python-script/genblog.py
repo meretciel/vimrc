@@ -1,16 +1,16 @@
-
 import sys
+import html
 
 PATTERN_END = "\\}"
 INLINE_PATTERN_MAP = {
-    ("\\hl{", PATTERN_END):      ("<b>", "</b>"),
-    ("\\note{", PATTERN_END):    ("<span style=\"color:blue;\">", "</span>"),
+    ("\\hl{", PATTERN_END): ("<b>", "</b>"),
+    ("\\note{", PATTERN_END): ("<span style=\"color:blue;\">", "</span>"),
     ("\\command{", PATTERN_END): ("<code>", "</code>"),
-    ("`", "`"):                  ("<code>", "</code>"),
-    ("\\danger{", PATTERN_END):  ("<span style=\"color:red;\">", "</span>"),
+    ("`", "`"): ("<code>", "</code>"),
+    ("\\danger{", PATTERN_END): ("<span style=\"color:red;\">", "</span>"),
     ("\\warning{", PATTERN_END): ("<span style=\"color:orange;\">", "</span>"),
-    ("\\info{", PATTERN_END):    ("<span style=\"color:cyan;\">", "</span>"),
-    ("\\red{", PATTERN_END):     ("<span style=\"color:red;\">", "</span>")
+    ("\\info{", PATTERN_END): ("<span style=\"color:cyan;\">", "</span>"),
+    ("\\red{", PATTERN_END): ("<span style=\"color:red;\">", "</span>")
 }
 
 TEXT = "text"
@@ -19,6 +19,9 @@ HTML_LINE = "html-line"
 HTML_BLOCK = "html-block"
 LINK_TEMPLATE = r'<a href="{link}" target="_blank">{content}</a>'
 CODE_FIRST_LINE_TEMPLATE = r'<pre style="padding: 0px;"><code class={lang}>'
+HEADER_LINE = "header-line"
+
+
 
 def transformHeader(rawLine):
     line = rawLine.strip();
@@ -46,14 +49,14 @@ def transformInlineMarker(rawLine):
         for oldPattern, newPattern in INLINE_PATTERN_MAP.items():
             startIndex = rawLine.find(oldPattern[0], k)
             if startIndex != -1:
-                output.append(rawLine[prevIndex : startIndex])
+                output.append(rawLine[prevIndex: startIndex])
                 output.append(newPattern[0])
 
-                endIndex = rawLine.find(oldPattern[1], startIndex + len(oldPattern))
+                endIndex = rawLine.find(oldPattern[1], startIndex + len(oldPattern[0]))
                 if endIndex == -1:
                     raise RuntimeError("Mismatched pattern in line: {}".format(rawLine))
 
-                output.append(rawLine[startIndex + len(oldPattern) : endIndex])
+                output.append(rawLine[startIndex + len(oldPattern[0]): endIndex])
                 output.append(newPattern[1])
 
                 k = endIndex + len(oldPattern[1])
@@ -82,7 +85,7 @@ def transformLink(line):
         if startIndex != -1 and endIndexOfContent != -1 and endIndex != -1:
             content = line[startIndex + len('@link['): endIndexOfContent]
             link = line[endIndexOfContent + 2: endIndex]
-            output.append(line[prevIndex : startIndex])
+            output.append(line[prevIndex: startIndex])
             output.append(LINK_TEMPLATE.format(content=content, link=link))
             k = endIndex + 1
 
@@ -94,26 +97,30 @@ def transformLink(line):
     else:
         return line
 
+
 def getIndentationLevel(line):
     k = 0
     while k < len(line) and line[k] == ' ':
         k += 1
     return k
 
+
 def isOrderedList(line):
     level = getIndentationLevel(line)
-    return line[level : level + 2] == '1.'
+    return line[level: level + 2] == '1.'
+
 
 def isListLine(line):
     if line == '':
         return False
     level = getIndentationLevel(line)
-    if level % 4 == 0:
+    if level != 0 and level % 4 == 0:
         if level < len(line) and (line[level] in '*-'):
             return True
-        return level + 1 < len(line) and  line[level:level+2] == '1.'
+        return level + 1 < len(line) and line[level:level + 2] == '1.'
     else:
         return False
+
 
 def addListOpenTag(isOrderedList, output):
     if isOrderedList:
@@ -128,13 +135,15 @@ def addListCloseTag(isOrderedList, output):
     else:
         output.append('</ul>')
 
+
 def transformListLine(line, isOrderedList):
     level = getIndentationLevel(line)
 
     if isOrderedList:
-        return '{}<li>{}</li>'.format(' ' * level,line[level + 2 :])
+        return '{}<li>{}</li>'.format(' ' * level, line[level + 2:])
     else:
-        return '{}<li>{}</li>'.format(' ' * level, line[level + 1 :])
+        return '{}<li>{}</li>'.format(' ' * level, line[level + 1:])
+
 
 def transformList(lines):
     k = 0
@@ -158,7 +167,8 @@ def transformList(lines):
         addListOpenTag(isOrderedListLine, output)
 
         while stack:
-            while k < len(lines) and (lines[k].strip() == '' or (isListLine(lines[k]) and getIndentationLevel(lines[k]) == stack[-1][0])):
+            while k < len(lines) and (
+                    lines[k].strip() == '' or (isListLine(lines[k]) and getIndentationLevel(lines[k]) == stack[-1][0])):
                 if lines[k].strip() == '':
                     k += 1
                 else:
@@ -166,9 +176,10 @@ def transformList(lines):
                     k += 1
 
             if k == len(lines):
-                 while stack:
-                     addListCloseTag(stack[-1][1], output)
-                     stack.pop()
+                while stack:
+                    addListCloseTag(stack[-1][1], output)
+                    stack.pop()
+                break
 
             if isListLine(lines[k]):
                 # we are in the next level
@@ -182,10 +193,12 @@ def transformList(lines):
 
     return output
 
+
 def getCodeLanguage(line):
     result = line.strip().replace('@code[lang=', '')
     result = result.replace(']', '')
     return result
+
 
 def isHtmlLine(data):
     patterns = ['<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '</br>']
@@ -193,8 +206,9 @@ def isHtmlLine(data):
 
 
 def isHtmlBlock(data):
-    patterns = ['<div ', '<p>', '<style>', '<script>', '<ul>', '<ol>']
+    patterns = ['<div ', '<p>', '<style>', '<script>', '<ul>', '<ol>', '<table', '<pre>']
     return any(data.startswith(pattern) for pattern in patterns)
+
 
 def getHtmlBlockEnd(data):
     if data.startswith('<div'):
@@ -215,6 +229,12 @@ def getHtmlBlockEnd(data):
     if data.startswith('<ol>'):
         return '</ol>'
 
+    if data.startswith('<table'):
+        return '</table>'
+
+    if data.startswith('<pre>'):
+        return '</pre>'
+
 
 def getMode(line):
     data = line.strip();
@@ -226,6 +246,8 @@ def getMode(line):
         return HTML_LINE
     elif isHtmlBlock(data):
         return HTML_BLOCK
+    elif line.startswith('#'):
+        return HEADER_LINE
     else:
         return TEXT
 
@@ -238,6 +260,7 @@ def maybeMakeItPara(line, output):
     output.append('<p>')
     output.append(line)
     output.append('</p>')
+
 
 def transformBlock(lines):
     output = []
@@ -255,6 +278,9 @@ def transformBlock(lines):
             if modeOfCurrentLine == TEXT:
                 maybeMakeItPara(line, output)
                 k += 1
+            elif modeOfCurrentLine == HEADER_LINE:
+                output.append(transformHeader(line))
+                k += 1
             else:
                 mode = modeOfCurrentLine
                 # will process the same line again
@@ -265,11 +291,11 @@ def transformBlock(lines):
             codeLanguage = getCodeLanguage(lines[k])
             s += 1
             while s < len(lines) and lines[s].strip() != '@end-code':
-                codeLines.append(lines[s].rstrip())
+                codeLines.append(html.escape(lines[s].rstrip()))
                 s += 1
 
             if s < len(lines):
-                codeLines.append(lines[s].rstrip())
+                codeLines.append(html.escape(lines[s].rstrip()))
 
             mode = TEXT
             k = s + 1  # move to the next line
@@ -321,21 +347,14 @@ def transformBlock(lines):
     return output
 
 
-
-
-
 if __name__ == '__main__':
     data = sys.stdin.readlines()
     linesAfterRstrip = list(map(lambda x: x.rstrip(), data))
     linesAfterListTransformation = transformList(linesAfterRstrip)
-    linesAfterHeaderTransformation = list(map(transformHeader, linesAfterListTransformation))
-    linesAfterInlineTransformation = list(map(transformInlineMarker, linesAfterHeaderTransformation))
+    # linesAfterHeaderTransformation = list(map(transformHeader, linesAfterListTransformation))
+    linesAfterInlineTransformation = list(map(transformInlineMarker, linesAfterListTransformation))
     linesAfterLinkTransformation = list(map(transformLink, linesAfterInlineTransformation))
     output = transformBlock(linesAfterLinkTransformation)
 
     for item in output:
         print(item)
-
-
-
-
