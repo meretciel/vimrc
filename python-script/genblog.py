@@ -28,7 +28,20 @@ CODE_FIRST_LINE_TEMPLATE = r'<pre style="padding: 0px;"><code class={lang}>'
 HEADER_LINE = "header-line"
 MATH_BLOCK = "math-block"
 MULTI_LINE_EQUATION = "multi-line-equation"
+IMAGE_BLOCK = "image-block"
 
+
+def parsePattern(line, startPattern, endPattern):
+    startIndex = line.find(startPattern)
+    endIndex = -1
+
+    if startIndex != -1:
+        endIndex = line.find(endPattern, startIndex + 1)
+
+    if endIndex != -1:
+        return line[startIndex + len(startPattern): endIndex]
+
+    return None
 
 
 def transformHeader(rawLine):
@@ -261,7 +274,7 @@ def getHtmlBlockEnd(data):
 
 
 def getMode(line):
-    data = line.strip();
+    data = line.strip()
 
     # if data.startswith('<pre style="padding: 0px;"><code class='):
     if data.startswith('@code[lang='):
@@ -276,6 +289,8 @@ def getMode(line):
         return MATH_BLOCK
     elif line.startswith("@multi-line-equation") or line.startswith("@mleq"):
         return MULTI_LINE_EQUATION
+    elif line.startswith("@image(") and line.strip()[-1] == ')':
+        return IMAGE_BLOCK
     else:
         return TEXT
 
@@ -288,6 +303,40 @@ def maybeMakeItPara(line, output):
     output.append('<p>')
     output.append(line)
     output.append('</p>')
+
+
+
+def processImageBlock(lines, k, output):
+
+    def _parseField(line, fieldName):
+        v = parsePattern(line, fieldName + '=', ",")
+        if v is None:
+            v = parsePattern(line, fieldName + '=', ')')
+
+        if v is not None:
+            v = v.replace('"', '')
+
+        return v
+
+    line = lines[k]
+    filename = _parseField(line, 'filename')
+    width = _parseField(line, 'width')
+    height = _parseField(line, 'height')
+
+    output.append('<div style="text-align: center">')
+
+    l = '    <img src="/{{ postPath }}/@" alt="@"'.replace('@', filename)
+    if width is not None:
+        l += ' width = {}'.format(width)
+
+    if height is not None:
+        l += ' height = {}'.format(height)
+
+    l += '>'
+    output.append(l)
+    output.append('</div>')
+
+    return k + 1
 
 
 def transformBlock(lines):
@@ -343,6 +392,10 @@ def transformBlock(lines):
             codeLines[-1] = '</code></pre>'
             output.extend(codeLines)
             output.append('</div>')
+
+        elif mode == IMAGE_BLOCK:
+            k = processImageBlock(lines, k, output)
+            mode = TEXT
 
         elif mode == MATH_BLOCK:
             output.append("<div>")
