@@ -1,5 +1,11 @@
 import sys
 import html
+import logging
+logging.basicConfig(stream=sys.stdout)
+log = logging.getLogger("main")
+log.setLevel(logging.ERROR)
+
+
 
 PATTERN_END = "\\}"
 INLINE_PATTERN_MAP = {
@@ -20,6 +26,8 @@ HTML_BLOCK = "html-block"
 LINK_TEMPLATE = r'<a href="{link}" target="_blank">{content}</a>'
 CODE_FIRST_LINE_TEMPLATE = r'<pre style="padding: 0px;"><code class={lang}>'
 HEADER_LINE = "header-line"
+MATH_BLOCK = "math-block"
+MULTI_LINE_EQUATION = "multi-line-equation"
 
 
 
@@ -44,8 +52,10 @@ def transformInlineMarker(rawLine):
     k = 0
     prevIndex = -1
     output = []
+    # log.info("transforming inline markers: {}".format(rawLine))
     while k < len(rawLine) and k > prevIndex:
         prevIndex = k
+        # log.debug("char = {}, k = {}, prevIndex = {}, output = {}".format(rawLine[k], k, prevIndex, output))
         for oldPattern, newPattern in INLINE_PATTERN_MAP.items():
             startIndex = rawLine.find(oldPattern[0], k)
             if startIndex != -1:
@@ -61,8 +71,9 @@ def transformInlineMarker(rawLine):
 
                 k = endIndex + len(oldPattern[1])
 
-    if prevIndex != -1 and prevIndex < len(rawLine):
-        output.append(rawLine[prevIndex:])
+
+    if k != 0 and k < len(rawLine):
+        output.append(rawLine[k:])
 
     if k != 0:
         return ''.join(output)
@@ -153,7 +164,14 @@ def transformList(lines):
 
     while k < len(lines) and k > prevIndex:
         prevIndex = k
-        while k < len(lines) and not isListLine(lines[k]):
+        isInCode = False
+        while k < len(lines) and (not isListLine(lines[k]) or isInCode):
+            if lines[k].startswith('@code'):
+                isInCode = True
+
+            if lines[k].startswith('@end-code'):
+                isInCode = False
+
             k += 1
 
         output.extend(lines[prevIndex: k])
@@ -181,7 +199,7 @@ def transformList(lines):
                     stack.pop()
                 break
 
-            if isListLine(lines[k]):
+            if isListLine(lines[k]) and getIndentationLevel(lines[k]) > stack[-1][0]:
                 # we are in the next level
                 addListOpenTag(isOrderedList(lines[k]), output)
                 stack.append((getIndentationLevel(lines[k]), isOrderedList(lines[k])))
@@ -206,7 +224,7 @@ def isHtmlLine(data):
 
 
 def isHtmlBlock(data):
-    patterns = ['<div ', '<p>', '<style>', '<script>', '<ul>', '<ol>', '<table', '<pre>']
+    patterns = ['<div ', '<p>', '<style>', '<script>', '<ul>', '<ol>', '<table', '<pre>', '<div>', r'\[', '<blockquote']
     return any(data.startswith(pattern) for pattern in patterns)
 
 
@@ -235,6 +253,12 @@ def getHtmlBlockEnd(data):
     if data.startswith('<pre>'):
         return '</pre>'
 
+    if data == r'\[':
+        return r'\]'
+
+    if data.startswith('<blockquote'):
+        return '</blockquote>'
+
 
 def getMode(line):
     data = line.strip();
@@ -248,6 +272,10 @@ def getMode(line):
         return HTML_BLOCK
     elif line.startswith('#'):
         return HEADER_LINE
+    elif line.startswith("@mathblock") or line.startswith("@mb"):
+        return MATH_BLOCK
+    elif line.startswith("@multi-line-equation") or line.startswith("@mleq"):
+        return MULTI_LINE_EQUATION
     else:
         return TEXT
 
@@ -270,7 +298,7 @@ def transformBlock(lines):
     while k < len(lines):
 
         line = lines[k].rstrip()
-        # print("[{}] {} | line: {}".format(k, mode, line))
+        # print("[{}] current mode: {} | line: {} | next mode: {}".format(k, mode, line, getMode(line)))
 
         if mode == TEXT:
             modeOfCurrentLine = getMode(line)
@@ -316,6 +344,40 @@ def transformBlock(lines):
             output.extend(codeLines)
             output.append('</div>')
 
+        elif mode == MATH_BLOCK:
+            output.append("<div>")
+            output.append("$$")
+            s  = k + 1
+            while s < len(lines) and lines[s].strip() != "@endmathblock" and lines[s].strip() != "@end-mathblock" and lines[s].strip() != "@end-mb":
+                output.append(lines[s])
+                s += 1
+
+            output.append("$$")
+            output.append("</div>")
+
+            # move to the next line
+            mode = TEXT
+            k = s + 1
+
+        elif mode == MULTI_LINE_EQUATION:
+            output.append("<div>")
+            output.append("$$")
+            output.append(r"\begin{eqnarray}")
+
+            s  = k + 1
+            while s < len(lines) and lines[s].strip() != "@end-multi-line-equation" and lines[s].strip() != '@end-mleq':
+                output.append(lines[s])
+                s += 1
+
+            output.append(r"\end{eqnarray}")
+            output.append("$$")
+            output.append("</div>")
+
+            # move to the next line
+            mode = TEXT
+            k = s + 1
+
+
         elif mode == HTML_LINE:
             output.append(line)
             k += 1
@@ -346,15 +408,22 @@ def transformBlock(lines):
 
     return output
 
+def printLines(lines):
+    for line in lines:
+        print(line)
 
 if __name__ == '__main__':
     data = sys.stdin.readlines()
     linesAfterRstrip = list(map(lambda x: x.rstrip(), data))
+    # printLines(linesAfterRstrip)
+
     linesAfterListTransformation = transformList(linesAfterRstrip)
+
+    # printLines(linesAfterListTransformation)
+
     # linesAfterHeaderTransformation = list(map(transformHeader, linesAfterListTransformation))
     linesAfterInlineTransformation = list(map(transformInlineMarker, linesAfterListTransformation))
     linesAfterLinkTransformation = list(map(transformLink, linesAfterInlineTransformation))
     output = transformBlock(linesAfterLinkTransformation)
 
-    for item in output:
-        print(item)
+    printLines(output)
